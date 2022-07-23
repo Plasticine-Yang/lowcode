@@ -1,5 +1,5 @@
 {
-  "name": "lowcode",
+  "private": true,
   "version": "1.0.0",
   "description": "lowcode",
   "main": "index.js",
