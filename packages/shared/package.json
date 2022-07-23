@@ -1,0 +1,12 @@
+{
+  "name": "@lowcode/shared",
+  "version": "1.0.0",
+  "description": "@lowcode/shared",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Hello Shared!\""
+  },
+  "keywords": [],
+  "author": "Plasticine",
+  "license": "ISC"
+}

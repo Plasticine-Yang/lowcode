@@ -1,0 +1,17 @@
+/** @type { import('eslint').ESLint.ConfigData } */
+module.exports = {
+  parser: '@typescript-eslint/parser',
+  parserOptions: {
+    ecmaVersion: 'latest',
+    sourceType: 'module',
+  },
+  extends: ['plugin:prettier/recommended'],
+  plugins: ['@typescript-eslint'],
+  overrides: [
+    {
+      files: ['packages/core/**'],
+      extends: ['plugin:vue/vue3-recommended', 'plugin:prettier/recommended'],
+      plugins: ['vue', '@typescript-eslint'],
+    },
+  ],
+}
