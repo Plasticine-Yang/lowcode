@@ -10,6 +10,7 @@ module.exports = {
   overrides: [
     {
       files: ['packages/core/**'],
+      parser: 'vue-eslint-parser',
       extends: ['plugin:vue/vue3-recommended', 'plugin:prettier/recommended'],
       plugins: ['vue', '@typescript-eslint'],
     },
