@@ -13,7 +13,10 @@
     "vue": "^3.2.37"
   },
   "devDependencies": {
+    "@iconify/json": "^2.1.81",
+    "@iconify/vue": "^3.2.1",
     "@vitejs/plugin-vue": "^3.0.0",
+    "naive-ui": "^2.31.0",
     "sass": "^1.54.0",
     "unocss": "^0.44.5",
     "unplugin-vue-components": "^0.21.1",
