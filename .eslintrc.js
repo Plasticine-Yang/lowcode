@@ -11,6 +11,11 @@ module.exports = {
     {
       files: ['packages/core/**'],
       parser: 'vue-eslint-parser',
+      parserOptions: {
+        ecmaVersion: 'latest',
+        parser: '@typescript-eslint/parser',
+        sourceType: 'module',
+      },
       extends: ['plugin:vue/vue3-recommended', 'plugin:prettier/recommended'],
       plugins: ['vue', '@typescript-eslint'],
     },
