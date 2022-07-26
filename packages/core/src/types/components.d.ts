@@ -7,7 +7,7 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
-    BasicLayout: typeof import('./../components/BasicLayout.vue')['default']
+    BasicLayout: typeof import('./../layouts/BasicLayout.vue')['default']
     NButton: typeof import('naive-ui')['NButton']
     NLayout: typeof import('naive-ui')['NLayout']
     NLayoutContent: typeof import('naive-ui')['NLayoutContent']
