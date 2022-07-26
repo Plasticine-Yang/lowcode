@@ -7,7 +7,7 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
-    BasicLayout: typeof import('./../layouts/BasicLayout.vue')['default']
+    BasicLayout: typeof import('./../layouts/basic-layout/index.vue')['default']
     BasicLayoutHeader: typeof import('./../layouts/basic-layout/components/BasicLayoutHeader.vue')['default']
     Drawer: typeof import('./../layouts/basic-layout/components/drawer-panel/Drawer.vue')['default']
     DrawerPanel: typeof import('./../layouts/basic-layout/components/drawer-panel/index.vue')['default']
