@@ -10,7 +10,7 @@ defineProps<Props>()
 </script>
 
 <template>
-  <n-tag :bordered="false" class="cursor-pointer flex-1">
+  <n-tag :bordered="false" class="cursor-pointer w-full flex-1">
     {{ fieldName }}
     <template v-if="iconName !== undefined" #icon>
       <icon :icon="iconName" :inline="true" />
