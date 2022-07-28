@@ -1,0 +1,13 @@
+$--color-primary: #409eff;
+
+.ghost {
+  content: '';
+  font-size: 0;
+  height: 3px;
+  box-sizing: border-box;
+  background: $--color-primary;
+  border: 2px solid $--color-primary;
+  outline-width: 0;
+  padding: 0;
+  overflow: hidden;
+}
