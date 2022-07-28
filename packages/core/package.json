@@ -10,7 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "vue": "^3.2.37"
+    "vue": "^3.2.37",
+    "vuedraggable": "^4.1.0"
   },
   "devDependencies": {
     "@iconify/json": "^2.1.81",

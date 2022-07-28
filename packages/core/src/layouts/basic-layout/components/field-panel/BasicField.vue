@@ -1,23 +1,47 @@
+<script setup lang="ts">
+import { reactive } from 'vue'
+import type { FieldItemProps } from './FieldItem.vue'
+
+const fieldItemList = reactive<FieldItemProps[]>([
+  {
+    id: 1,
+    fieldName: '单行输入',
+    iconName: 'lucide:text-cursor-input',
+  },
+  {
+    id: 2,
+    fieldName: '多行输入',
+    iconName: 'bi:textarea-resize',
+  },
+  {
+    id: 3,
+    fieldName: '单选项',
+    iconName: 'bi:textarea-resize',
+  },
+  {
+    id: 4,
+    fieldName: '多选项',
+    iconName: 'bx:select-multiple',
+  },
+])
+</script>
+
 <template>
-  <n-grid x-gap="8" y-gap="8" :cols="2">
-    <!-- 单行输入 -->
-    <n-grid-item>
-      <field-item field-name="单行输入" icon-name="lucide:text-cursor-input" />
-    </n-grid-item>
-
-    <!-- 多行输入 -->
-    <n-grid-item>
-      <field-item field-name="多行输入" icon-name="bi:textarea-resize" />
-    </n-grid-item>
-
-    <!-- 单选项 -->
-    <n-grid-item>
-      <field-item field-name="单选项" icon-name="carbon:radio-button-checked" />
-    </n-grid-item>
-
-    <!-- 多选项 -->
-    <n-grid-item>
-      <field-item field-name="多选项" icon-name="bx:select-multiple" />
-    </n-grid-item>
-  </n-grid>
+  <!-- TODO 字段面板中的字段不应该被修改顺序
+      所以使用 v-model 但是拖拽的过程的预览效果还是会移动的，这个需要修复 -->
+  <draggable
+    v-model="fieldItemList"
+    item-key="fieldName"
+    group="basic-field"
+    :animation="300"
+    class="grid grid-cols-2 gap-8px"
+  >
+    <template #item="{ element }">
+      <field-item
+        :id="element.id"
+        :field-name="element.fieldName"
+        :icon-name="element.iconName"
+      />
+    </template>
+  </draggable>
 </template>
