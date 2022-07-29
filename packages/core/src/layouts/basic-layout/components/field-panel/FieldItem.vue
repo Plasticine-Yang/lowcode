@@ -1,4 +1,5 @@
 <script setup lang="ts">
+/* eslint-disable no-alert */
 export interface FieldItemProps {
   // 字段 id 用于唯一标识字段
   id: number
@@ -6,6 +7,8 @@ export interface FieldItemProps {
   fieldName: string
   // iconify图标名: https://icon-sets.iconify.design/
   iconName?: string
+  type: string
+  options?: object
 }
 
 defineProps<FieldItemProps>()
