@@ -1,13 +1,15 @@
 <script setup lang="ts">
-import { reactive } from 'vue'
 import type { FieldItemProps } from './FieldItem.vue'
+import { reactive } from 'vue'
+import { basicFieldGroup } from '@/utils'
+import { generateId } from '@/utils'
 
 // 后续在此添加配置或将其抽离
 const fieldItemList = reactive<FieldItemProps[]>([
   {
     id: 1,
     fieldName: '单行输入',
-    type: 'input',
+    name: 'n-input',
     iconName: 'lucide:text-cursor-input',
     options: {
       type: 'text',
@@ -24,25 +26,33 @@ const fieldItemList = reactive<FieldItemProps[]>([
   {
     id: 2,
     fieldName: '多行输入',
-    type: 'textarea',
+    name: 'n-input',
     iconName: 'bi:textarea-resize',
     options: {},
   },
   {
     id: 3,
-    fieldName: '单选项',
-    type: 'checkbox',
+    fieldName: '单选',
+    name: 'n-radio',
     iconName: 'bi:textarea-resize',
     options: {},
   },
   {
     id: 4,
-    fieldName: '多选项',
-    type: 'selectbox',
+    fieldName: '复选框',
+    name: 'n-checkbox',
     iconName: 'bx:select-multiple',
     options: {},
   },
 ])
+
+const handleClone = ({ name, options }: FieldItemProps): DrawerComponent => {
+  return {
+    id: generateId(),
+    name,
+    options,
+  }
+}
 </script>
 
 <template>
@@ -51,8 +61,9 @@ const fieldItemList = reactive<FieldItemProps[]>([
   <draggable
     v-model="fieldItemList"
     item-key="fieldName"
-    group="basic-field"
+    :group="basicFieldGroup"
     :sort="false"
+    :clone="handleClone"
     class="grid grid-cols-2 gap-8px"
   >
     <template #item="{ element }">
@@ -61,7 +72,7 @@ const fieldItemList = reactive<FieldItemProps[]>([
         :options="element.options"
         :field-name="element.fieldName"
         :icon-name="element.iconName"
-        :type="element.type"
+        :name="element.name"
       />
     </template>
   </draggable>
