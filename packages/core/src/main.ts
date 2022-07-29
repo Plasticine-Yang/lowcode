@@ -2,6 +2,7 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import EventBus from '@/lib/bus'
 import { setupAssets, setupGlobalComponents } from './setup'
+import setupPinia from './store'
 
 function bootstrap() {
   const app = createApp(App)
@@ -13,6 +14,8 @@ function bootstrap() {
   setupGlobalComponents(app)
   // 全局注入事件总线
   app.provide('$bus', $bus)
+
+  setupPinia(app)
 
   app.mount('#app')
 }
