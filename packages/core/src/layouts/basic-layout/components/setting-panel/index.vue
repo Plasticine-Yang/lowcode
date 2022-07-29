@@ -15,3 +15,4 @@ $bus.on('changeCurrentEdit', (evt: Event) => {
   currentWidget.value = evt.target
 })
 </script>
+
