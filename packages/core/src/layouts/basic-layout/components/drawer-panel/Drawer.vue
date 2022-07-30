@@ -33,8 +33,8 @@ export default defineComponent({
   >
     <template #item="{ element }">
       <item-wrapper
-        :dragHandlerName="element.dragHandlerName"
-        :componentId="element.id"
+        :drag-handler-name="element.dragHandlerName"
+        :component-id="element.id"
       >
         <component :is="element.name" v-bind="element.options"></component>
       </item-wrapper>
