@@ -51,11 +51,11 @@ const removeComponent = () => {
       <icon
         :inline="true"
         icon="fluent:delete-48-filled"
-        @click="removeComponent"
+        @click.stop="removeComponent"
       />
     </div>
     <!-- 组件插槽区域 -->
-    <section @click="handleActiveComponent">
+    <section @click.stop="handleActiveComponent">
       <slot></slot>
     </section>
   </div>

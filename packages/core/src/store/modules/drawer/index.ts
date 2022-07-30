@@ -31,5 +31,11 @@ export const useDrawer = defineStore('drawer', {
 
       targetIdx !== -1 && this.components.splice(targetIdx, 1)
     },
+    /**
+     * @description 取消选中组件
+     */
+    resetActiveComponent() {
+      this.activeComponent = null
+    },
   },
 })
