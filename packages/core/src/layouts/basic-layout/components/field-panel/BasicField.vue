@@ -46,10 +46,15 @@ const fieldItemList = reactive<FieldItemProps[]>([
   },
 ])
 
-const handleClone = ({ name, options }: FieldItemProps): DrawerComponent => {
+const handleClone = ({
+  name,
+  options,
+  fieldName,
+}: FieldItemProps): DrawerComponent => {
   return {
     id: generateId(),
     name,
+    dragHandlerName: fieldName,
     options,
   }
 }

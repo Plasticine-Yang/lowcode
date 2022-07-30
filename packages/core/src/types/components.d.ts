@@ -15,6 +15,7 @@ declare module '@vue/runtime-core' {
     DrawerPanelHeader: typeof import('./../layouts/basic-layout/components/drawer-panel/DrawerPanelHeader.vue')['default']
     FieldItem: typeof import('./../layouts/basic-layout/components/field-panel/FieldItem.vue')['default']
     FieldPanel: typeof import('./../layouts/basic-layout/components/field-panel/index.vue')['default']
+    ItemWrapper: typeof import('./../layouts/basic-layout/components/drawer-panel/ItemWrapper.vue')['default']
     NCollapse: typeof import('naive-ui')['NCollapse']
     NCollapseItem: typeof import('naive-ui')['NCollapseItem']
     NInput: typeof import('naive-ui')['NInput']

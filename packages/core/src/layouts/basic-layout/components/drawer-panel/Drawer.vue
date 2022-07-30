@@ -29,9 +29,15 @@ export default defineComponent({
     class="wh-full bg-white"
     ghost-class="ghost"
     :animation="300"
+    handle=".drag-handler"
   >
     <template #item="{ element }">
-      <component :is="element.name" v-bind="element.options"></component>
+      <item-wrapper
+        :dragHandlerName="element.dragHandlerName"
+        :componentId="element.id"
+      >
+        <component :is="element.name" v-bind="element.options"></component>
+      </item-wrapper>
     </template>
   </draggable>
 </template>

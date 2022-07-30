@@ -24,5 +24,13 @@ export const useDrawer = defineStore('drawer', {
       this.components.push(component)
       this.setActiveComponent(component)
     },
+    removeComponent(id: string) {
+      let targetIdx = -1
+      this.components.forEach((item, idx) => {
+        if (item.id === id) targetIdx = idx
+      })
+
+      targetIdx !== -1 && this.components.splice(targetIdx, 1)
+    },
   },
 })
