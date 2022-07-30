@@ -65,10 +65,10 @@ const handleClone = ({
       所以使用 v-model 但是拖拽的过程的预览效果还是会移动的，这个需要修复 -->
   <draggable
     v-model="fieldItemList"
-    item-key="fieldName"
     :group="basicFieldGroup"
     :sort="false"
     :clone="handleClone"
+    item-key="fieldName"
     class="grid grid-cols-2 gap-8px"
   >
     <template #item="{ element }">

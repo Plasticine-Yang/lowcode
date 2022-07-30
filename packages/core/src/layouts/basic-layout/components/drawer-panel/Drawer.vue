@@ -24,11 +24,11 @@ export default defineComponent({
 <template>
   <draggable
     :list="drawer.components"
-    item-key="id"
     :group="drawerGroup"
+    :animation="300"
+    item-key="id"
     class="wh-full bg-white"
     ghost-class="ghost"
-    :animation="300"
     handle=".drag-handler"
   >
     <template #item="{ element }">

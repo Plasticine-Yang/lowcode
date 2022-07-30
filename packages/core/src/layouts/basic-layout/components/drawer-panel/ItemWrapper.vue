@@ -29,8 +29,8 @@ const removeComponent = () => {
     <!-- 操作区域 -->
     <div class="item-action">
       <icon
-        icon="fluent:delete-48-filled"
         :inline="true"
+        icon="fluent:delete-48-filled"
         @click="removeComponent"
       />
     </div>
