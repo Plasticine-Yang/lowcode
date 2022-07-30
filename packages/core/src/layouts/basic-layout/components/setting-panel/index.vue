@@ -1,18 +1,18 @@
-<template>
-  <section class="wh-full flex-center">setting panel</section>
-</template>
-
 <script lang="ts" setup>
-import { ref, inject } from 'vue'
-import EventBus from '@/lib/bus'
+import { useDrawer } from '@/store'
 
-// 当前控件
-const currentWidget = ref()
-// 注入事件总线
-const $bus = inject('$bus') as EventBus
-$bus.on('changeCurrentEdit', (evt: Event) => {
-  console.log(evt, 'evt')
-  currentWidget.value = evt.target
-})
+const drawer = useDrawer()
 </script>
 
+<template>
+  <section v-if="drawer.activeComponent === null" class="wh-full flex-center">
+    <n-empty description="未选中组件"></n-empty>
+  </section>
+  <section v-else class="wh-full p-10px">
+    <n-collapse>
+      <n-collapse-item title="基本属性">
+        <basic-settings />
+      </n-collapse-item>
+    </n-collapse>
+  </section>
+</template>
