@@ -21,6 +21,6 @@ export const basicFieldGroup = createGroup('drawer', {
 })
 
 export const drawerGroup = createGroup('drawer', {
-  pull: true,
+  pull: false,
   put: true,
 })
