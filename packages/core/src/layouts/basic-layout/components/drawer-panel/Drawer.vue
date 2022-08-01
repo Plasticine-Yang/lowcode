@@ -19,8 +19,6 @@ export default defineComponent({
 })
 </script>
 
-<script lang="ts" setup></script>
-
 <template>
   <draggable
     :list="drawer.components"
