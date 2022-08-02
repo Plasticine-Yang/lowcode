@@ -12,6 +12,7 @@ const fieldItemList = reactive<FieldItemProps[]>([
     name: 'n-input',
     iconName: 'lucide:text-cursor-input',
     options: {
+      value: '',
       type: 'text',
       placeholder: '',
       minWidth: '',
