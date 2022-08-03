@@ -14,7 +14,6 @@ function bootstrap() {
   setupGlobalProvide(app)
 
   setupPinia(app)
-
   app.mount('#app')
 }
 

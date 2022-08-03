@@ -19,8 +19,6 @@ export default defineComponent({
 })
 </script>
 
-<script lang="ts" setup></script>
-
 <template>
   <draggable
     :list="drawer.components"
@@ -36,7 +34,10 @@ export default defineComponent({
         :drag-handler-name="element.dragHandlerName"
         :component-id="element.id"
       >
-        <component :is="element.name" v-bind="element.options"></component>
+        <component
+          :is="element.componentName"
+          v-bind="element.componentProps"
+        ></component>
       </item-wrapper>
     </template>
   </draggable>

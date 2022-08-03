@@ -3,7 +3,7 @@
     <n-collapse>
       <!-- 基础字段 -->
       <n-collapse-item title="基础字段" name="basic-field">
-        <basic-field />
+        <basic-fields />
       </n-collapse-item>
     </n-collapse>
   </section>
