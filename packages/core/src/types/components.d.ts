@@ -32,6 +32,7 @@ declare module '@vue/runtime-core' {
     NTag: typeof import('naive-ui')['NTag']
     PanelHeaderModal: typeof import('./../layouts/basic-layout/components/drawer-panel/panelHeaderModal.vue')['default']
     SettingPanel: typeof import('./../layouts/basic-layout/components/setting-panel/index.vue')['default']
+    SettingsForm: typeof import('./../layouts/basic-layout/components/setting-panel/SettingsForm.vue')['default']
     VueJsonEditor: typeof import('./../layouts/basic-layout/components/drawer-panel/vueJsonEditor.vue')['default']
   }
 }

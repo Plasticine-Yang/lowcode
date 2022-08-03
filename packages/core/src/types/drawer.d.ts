@@ -5,6 +5,8 @@ interface DrawerComponent {
   componentName: string
   // 左上角拖拽把手显示的名字 -- 比如 单行输入
   dragHandlerName: string
-  // 普通属性
+  // 组件 props
   componentProps?: Record<string, any>
+  // 组件 props 元数据
+  componentPropsMeta?: ComponentPropsMeta
 }
