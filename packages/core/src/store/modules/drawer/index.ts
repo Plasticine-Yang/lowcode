@@ -16,12 +16,16 @@ const initDrawerState = (): DrawerState => {
 
 export const useDrawer = defineStore('drawer', {
   state: initDrawerState,
+
   actions: {
     setActiveComponent(id: string): void {
       const target = this.components.find(item => item.id === id)
       if (target !== undefined) {
         this.activeComponent = target
       }
+    },
+    setComponent(components: DrawerComponent[]): void {
+      this.components = components
     },
     removeComponent(id: string) {
       let targetIdx = -1

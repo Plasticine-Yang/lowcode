@@ -17,6 +17,9 @@ declare module '@vue/runtime-core' {
     FieldItem: typeof import('./../layouts/basic-layout/components/field-panel/FieldItem.vue')['default']
     FieldPanel: typeof import('./../layouts/basic-layout/components/field-panel/index.vue')['default']
     ItemWrapper: typeof import('./../layouts/basic-layout/components/drawer-panel/ItemWrapper.vue')['default']
+    NAlert: typeof import('naive-ui')['NAlert']
+    NButton: typeof import('naive-ui')['NButton']
+    NCard: typeof import('naive-ui')['NCard']
     NCollapse: typeof import('naive-ui')['NCollapse']
     NCollapseItem: typeof import('naive-ui')['NCollapseItem']
     NEmpty: typeof import('naive-ui')['NEmpty']
@@ -25,7 +28,10 @@ declare module '@vue/runtime-core' {
     NLayoutContent: typeof import('naive-ui')['NLayoutContent']
     NLayoutHeader: typeof import('naive-ui')['NLayoutHeader']
     NLayoutSider: typeof import('naive-ui')['NLayoutSider']
+    NModal: typeof import('naive-ui')['NModal']
     NTag: typeof import('naive-ui')['NTag']
+    PanelHeaderModal: typeof import('./../layouts/basic-layout/components/drawer-panel/panelHeaderModal.vue')['default']
     SettingPanel: typeof import('./../layouts/basic-layout/components/setting-panel/index.vue')['default']
+    VueJsonEditor: typeof import('./../layouts/basic-layout/components/drawer-panel/vueJsonEditor.vue')['default']
   }
 }
