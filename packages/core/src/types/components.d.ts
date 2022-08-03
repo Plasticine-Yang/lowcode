@@ -7,7 +7,7 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
-    BasicField: typeof import('./../layouts/basic-layout/components/field-panel/BasicField.vue')['default']
+    BasicFields: typeof import('./../layouts/basic-layout/components/field-panel/basic-fields/index.vue')['default']
     BasicLayout: typeof import('./../layouts/basic-layout/index.vue')['default']
     BasicLayoutHeader: typeof import('./../layouts/basic-layout/components/BasicLayoutHeader.vue')['default']
     BasicSettings: typeof import('./../layouts/basic-layout/components/setting-panel/BasicSettings.vue')['default']
