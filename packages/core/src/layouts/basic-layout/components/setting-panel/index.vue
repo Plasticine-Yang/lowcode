@@ -13,6 +13,9 @@ const drawer = useDrawer()
       <n-collapse-item title="基本属性">
         <basic-settings />
       </n-collapse-item>
+      <n-collapse-item title="样式属性">
+        <style-settings />
+      </n-collapse-item>
     </n-collapse>
   </section>
 </template>
