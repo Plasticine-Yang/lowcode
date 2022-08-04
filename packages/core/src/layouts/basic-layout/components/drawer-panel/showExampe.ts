@@ -1,35 +1,41 @@
 interface typeShowExample {
   id: string
-  name: string
-  dragHandlerName: string
-  options: options
+  componentName: string
+  componentProps: Props
+  componentPropMeta: object
+  dragHandlerName?: string
 }
-interface options {
+interface Props {
   type?: string
-  placeholder?: string
-  minWidth?: string
-  maxWidth?: string
-  clearable?: false
-  showPassword?: false
-  readonly?: false
-  disabled?: false
-  labelName?: string
+  clearable?: boolean
+  readonly?: boolean
+  disabled?: boolean
 }
+
 export const showExample: typeShowExample[] = [
   {
     id: '1',
-    name: 'n-input',
-    dragHandlerName: '单行输入',
-    options: {
-      type: '类型',
-      placeholder: '替代文字',
-      minWidth: '最小宽度',
-      maxWidth: '最大宽度',
+    componentName: 'n-input',
+    componentProps: {
+      type: 'text',
       clearable: false,
-      showPassword: false,
       readonly: false,
       disabled: false,
-      labelName: '单行输入',
+    },
+    dragHandlerName: '单行输入',
+    componentPropMeta: {
+      clearable: {
+        name: '可清除',
+        fieldComponent: 'n-switch',
+      },
+      readonly: {
+        name: '只读',
+        fieldComponent: 'n-switch',
+      },
+      disabled: {
+        name: '禁用',
+        fieldComponent: 'n-switch',
+      },
     },
   },
 ]

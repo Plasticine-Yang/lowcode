@@ -134,7 +134,7 @@ export default defineComponent({
     const editor = ref(null)
     const insert = () => {
       if (editor.value) {
-        editor.value?.changeValue()
+        editor.value.changeValue()
         close()
       }
     }
