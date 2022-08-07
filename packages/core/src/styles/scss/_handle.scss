@@ -1,0 +1,26 @@
+@import './_theme.scss';
+@mixin themeify {
+  @each $theme-name,
+  $theme-map in $themes {
+    $theme-map: $theme-map !global;
+    [data-theme="#{$theme-name}"] & {
+      @content;
+    }
+  }
+}
+//从主题色map中取出对应的颜色
+@function themed($key) {
+  @return map-get($theme-map, $key );
+}
+
+@mixin background_color($color) {
+  @include themeify {
+    background-color: themed($color) !important;
+  }
+}
+
+@mixin font_color($color) {
+  @include themeify {
+    color: themed($color) !important;
+  }
+}

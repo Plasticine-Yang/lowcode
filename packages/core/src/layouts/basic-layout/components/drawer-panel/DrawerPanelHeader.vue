@@ -42,7 +42,7 @@ export default defineComponent({
 })
 </script>
 <template>
-  <section class="flex DrawerPanelHeader h-50px">
+  <section class="flex DrawerPanelHeader h-50px common-util">
     <div
       class="flex-center export"
       style="cursor: pointer"
