@@ -6,14 +6,13 @@ import setupPinia from './store'
 
 function bootstrap() {
   const app = createApp(App)
-
+  setupPinia(app)
   setupAssets()
 
   setupGlobalComponents(app)
 
   setupGlobalProvide(app)
 
-  setupPinia(app)
   app.mount('#app')
 }
 
