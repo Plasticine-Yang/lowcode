@@ -3,7 +3,6 @@ import type { FieldItemProps } from './FieldItem.vue'
 import { reactive } from 'vue'
 import { basicFieldGroup } from '@/utils'
 import { generateId } from '@/utils'
-
 // 后续在此添加配置或将其抽离
 const fieldItemList = reactive<FieldItemProps[]>([
   {
@@ -46,7 +45,6 @@ const fieldItemList = reactive<FieldItemProps[]>([
     options: {},
   },
 ])
-
 const handleClone = ({
   name,
   options,
