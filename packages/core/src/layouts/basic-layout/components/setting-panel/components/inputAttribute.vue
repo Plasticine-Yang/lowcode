@@ -1,3 +1,5 @@
+<!-- 自定义右侧面板输入组件 -->
+
 <template>
   <div>
     <n-input v-model:value="componentProps[keyname]" @keydown.enter.prevent />
