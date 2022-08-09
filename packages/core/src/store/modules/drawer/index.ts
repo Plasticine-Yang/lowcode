@@ -1,3 +1,4 @@
+import { tr } from 'date-fns/locale'
 import { defineStore } from 'pinia'
 
 interface DrawerState {
@@ -33,16 +34,25 @@ export const useDrawer = defineStore('drawer', {
         }
       }
     },
+    //使用filter删除要删除的id
+    recuritFilter(arr: any, id: string) {
+      return arr.filter((item: any) => {
+        if (item.id == id) {
+          return false
+        }
+        if (item.children && item.children.length > 0) {
+          for (let i = 0; i < item.children.length; i++) {
+            item.children[i] = this.recuritFilter(item.children[i], id)
+          }
+        }
+        return true
+      })
+    },
     setComponent(components: DrawerComponent[]): void {
       this.components = components
     },
     removeComponent(id: string) {
-      let targetIdx = -1
-      this.components.forEach((item, idx) => {
-        if (item.id === id) targetIdx = idx
-      })
-
-      targetIdx !== -1 && this.components.splice(targetIdx, 1)
+      this.components = this.recuritFilter(this.components, id)
     },
     /**
      * @description 取消选中组件

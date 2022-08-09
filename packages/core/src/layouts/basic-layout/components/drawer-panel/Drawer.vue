@@ -27,6 +27,7 @@ export default defineComponent({
       :list="drawer.components"
       :group="drawerGroup"
       :animation="300"
+      :sort="true"
       item-key="id"
       class="wh-full bg-white"
       ghost-class="ghost"
