@@ -32,5 +32,8 @@ type ComponentPropsMeta = Record<
     // 比如 clearable 这个属性我希望用 <n-switch> 这个组件来渲染
     // 那么就填 n-switch
     fieldComponent: string
+    // 对fieldcomponent 自定义组件 传参
+    // 比如使用选择器，就要传入选项
+    fieldComponentParam?: Record<string, any>
   }
 >

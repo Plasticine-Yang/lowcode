@@ -22,11 +22,12 @@
 </template>
 
 <script lang="ts">
-import { inputAttribute } from './components/index'
+import { inputAttribute, sliderAttribute } from './components/index'
 import { NSwitch, NInput } from 'naive-ui'
 export default {
   components: {
     inputAttribute,
+    sliderAttribute, //滑块
     NSwitch,
     NInput,
   },

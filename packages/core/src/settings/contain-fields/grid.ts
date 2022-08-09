@@ -12,7 +12,15 @@ export const grid: IField = {
   componentPropsMeta: {
     cols: {
       name: '栅格栏',
-      fieldComponent: 'input-attribute',
+      fieldComponent: 'slider-attribute',
+      fieldComponentParam: {
+        maxNum: 4,
+        // emit映射的事件名称：updateValue
+        // 定义一下在fieldComponentParam中使用该组件可以填写的参数
+        // maxNum?: number // 最大值
+        // minNum?: number // 最小值
+        // step?: number // 滑动灵敏度
+      },
     },
     collapsed: {
       name: '是否折叠',
