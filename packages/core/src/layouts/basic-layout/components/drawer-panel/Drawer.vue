@@ -12,7 +12,6 @@ export default defineComponent({
   setup() {
     // 画布数据
     const drawer = useDrawer()
-
     return {
       drawer,
       drawerGroup,

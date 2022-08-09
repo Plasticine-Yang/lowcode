@@ -9,7 +9,7 @@
       v-for="(item, key, index) in componentPropsMeta"
       :key="index"
       :path="key"
-      :label="key"
+      :label="componentPropsMeta[key].name"
     >
       <component
         :is="componentPropsMeta[key].fieldComponent"

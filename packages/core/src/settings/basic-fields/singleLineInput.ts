@@ -16,7 +16,7 @@ export const singleLineInput: IField = {
   componentPropsMeta: {
     placeholder: {
       name: '提示信息',
-      fieldComponent: 'input-attribute',
+      fieldComponent: 'n-input',
     },
     clearable: {
       name: '可清除',
