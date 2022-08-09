@@ -42,4 +42,10 @@ export const blueTheme: GlobalThemeOverrides = {
   Form: {
     labelTextColor: 'black',
   },
+  Tabs: {
+    barColor: 'purple',
+    tabTextColorActiveBar: '#8a49cb',
+    tabTextColorHoverBar: '#8a49cb',
+    tabTextColorBar: 'rgb(133 179 226)',
+  },
 }

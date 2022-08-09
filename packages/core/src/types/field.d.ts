@@ -11,6 +11,8 @@ interface IField {
   componentProps?: Record<string, any>
   // 组件 props 元数据
   componentPropsMeta?: ComponentPropsMeta
+  //容器的子组件
+  children?: any
 }
 
 // 记录组件 props 元数据信息 -- 方便属性配置表单的渲染

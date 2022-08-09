@@ -131,10 +131,10 @@ export default defineComponent({
         console.log(e)
       }
     }
-    const editor = ref(null)
+    const editor = ref<any>(null)
     const insert = () => {
       if (editor.value) {
-        editor.value!.changeValue()
+        editor.value.changeValue()
         close()
       }
     }

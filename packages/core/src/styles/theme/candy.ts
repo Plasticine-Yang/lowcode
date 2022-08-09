@@ -47,4 +47,10 @@ export const candyTheme: GlobalThemeOverrides = {
     borderFocus: 'rgb(221, 118, 173)',
     borderHover: 'rgb(221, 118, 173)',
   },
+  Tabs: {
+    barColor: 'orange',
+    tabTextColorActiveBar: '#f2ae2e',
+    tabTextColorHoverBar: '#f2ae2e',
+    tabTextColorBar: '#f0b6c0',
+  },
 }

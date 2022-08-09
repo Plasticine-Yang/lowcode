@@ -6,6 +6,7 @@
     [data-theme="#{$theme-name}"] & {
       @content;
     }
+ 
   }
 }
 //从主题色map中取出对应的颜色
@@ -24,3 +25,4 @@
     color: themed($color) !important;
   }
 }
+

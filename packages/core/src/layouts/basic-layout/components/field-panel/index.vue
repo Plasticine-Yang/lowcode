@@ -1,10 +1,26 @@
 <template>
   <section class="wh-full p-10px common-util">
-    <n-collapse>
-      <!-- 基础字段 -->
-      <n-collapse-item title="基础字段" name="basic-field" class="common-util">
-        <basic-fields />
-      </n-collapse-item>
-    </n-collapse>
+    <n-tabs type="bar" animated>
+      <n-tab-pane name="组件库">
+        <n-collapse>
+          <n-collapse-item
+            title="容器"
+            name="contain-field"
+            class="common-util"
+          >
+            <contain-fields></contain-fields>
+          </n-collapse-item>
+          <!-- 基础字段 -->
+          <n-collapse-item
+            title="基础字段"
+            name="basic-field"
+            class="common-util"
+          >
+            <basic-fields />
+          </n-collapse-item>
+        </n-collapse>
+      </n-tab-pane>
+      <n-tab-pane name="模版"></n-tab-pane>
+    </n-tabs>
   </section>
 </template>

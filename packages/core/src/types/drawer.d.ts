@@ -9,4 +9,6 @@ interface DrawerComponent {
   componentProps?: Record<string, any>
   // 组件 props 元数据
   componentPropsMeta?: ComponentPropsMeta
+  //容器的子组件
+  children?: DrawerComponent[]
 }

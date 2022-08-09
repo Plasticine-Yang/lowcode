@@ -14,12 +14,12 @@ export interface Props {
   iconName?: string
   // 组件 props
   componentProps?: Record<string, any>
+  children?: any
 }
 
 defineProps<Props>()
 
 const theme = computed(() => useTheme().theme)
-console.log(theme)
 </script>
 
 <template>

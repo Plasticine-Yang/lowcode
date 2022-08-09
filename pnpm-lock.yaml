@@ -49,6 +49,7 @@ importers:
       '@vitejs/plugin-vue': ^3.0.0
       ace-builds: ^1.8.1
       cjs2esmodule: ^1.1.1
+      default-passive-events: ^2.0.0
       naive-ui: ^2.31.0
       pinia: ^2.0.17
       sass: ^1.54.0
@@ -66,6 +67,7 @@ importers:
     dependencies:
       ace-builds: registry.npmmirror.com/ace-builds/1.8.1
       cjs2esmodule: registry.npmmirror.com/cjs2esmodule/1.1.1
+      default-passive-events: registry.npmmirror.com/default-passive-events/2.0.0
       pinia: 2.0.17_vue@3.2.37
       uuid: 8.3.2
       vue: 3.2.37
@@ -5530,6 +5532,12 @@ packages:
         optional: true
     dependencies:
       ms: registry.npmmirror.com/ms/2.1.2
+
+  registry.npmmirror.com/default-passive-events/2.0.0:
+    resolution: {integrity: sha512-eMtt76GpDVngZQ3ocgvRcNCklUMwID1PaNbCNxfpDXuiOXttSh0HzBbda1HU9SIUsDc02vb7g9+3I5tlqe/qMQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/default-passive-events/-/default-passive-events-2.0.0.tgz}
+    name: default-passive-events
+    version: 2.0.0
+    dev: false
 
   registry.npmmirror.com/define-properties/1.1.4:
     resolution: {integrity: sha512-uckOqKcfaVvtBdsVkdPv3XjveQJsNQqmhXgRi8uhvWWuPYZCNlzT8qAyblUgNoXdHdjMTzAqeGjAoli8f+bzPA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/define-properties/-/define-properties-1.1.4.tgz}

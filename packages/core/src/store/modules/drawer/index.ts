@@ -4,7 +4,7 @@ interface DrawerState {
   // 画布当中的所有组件
   components: DrawerComponent[]
   // 当前激活的组件
-  activeComponent: DrawerComponent | null
+  activeComponent: DrawerComponent | undefined | null
 }
 
 const initDrawerState = (): DrawerState => {
@@ -19,9 +19,18 @@ export const useDrawer = defineStore('drawer', {
 
   actions: {
     setActiveComponent(id: string): void {
-      const target = this.components.find(item => item.id === id)
-      if (target !== undefined) {
-        this.activeComponent = target
+      this.activeComponent = this.getTarget(this.components, id)
+    },
+    //找到点击的target
+    getTarget(list: any, id: string): any {
+      for (let o of list || []) {
+        if (o.id == id) return o
+        if (o.children) {
+          for (let item of o.children) {
+            const o_ = this.getTarget(item, id)
+            if (o_) return o_
+          }
+        }
       }
     },
     setComponent(components: DrawerComponent[]): void {

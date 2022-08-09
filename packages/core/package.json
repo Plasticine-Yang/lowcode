@@ -12,6 +12,7 @@
   "dependencies": {
     "ace-builds": "^1.8.1",
     "cjs2esmodule": "^1.1.1",
+    "default-passive-events": "^2.0.0",
     "pinia": "^2.0.17",
     "uuid": "^8.3.2",
     "vue": "^3.2.37",
