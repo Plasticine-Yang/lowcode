@@ -14,7 +14,7 @@ export const grid: IField = {
       name: '栅格栏',
       fieldComponent: 'slider-attribute',
       fieldComponentParam: {
-        maxNum: 4,
+        maxNum: 24,
         // emit映射的事件名称：updateValue
         // 定义一下在fieldComponentParam中使用该组件可以填写的参数
         // maxNum?: number // 最大值

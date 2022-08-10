@@ -7,7 +7,7 @@
       :step="param.step || 1"
       :max="param.maxNum"
       :min="param.minNum || 1"
-      @on-update:value="updateValue"
+      @update:value="updateValue"
     />
     <n-input-number
       v-model:value="componentProps[keyname]"
@@ -38,7 +38,10 @@ let componentPropsMeta: ComponentPropsMeta =
   drawer.activeComponent?.componentPropsMeta || {}
 let param = componentPropsMeta[props.keyname]?.fieldComponentParam || {}
 const emit = defineEmits(['updateValue']) // setup 的第二个参数emit
-function updateValue() {
+function updateValue(e: any) {
+  console.log('123')
+  console.log(e)
+
   emit('updateValue', componentProps[props.keyname])
 }
 </script>
