@@ -38,15 +38,19 @@ export default defineComponent({
           :drag-handler-name="element.dragHandlerName"
           :component-id="element.id"
         >
-          <component
-            :is="element.componentName"
-            v-if="element.componentName != 'n-grid'"
-            v-bind="element.componentProps"
-          ></component>
           <drawer-grid
             v-if="element.componentName == 'n-grid'"
             :element="element"
           ></drawer-grid>
+          <drawer-carousel
+            v-if="element.componentName == 'n-carousel'"
+            :list="element"
+          ></drawer-carousel>
+          <component
+            :is="element.componentName"
+            v-else
+            v-bind="element.componentProps"
+          ></component>
         </item-wrapper>
       </template>
     </draggable>
