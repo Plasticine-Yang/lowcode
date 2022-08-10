@@ -18,6 +18,13 @@
           >
             <basic-fields />
           </n-collapse-item>
+          <n-collapse-item
+            title="高级组件"
+            name="senior-field"
+            class="common-util"
+          >
+            <senior-fields />
+          </n-collapse-item>
         </n-collapse>
       </n-tab-pane>
       <n-tab-pane name="模版"></n-tab-pane>

@@ -4,10 +4,12 @@ import { drawerGroup } from '@/utils'
 import { defineComponent } from 'vue'
 import resolveComponents from './resolveComponents'
 import { lightTheme } from '@/styles/theme/light'
-
+//这个抽离出来是因为递归调用了
+import drawerGrid from './drawerGrid/drawerGrid.vue'
 export default defineComponent({
   components: {
     ...resolveComponents,
+    drawerGrid,
   },
   setup() {
     // 画布数据
@@ -27,6 +29,7 @@ export default defineComponent({
       :list="drawer.components"
       :group="drawerGroup"
       :animation="300"
+      :sort="true"
       item-key="id"
       class="wh-full bg-white"
       ghost-class="ghost"
@@ -39,13 +42,14 @@ export default defineComponent({
         >
           <component
             :is="element.componentName"
-            v-if="element.componentName != 'n-grid'"
+            v-if="element.type == 'basic'"
             v-bind="element.componentProps"
           ></component>
-          <drawer-grid
-            v-if="element.componentName == 'n-grid'"
+          <component
+            :is="element.componentName"
+            v-if="element.type == 'contain' || element.type == 'senior'"
             :element="element"
-          ></drawer-grid>
+          ></component>
         </item-wrapper>
       </template>
     </draggable>

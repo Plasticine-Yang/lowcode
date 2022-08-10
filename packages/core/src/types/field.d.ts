@@ -13,6 +13,9 @@ interface IField {
   componentPropsMeta?: ComponentPropsMeta
   //容器的子组件
   children?: any
+  //组件的分类
+  type: 'basic' | 'senior' | 'contain'
+  showName?: string
 }
 
 // 记录组件 props 元数据信息 -- 方便属性配置表单的渲染

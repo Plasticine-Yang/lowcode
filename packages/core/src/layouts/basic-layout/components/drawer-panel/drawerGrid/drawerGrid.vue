@@ -27,13 +27,14 @@
             >
               <component
                 :is="element.componentName"
-                v-if="element.componentName != 'n-grid'"
+                v-if="element.type == 'basic'"
                 v-bind="element.componentProps"
               ></component>
-              <drawer-grid
-                v-if="element.componentName == 'n-grid'"
+              <component
+                :is="element.componentName"
+                v-if="element.type == 'contain' || element.type == 'senior'"
                 :element="element"
-              ></drawer-grid></item-wrapper></template></draggable
+              ></component></item-wrapper></template></draggable
       ></n-gi>
     </n-grid>
   </div>
