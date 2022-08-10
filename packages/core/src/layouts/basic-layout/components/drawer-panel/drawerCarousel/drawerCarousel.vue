@@ -1,7 +1,10 @@
 <template>
-  <n-carousel style="height: 300px; width: 100%" v-bind="list.componentProps">
+  <n-carousel
+    style="height: 300px; width: 100%"
+    v-bind="element.componentProps"
+  >
     <img
-      v-for="(item, index) in list.componentProps?.imgUrl"
+      v-for="(item, index) in element.componentProps?.imgUrl"
       :key="index"
       :src="getAssetImages(item)"
       class="carousel-img wh-full"
@@ -14,7 +17,7 @@ import { defineComponent } from 'vue'
 
 export default defineComponent({
   props: {
-    list: {
+    element: {
       type: Object,
       default: () => {
         return {}

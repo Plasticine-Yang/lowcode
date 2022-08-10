@@ -3,6 +3,7 @@ export const multiLineInput: IField = {
   fieldName: '多行输入',
   componentName: 'n-input',
   iconName: 'bi:textarea-resize',
+  type: 'basic',
   componentProps: {
     type: 'textarea',
   },

@@ -1,7 +1,9 @@
 export const lb: IField = {
   id: 6,
   fieldName: '轮播图',
-  componentName: 'n-carousel',
+  componentName: 'drawer-carousal',
+  type: 'senior',
+  showName: 'carouselShow',
   componentProps: {
     imgUrl: ['lb1.png', 'lb2.png', 'lb3.png'],
     imgNum: 3,

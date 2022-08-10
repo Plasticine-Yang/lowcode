@@ -3,6 +3,7 @@ export const singleLineInput: IField = {
   fieldName: '单行输入',
   componentName: 'n-input',
   iconName: 'lucide:text-cursor-input',
+  type: 'basic',
   componentProps: {
     type: 'text',
     clearable: false,

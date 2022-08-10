@@ -7,20 +7,8 @@
     item-key="fileName"
   >
     <template #item="{ element }">
-      <div
-        v-if="element.componentName == 'n-carousel'"
-        class="relative"
-        style="height: 100px"
-      >
-        <n-carousel autoplay class="wh-full" style="height: 100px">
-          <img src="@/assets/lb/lb1.png" class="carousel-img wh-full" />
-          <img src="@/assets/lb/lb2.png" class="carousel-img wh-full" />
-          <img src="@/assets/lb/lb3.png" class="carousel-img wh-full" />
-        </n-carousel>
-        <div class="absolute lb">轮播图</div>
-      </div></template
-    ></draggable
-  >
+      <component :is="element.showName"></component></template
+  ></draggable>
 </template>
 
 <script lang="ts">
@@ -29,7 +17,11 @@ import { reactive } from 'vue'
 import { seniorFields } from '@/settings'
 import { basicFieldGroup } from '@/utils'
 import transformFieldToDrawer from '@/utils/transformFieldToDrawer'
+import resolveComponents from './resolveComponents'
 export default defineComponent({
+  components: {
+    ...resolveComponents,
+  },
   setup() {
     const fieldItemList = reactive(seniorFields)
     const lbList = [

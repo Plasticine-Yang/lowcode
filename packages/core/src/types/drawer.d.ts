@@ -11,4 +11,6 @@ interface DrawerComponent {
   componentPropsMeta?: ComponentPropsMeta
   //容器的子组件
   children?: DrawerComponent[]
+  // 组件的类型
+  type: 'senior' | 'contain' | 'basic'
 }

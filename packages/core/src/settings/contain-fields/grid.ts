@@ -1,8 +1,9 @@
 export const grid: IField = {
   id: 5,
   fieldName: '栅格',
-  componentName: 'n-grid',
+  componentName: 'drawerGrid',
   iconName: 'bi:textarea-resize',
+  type: 'contain',
   children: [],
   componentProps: {
     cols: 2,

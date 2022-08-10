@@ -3,4 +3,5 @@ export const radio: IField = {
   fieldName: '单选',
   componentName: 'n-radio',
   iconName: 'bi:textarea-resize',
+  type: 'basic',
 }

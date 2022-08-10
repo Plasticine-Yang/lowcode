@@ -8,18 +8,19 @@
       <n-card style="width: 1000px; min-height: 600px" class="bg-white">
         <template v-for="(item, index) in components" :key="index">
           <grid-preview
-            v-if="item.componentName == 'n-grid'"
+            v-if="item.componentName == 'drawerGrid'"
             :list="item"
           ></grid-preview>
-          <drawer-carousel
-            v-if="item.componentName == 'n-carousel'"
-            :list="item"
-          ></drawer-carousel>
+          <component
+            :is="item.componentName"
+            v-else-if="item.type == 'basic'"
+            v-bind="item.componentProps"
+            style="margin: 10px 0"
+          ></component>
           <component
             :is="item.componentName"
             v-else
-            v-bind="item.componentProps"
-            style="margin: 10px 0"
+            :element="item"
           ></component> </template></n-card
     ></n-modal>
   </div>
