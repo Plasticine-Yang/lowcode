@@ -9,6 +9,11 @@ export const singleLineInput: IField = {
     readonly: false,
     disabled: false,
     placeholder: '',
+    loading: false,
+    autofocus: false,
+    round: false,
+    showCount: false,
+    vModel: '123',
   },
   // 需要显示在属性配置面板的属性就在这里编写相关元数据信息
   // 比如 type: 'text' 这种属性不希望被用户修改 就不需要写进来
@@ -19,15 +24,31 @@ export const singleLineInput: IField = {
       fieldComponent: 'n-input',
     },
     clearable: {
-      name: '可清除',
+      name: '是否可清除',
       fieldComponent: 'n-switch',
     },
     readonly: {
-      name: '只读',
+      name: '是否只读',
       fieldComponent: 'n-switch',
     },
     disabled: {
-      name: '禁用',
+      name: '是否禁用',
+      fieldComponent: 'n-switch',
+    },
+    autofocus: {
+      name: '是否自动获取焦点',
+      fieldComponent: 'n-switch',
+    },
+    loading: {
+      name: '是否展示加载图标',
+      fieldComponent: 'n-switch',
+    },
+    round: {
+      name: '是否圆角',
+      fieldComponent: 'n-switch',
+    },
+    showCount: {
+      name: '是否显示字数',
       fieldComponent: 'n-switch',
     },
   },
