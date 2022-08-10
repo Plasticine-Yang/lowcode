@@ -34,12 +34,4 @@ export default defineComponent({
 })
 </script>
 
-<style scoped>
-.lb {
-  width: 100%;
-  left: 0;
-  bottom: 0;
-  text-align: center;
-  background-color: rgb(241 242 243);
-}
-</style>
+<style scoped></style>
