@@ -5,7 +5,7 @@ import { defineComponent } from 'vue'
 import resolveComponents from './resolveComponents'
 import { lightTheme } from '@/styles/theme/light'
 //这个抽离出来是因为递归调用了
-import drawerGrid from './drawerGrid/drawerGrid.vue'
+import drawerGrid from './drawerContain/drawerGrid.vue'
 export default defineComponent({
   components: {
     ...resolveComponents,
@@ -40,14 +40,20 @@ export default defineComponent({
           :drag-handler-name="element.dragHandlerName"
           :component-id="element.id"
         >
+          <!-- 简单组件自己渲染navieUi库 -->
           <component
             :is="element.componentName"
             v-if="element.type == 'basic'"
             v-bind="element.componentProps"
           ></component>
+          <!-- 高级组件，容器组件，需要再次封装的简单组件 -->
           <component
             :is="element.componentName"
-            v-if="element.type == 'contain' || element.type == 'senior'"
+            v-if="
+              element.type == 'contain' ||
+              element.type == 'senior' ||
+              element.type == 'basic-senior'
+            "
             :element="element"
           ></component>
         </item-wrapper>

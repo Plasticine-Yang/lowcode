@@ -13,8 +13,8 @@ interface IField {
   componentPropsMeta?: ComponentPropsMeta
   //容器的子组件
   children?: any
-  //组件的分类
-  type: 'basic' | 'senior' | 'contain'
+  //组件的分类 ，因为发现简单组件也挺多需要再封装的....但是不适合放到高级组件，所以以'basic-senior'为分类
+  type: 'basic' | 'senior' | 'contain' | 'basic-senior'
   showName?: string
 }
 

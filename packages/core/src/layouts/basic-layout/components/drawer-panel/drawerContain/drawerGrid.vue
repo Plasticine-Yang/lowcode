@@ -32,7 +32,11 @@
               ></component>
               <component
                 :is="element.componentName"
-                v-if="element.type == 'contain' || element.type == 'senior'"
+                v-if="
+                  element.type == 'contain' ||
+                  element.type == 'senior' ||
+                  element.type == 'basic-senior'
+                "
                 :element="element"
               ></component></item-wrapper></template></draggable
       ></n-gi>
