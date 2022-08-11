@@ -12,5 +12,5 @@ interface DrawerComponent {
   //容器的子组件
   children?: DrawerComponent[]
   // 组件的类型
-  type: 'senior' | 'contain' | 'basic'
+  type: 'senior' | 'contain' | 'basic' | 'basic-senior'
 }

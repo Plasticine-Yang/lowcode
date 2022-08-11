@@ -1,5 +1,5 @@
 export const grid: IField = {
-  id: 5,
+  id: 1,
   fieldName: '栅格',
   componentName: 'drawerGrid',
   iconName: 'bi:textarea-resize',

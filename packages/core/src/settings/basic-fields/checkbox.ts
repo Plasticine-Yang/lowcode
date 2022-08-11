@@ -1,5 +1,5 @@
 export const checkbox: IField = {
-  id: 4,
+  id: 9,
   fieldName: '复选框',
   componentName: 'n-checkbox',
   iconName: 'bx:select-multiple',

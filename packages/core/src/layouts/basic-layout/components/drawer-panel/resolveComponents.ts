@@ -1,8 +1,14 @@
-import { NInput, NRadio, NCheckbox } from 'naive-ui'
-import drawerCarousal from './drawerCarousel/drawerCarousel.vue'
+import { NInput, NRadio, NCheckbox, NButton } from 'naive-ui'
+
+import { drawerBasicSenior } from './drawerBasic-senior'
+import { drawerContain } from './drawerContain'
+import { drawerSenior } from './drawerSenior'
 export default {
   NInput,
   NRadio,
   NCheckbox,
-  drawerCarousal,
+  NButton,
+  ...drawerBasicSenior,
+  ...drawerContain,
+  ...drawerSenior,
 }
