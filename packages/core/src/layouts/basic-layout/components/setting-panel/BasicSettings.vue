@@ -35,12 +35,15 @@ export default {
 </script>
 
 <script lang="ts" setup>
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 import { useDrawer } from '@/store'
-const drawer = useDrawer()
-let componentProps = ref(drawer.activeComponent?.componentProps || {})
-let componentPropsMeta = ref(drawer.activeComponent?.componentPropsMeta || {})
-
+const drawer = ref(useDrawer())
+let componentProps = computed(() => {
+  return drawer.value.activeComponent?.componentProps || {}
+})
+let componentPropsMeta = computed(() => {
+  return drawer.value.activeComponent?.componentPropsMeta || {}
+})
 const rules = {
   type: {},
 }
