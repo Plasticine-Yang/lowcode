@@ -1,21 +1,7 @@
 <!-- 自定义右侧面板输入组件 -->
 
 <template>
-  <div>
-    <n-slider
-      v-model:value="componentProps[keyname]"
-      :step="param.step || 1"
-      :max="param.maxNum"
-      :min="param.minNum || 0"
-      @update:value="updateValue"
-    />
-    <n-input-number
-      v-model:value="componentProps[keyname]"
-      size="small"
-      :max="param.maxNum"
-      :min="param.minNum || 0"
-    />
-  </div>
+  <div></div>
 </template>
 
 <script lang="ts" setup>

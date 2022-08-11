@@ -29,7 +29,19 @@ export const lb: IField = {
     },
     direction: {
       name: '轮播图的显示方向',
-      fieldComponent: 'input-attribute',
+      fieldComponent: 'select-attribute',
+      fieldComponentParam: {
+        selectOptions: [
+          {
+            label: '水平的',
+            value: 'horizontal',
+          },
+          {
+            label: '垂直的',
+            value: 'vertical',
+          },
+        ],
+      },
     },
     draggable: {
       name: '是否通过鼠标拖拽切换轮播图',
@@ -51,6 +63,10 @@ export const lb: IField = {
     showDots: {
       name: '是否展示指示点',
       fieldComponent: 'n-switch',
+    },
+    imgUrl: {
+      name: '添加照片',
+      fieldComponent: 'upload-image-attribute',
     },
   },
 }
