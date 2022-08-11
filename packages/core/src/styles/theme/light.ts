@@ -4,4 +4,8 @@ export const lightTheme: GlobalThemeOverrides = {
   common: {
     baseColor: '#FFFFFFFF',
   },
+  Divider: {
+    color: 'purple',
+    textColor: 'black',
+  },
 }

@@ -4,6 +4,7 @@ import { radio } from './radio'
 import { singleLineInput } from './singleLineInput'
 import { button } from './button'
 import { textInput } from './textInput'
+import { divider } from './divider'
 export const basicFields: IField[] = [
   singleLineInput,
   multiLineInput,
@@ -11,4 +12,5 @@ export const basicFields: IField[] = [
   button,
   checkbox,
   textInput,
+  divider,
 ]

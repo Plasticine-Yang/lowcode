@@ -2,7 +2,7 @@ export const button: IField = {
   id: 11,
   fieldName: '按钮',
   componentName: 'drawerButton',
-  iconName: 'bx:select-multiple',
+  iconName: 'material-symbols:radio-button-checked',
   type: 'basic-senior',
   componentProps: {
     Buttontext: '输入文本',

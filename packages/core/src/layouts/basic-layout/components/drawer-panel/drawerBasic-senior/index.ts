@@ -1,3 +1,4 @@
 import drawerButton from './drawerButton.vue'
 import drawerText from './drawerText.vue'
-export const drawerBasicSenior = { drawerButton, drawerText }
+import drawerDivider from './drawerDivider.vue'
+export const drawerBasicSenior = { drawerButton, drawerText, drawerDivider }

@@ -48,4 +48,7 @@ export const blueTheme: GlobalThemeOverrides = {
     tabTextColorHoverBar: '#8a49cb',
     tabTextColorBar: 'rgb(133 179 226)',
   },
+  Divider: {
+    color: 'purple',
+  },
 }

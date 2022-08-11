@@ -2,7 +2,7 @@ export const textInput: IField = {
   id: 16,
   fieldName: '文本框',
   componentName: 'drawerText',
-  iconName: 'bx:select-multiple',
+  iconName: 'material-symbols:format-color-text',
   type: 'basic-senior',
   componentProps: {
     style: {
