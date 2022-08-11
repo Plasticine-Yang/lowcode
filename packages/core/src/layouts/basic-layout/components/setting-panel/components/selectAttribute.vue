@@ -24,3 +24,10 @@ let componentPropsMeta: ComponentPropsMeta =
   drawer.activeComponent?.componentPropsMeta || {}
 let param = componentPropsMeta[props.keyname]?.fieldComponentParam || {}
 </script>
+
+<style scoped>
+.n-select {
+  min-width: 100px;
+  max-width: 200px;
+}
+</style>

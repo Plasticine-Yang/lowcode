@@ -67,6 +67,7 @@ declare module '@vue/runtime-core' {
     SettingsForm: typeof import('./../layouts/basic-layout/components/setting-panel/SettingsForm.vue')['default']
     SliderAttribute: typeof import('./../layouts/basic-layout/components/setting-panel/components/sliderAttribute.vue')['default']
     StyleSettings: typeof import('./../layouts/basic-layout/components/setting-panel/styleSettings.vue')['default']
+    UploadImageAttribute: typeof import('./../layouts/basic-layout/components/setting-panel/components/uploadImageAttribute.vue')['default']
     VueJsonEditor: typeof import('./../layouts/basic-layout/components/drawer-panel/drawerPanelHeader/Import&Export/vueJsonEditor.vue')['default']
   }
 }
