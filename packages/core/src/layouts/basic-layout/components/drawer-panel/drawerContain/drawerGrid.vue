@@ -25,6 +25,10 @@
               :drag-handler-name="element.dragHandlerName"
               :component-id="element.id"
             >
+              <drawer-grid
+                v-if="element.componentName == 'drawerGrid'"
+                :element="element"
+              ></drawer-grid>
               <component
                 :is="element.componentName"
                 v-if="element.type == 'basic'"
@@ -48,7 +52,11 @@
 import { defineComponent } from 'vue'
 import { useDrawer, useTheme } from '@/store'
 import { drawerGroup } from '@/utils'
+//这个抽离出来是因为递归调用了
+// import drawerGrid from './drawerGrid.vue'
+
 import resolveComponents from '../resolveComponents'
+
 export default defineComponent({
   components: {
     ...resolveComponents,

@@ -28,13 +28,30 @@ export const button: IField = {
       fieldComponent: 'select-attribute',
       fieldComponentParam: {
         selectOptions: [
-          'primary',
-          'default',
-          'tertiary',
-          'success',
-          'info',
-          'warning',
-          'error',
+          {
+            label: '默认的',
+            value: 'default',
+          },
+          {
+            label: '主要的',
+            value: 'primary',
+          },
+          {
+            label: '成功',
+            value: 'success',
+          },
+          {
+            label: '信息',
+            value: 'info',
+          },
+          {
+            label: '警告',
+            value: 'warning',
+          },
+          {
+            label: '错误',
+            value: 'error',
+          },
         ],
       },
     },
