@@ -2,7 +2,11 @@
 
 <template>
   <div>
-    <n-input v-model:value="componentProps[keyname]" @keydown.enter.prevent />
+    <n-input
+      v-model:value="componentProps[keyname]"
+      @keydown.enter.prevent
+      @blur="change(componentProps[keyname], keyname)"
+    />
   </div>
 </template>
 
@@ -14,7 +18,12 @@ interface Props {
 }
 const drawer = ref(useDrawer())
 const props = defineProps<Props>()
+
 let componentProps = ref(drawer.value.activeComponent?.componentProps || {})
+const change = (e: any, keyname: any) => {
+  console.log(e)
+  console.log(keyname)
+}
 let componentPropsMeta = ref(
   drawer.value.activeComponent?.componentPropsMeta || {},
 )

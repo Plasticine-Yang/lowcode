@@ -1,19 +1,24 @@
 <script lang="ts">
 import { useDrawer } from '@/store'
 import { drawerGroup } from '@/utils'
-import { defineComponent } from 'vue'
+import { defineComponent, computed } from 'vue'
 import resolveComponents from './resolveComponents'
 import { lightTheme } from '@/styles/theme/light'
 //这个抽离出来是因为递归调用了
 import drawerGrid from './drawerContain/drawerGrid.vue'
+import drawerFlex from './drawerContain/drawerFlex.vue'
+import drawerCollapse from './drawerSenior/drawerCollapse.vue'
 export default defineComponent({
   components: {
     ...resolveComponents,
     drawerGrid,
+    drawerFlex,
+    drawerCollapse,
   },
   setup() {
     // 画布数据
     const drawer = useDrawer()
+
     return {
       drawer,
       drawerGroup,
@@ -26,11 +31,12 @@ export default defineComponent({
 <template>
   <n-config-provider :theme-overrides="lightTheme" style="min-height: 90px">
     <draggable
-      :list="drawer.components"
+      v-model="drawer.components"
       :group="drawerGroup"
       :animation="300"
       :sort="true"
       item-key="id"
+      element="ul"
       class="wh-full bg-white"
       ghost-class="ghost"
       handle=".drag-handler"

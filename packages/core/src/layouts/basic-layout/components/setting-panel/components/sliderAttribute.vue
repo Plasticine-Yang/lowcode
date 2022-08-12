@@ -21,6 +21,7 @@
 <script lang="ts" setup>
 import { ref, computed } from 'vue'
 import { useDrawer } from '@/store'
+import { changeGridChildren } from '../OnComponents/onSlider'
 interface Props {
   keyname: string
 }
@@ -42,9 +43,15 @@ let componentPropsMeta = computed(() => {
 let param = componentPropsMeta.value[props.keyname]?.fieldComponentParam || {}
 const emit = defineEmits(['updateValue']) // setup 的第二个参数emit
 function updateValue(e: any) {
-  console.log('123')
-  console.log(e)
-
-  emit('updateValue', componentProps.value[props.keyname])
+  if (drawer.value.activeComponent?.componentName == 'drawerGrid') {
+    if (props.keyname == 'cols') {
+      changeGridChildren(drawer, e)
+    }
+  }
+  if (drawer.value.activeComponent?.componentName == 'drawerFlex') {
+    if (props.keyname == 'cols') {
+      changeGridChildren(drawer, e)
+    }
+  }
 }
 </script>

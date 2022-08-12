@@ -2,7 +2,13 @@
   <section class="wh-full p-10px common-util">
     <n-tabs type="bar" animated>
       <n-tab-pane name="组件库">
-        <n-collapse>
+        <n-collapse
+          :default-expanded-names="[
+            'contain-field',
+            'basic-field',
+            'senior-field',
+          ]"
+        >
           <n-collapse-item
             title="容器"
             name="contain-field"

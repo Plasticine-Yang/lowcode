@@ -2,7 +2,7 @@ export const grid: IField = {
   id: 1,
   fieldName: '栅格',
   componentName: 'drawerGrid',
-  iconName: 'bi:textarea-resize',
+  iconName: 'clarity:grid-view-line',
   type: 'contain',
   children: [],
   componentProps: {
@@ -15,7 +15,7 @@ export const grid: IField = {
       name: '栅格栏',
       fieldComponent: 'slider-attribute',
       fieldComponentParam: {
-        maxNum: 24,
+        maxNum: 12,
         // emit映射的事件名称：updateValue
         // 定义一下在fieldComponentParam中使用该组件可以填写的参数
         // maxNum?: number // 最大值

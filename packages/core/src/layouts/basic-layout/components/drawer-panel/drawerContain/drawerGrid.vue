@@ -1,6 +1,6 @@
 <template>
   <div>
-    <n-grid v-bind="element.componentProps">
+    <n-grid v-bind="element.componentProps" class="grid">
       <n-gi
         v-for="(item, index) in element.componentProps.cols"
         :key="item"
@@ -25,14 +25,26 @@
               :drag-handler-name="element.dragHandlerName"
               :component-id="element.id"
             >
+              <drawer-grid
+                v-if="element.componentName == 'drawerGrid'"
+                :element="element"
+              ></drawer-grid>
+              <drawer-flex
+                v-if="element.componentName == 'drawerFlex'"
+                :element="element"
+              ></drawer-flex>
+              <drawer-collapse
+                v-if="element.componentName == 'drawerCollapse'"
+                :element="element"
+              ></drawer-collapse>
               <component
                 :is="element.componentName"
-                v-if="element.type == 'basic'"
+                v-else-if="element.type == 'basic'"
                 v-bind="element.componentProps"
               ></component>
               <component
                 :is="element.componentName"
-                v-if="
+                v-else-if="
                   element.type == 'contain' ||
                   element.type == 'senior' ||
                   element.type == 'basic-senior'
@@ -48,7 +60,11 @@
 import { defineComponent } from 'vue'
 import { useDrawer, useTheme } from '@/store'
 import { drawerGroup } from '@/utils'
+//这个抽离出来是因为递归调用了
+// import drawerGrid from './drawerGrid.vue'
+
 import resolveComponents from '../resolveComponents'
+
 export default defineComponent({
   components: {
     ...resolveComponents,
@@ -70,7 +86,10 @@ export default defineComponent({
 
 <style scoped>
 .gi {
-  min-height: 50px;
   overflow: hidden;
+}
+
+.grid {
+  height: 100%;
 }
 </style>
