@@ -7,17 +7,29 @@
         class="gi"
       >
         <template v-for="sub in list.children[index]" :key="sub">
+          <flex-preview
+            v-if="sub.componentName == 'drawerFlex'"
+            :element="sub"
+          ></flex-preview>
+          <grid-preview
+            v-else-if="sub.componentName == 'drawerGrid'"
+            :list="sub"
+          ></grid-preview>
           <component
             :is="sub.componentName"
-            v-if="sub.componentName != 'n-grid'"
-            style="margin: 10px 0"
+            v-else-if="sub.type == 'basic'"
             v-bind="sub.componentProps"
           ></component>
-          <grid-preview
-            v-if="sub.componentName == 'n-grid'"
-            :list="sub"
-          ></grid-preview
-        ></template> </n-gi
+          <component
+            :is="sub.componentName"
+            v-else-if="
+              sub.type == 'contain' ||
+              sub.type == 'senior' ||
+              sub.type == 'basic-senior'
+            "
+            :element="sub"
+          ></component>
+        </template> </n-gi
     ></n-grid>
   </div>
 </template>

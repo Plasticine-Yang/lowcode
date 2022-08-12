@@ -29,14 +29,18 @@
                 v-if="element.componentName == 'drawerGrid'"
                 :element="element"
               ></drawer-grid>
+              <drawer-flex
+                v-if="element.componentName == 'drawerFlex'"
+                :element="element"
+              ></drawer-flex>
               <component
                 :is="element.componentName"
-                v-if="element.type == 'basic'"
+                v-else-if="element.type == 'basic'"
                 v-bind="element.componentProps"
               ></component>
               <component
                 :is="element.componentName"
-                v-if="
+                v-else-if="
                   element.type == 'contain' ||
                   element.type == 'senior' ||
                   element.type == 'basic-senior'

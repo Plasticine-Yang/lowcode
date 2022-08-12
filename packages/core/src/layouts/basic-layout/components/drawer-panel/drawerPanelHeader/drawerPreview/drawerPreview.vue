@@ -7,6 +7,10 @@
     >
       <n-card style="width: 1000px; min-height: 600px" class="bg-white">
         <template v-for="(item, index) in components" :key="index">
+          <flex-preview
+            v-if="item.componentName == 'drawerFlex'"
+            :element="item"
+          ></flex-preview>
           <grid-preview
             v-if="item.componentName == 'drawerGrid'"
             :list="item"

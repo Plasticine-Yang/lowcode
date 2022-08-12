@@ -3,7 +3,9 @@
     contenteditable="true"
     class="drawerText"
     v-bind="element.componentProps"
-  ></div>
+  >
+    {{ element.componentProps.inputText }}
+  </div>
 </template>
 
 <script lang="ts">

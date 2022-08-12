@@ -6,10 +6,12 @@ import resolveComponents from './resolveComponents'
 import { lightTheme } from '@/styles/theme/light'
 //这个抽离出来是因为递归调用了
 import drawerGrid from './drawerContain/drawerGrid.vue'
+import drawerFlex from './drawerContain/drawerFlex.vue'
 export default defineComponent({
   components: {
     ...resolveComponents,
     drawerGrid,
+    drawerFlex,
   },
   setup() {
     // 画布数据
