@@ -21,7 +21,7 @@ export const flex: IField = {
     },
     interval: {
       name: '容器间隔',
-      fieldComponent: 'input-attribute',
+      fieldComponent: 'slider-attribute',
     },
   },
   iconName: 'arcticons:orange-flex',

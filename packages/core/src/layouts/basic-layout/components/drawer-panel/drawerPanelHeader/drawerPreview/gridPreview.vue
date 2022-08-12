@@ -15,6 +15,10 @@
             v-else-if="sub.componentName == 'drawerGrid'"
             :list="sub"
           ></grid-preview>
+          <collapse-preview
+            v-if="sub.componentName == 'drawerCollapse'"
+            :element="sub"
+          ></collapse-preview>
           <component
             :is="sub.componentName"
             v-else-if="sub.type == 'basic'"

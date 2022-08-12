@@ -5,6 +5,7 @@ import { singleLineInput } from './singleLineInput'
 import { button } from './button'
 import { textInput } from './textInput'
 import { divider } from './divider'
+import { rate } from './rate'
 export const basicFields: IField[] = [
   singleLineInput,
   multiLineInput,
@@ -13,4 +14,5 @@ export const basicFields: IField[] = [
   checkbox,
   textInput,
   divider,
+  rate,
 ]

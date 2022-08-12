@@ -33,6 +33,10 @@
                 v-if="element.componentName == 'drawerFlex'"
                 :element="element"
               ></drawer-flex>
+              <drawer-collapse
+                v-if="element.componentName == 'drawerCollapse'"
+                :element="element"
+              ></drawer-collapse>
               <component
                 :is="element.componentName"
                 v-else-if="element.type == 'basic'"

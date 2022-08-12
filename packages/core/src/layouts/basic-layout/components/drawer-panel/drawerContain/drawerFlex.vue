@@ -37,6 +37,10 @@
               v-if="element.componentName == 'drawerFlex'"
               :element="element"
             ></drawer-flex>
+            <drawer-collapse
+              v-if="element.componentName == 'drawerCollapse'"
+              :element="element"
+            ></drawer-collapse>
             <component
               :is="element.componentName"
               v-if="element.type == 'basic'"
@@ -61,12 +65,9 @@ import { defineComponent, computed } from 'vue'
 import { useDrawer, useTheme } from '@/store'
 import { drawerGroup } from '@/utils'
 import resolveComponents from '../resolveComponents'
-import { elementDark } from 'naive-ui'
-// import drawerGrid from './drawerGrid.vue'
 export default defineComponent({
   components: {
     ...resolveComponents,
-    // drawerGrid,
   },
   props: ['element'],
   setup(props) {

@@ -5,10 +5,6 @@
       :key="item"
       class="flexDiv"
       :style="{
-        border:
-          drawer.activeComponent?.id == element.id
-            ? colorTheme[themer.theme]
-            : '',
         flex: flexText[index],
         marginRight:
           index == element.children?.length - 1
@@ -25,6 +21,10 @@
           v-else-if="sub.componentName == 'drawerFlex'"
           :element="sub"
         ></flex-preview>
+        <collapse-preview
+          v-if="sub.componentName == 'drawerCollapse'"
+          :element="sub"
+        ></collapse-preview>
         <component
           :is="sub.componentName"
           v-else-if="sub.type == 'basic'"
@@ -46,7 +46,7 @@
 
 <script lang="ts">
 import { defineComponent, computed } from 'vue'
-import { useDrawer, useTheme } from '@/store'
+import { useDrawer } from '@/store'
 import { drawerGroup } from '@/utils'
 import resolveComponents from '../../resolveComponents'
 
@@ -57,7 +57,7 @@ export default defineComponent({
   props: ['element'],
   setup(props) {
     const drawer = useDrawer()
-    const themer = useTheme()
+
     //监测这里使用了children.length变化时，改变flexText
     const flexText = computed(() => {
       let temp = props.element.componentProps.flexText
@@ -71,13 +71,7 @@ export default defineComponent({
       return temp
     })
 
-    const colorTheme: any = {
-      light: '3px dashed black',
-      dark: '3px dashed black',
-      candy: '3px dashed rgb(227, 173, 202)',
-      blue: '3px dashed rgb(64, 158, 255)',
-    }
-    return { drawer, themer, colorTheme, drawerGroup, flexText }
+    return { drawer, drawerGroup, flexText }
   },
 })
 </script>
