@@ -7,7 +7,10 @@
     item-key="fileName"
   >
     <template #item="{ element }">
-      <component :is="element.showName"></component></template
+      <component
+        :is="element.showName"
+        style="margin-bottom: 10px"
+      ></component></template
   ></draggable>
 </template>
 

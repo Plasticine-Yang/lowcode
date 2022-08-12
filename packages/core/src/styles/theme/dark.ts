@@ -41,4 +41,8 @@ export const darkTheme: GlobalThemeOverrides = {
     titleTextColor: 'black',
     titleTextColorInfo: 'black',
   },
+  Divider: {
+    color: 'purple',
+    textColor: 'black',
+  },
 }

@@ -55,7 +55,7 @@ const removeComponent = () => {
       />
     </div>
     <!-- 组件插槽区域 -->
-    <section @click.stop="handleActiveComponent">
+    <section @click.stop.prevent="handleActiveComponent">
       <slot></slot>
     </section>
   </div>

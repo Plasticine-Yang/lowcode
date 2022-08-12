@@ -7,20 +7,30 @@
     >
       <n-card style="width: 1000px; min-height: 600px" class="bg-white">
         <template v-for="(item, index) in components" :key="index">
+          <flex-preview
+            v-if="item.componentName == 'drawerFlex'"
+            :element="item"
+          ></flex-preview>
           <grid-preview
             v-if="item.componentName == 'drawerGrid'"
             :list="item"
           ></grid-preview>
+          <collapse-preview
+            v-if="item.componentName == 'drawerCollapse'"
+            :element="item"
+          ></collapse-preview>
           <component
             :is="item.componentName"
             v-else-if="item.type == 'basic'"
             v-bind="item.componentProps"
             style="margin: 10px 0"
+            class="preview"
           ></component>
           <component
             :is="item.componentName"
             v-else
             :element="item"
+            class="preview"
           ></component> </template></n-card
     ></n-modal>
   </div>
@@ -52,4 +62,8 @@ export default defineComponent({
 })
 </script>
 
-<style scoped></style>
+<style scoped>
+.preview {
+  width: 100%;
+}
+</style>

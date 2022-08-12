@@ -1,3 +1,3 @@
 import { grid } from './grid'
-
-export const containFields: any = [grid]
+import { flex } from './flex'
+export const containFields: any = [grid, flex]

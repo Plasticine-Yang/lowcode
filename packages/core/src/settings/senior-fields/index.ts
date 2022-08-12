@@ -1,3 +1,3 @@
 import { lb } from './lb'
-
-export const seniorFields: IField[] = [lb]
+import { collapse } from './collapes'
+export const seniorFields: IField[] = [lb, collapse]

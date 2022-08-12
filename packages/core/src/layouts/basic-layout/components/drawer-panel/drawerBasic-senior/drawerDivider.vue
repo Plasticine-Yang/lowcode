@@ -1,10 +1,8 @@
 <template>
-  <div
-    contenteditable="true"
-    class="drawerText"
-    v-bind="element.componentProps"
-  >
-    {{ element.componentProps.inputText }}
+  <div>
+    <n-divider v-bind="element.componentProps">{{
+      element.componentProps.dividerText
+    }}</n-divider>
   </div>
 </template>
 
@@ -26,9 +24,4 @@ export default defineComponent({
 })
 </script>
 
-<style scoped>
-.drawerText {
-  min-height: 30px;
-  line-height: 30px;
-}
-</style>
+<style scoped></style>
