@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="relative" style="height: 100px">
-      <n-carousel autoplay class="wh-full" style="height: 100px">
+      <n-carousel autoplay class="wh-full">
         <img src="@/assets/lb/lb1.png" class="carousel-img wh-full" />
         <img src="@/assets/lb/lb2.png" class="carousel-img wh-full" />
         <img src="@/assets/lb/lb3.png" class="carousel-img wh-full" />

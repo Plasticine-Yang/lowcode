@@ -1,6 +1,6 @@
 <template>
   <n-carousel
-    style="height: 300px; width: 100%"
+    style="width: 100%; aspectratio: 16/9"
     v-bind="element.componentProps"
   >
     <img

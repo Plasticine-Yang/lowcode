@@ -1,6 +1,6 @@
 <template>
   <div>
-    <n-grid v-bind="element.componentProps">
+    <n-grid v-bind="element.componentProps" class="grid">
       <n-gi
         v-for="(item, index) in element.componentProps.cols"
         :key="item"
@@ -70,7 +70,10 @@ export default defineComponent({
 
 <style scoped>
 .gi {
-  min-height: 50px;
   overflow: hidden;
+}
+
+.grid {
+  height: 100%;
 }
 </style>

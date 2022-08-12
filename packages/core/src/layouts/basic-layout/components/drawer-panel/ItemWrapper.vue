@@ -64,11 +64,11 @@ const removeComponent = () => {
 <style lang="scss" scoped>
 .item-wrapper {
   position: relative;
-  margin: 10px 0;
+  margin-bottom: 10px;
 }
 
 .item-wrapper.active {
-  border: 3px solid skyblue;
+  outline: 1px solid skyblue;
 
   .drag-handler {
     display: flex;

@@ -1,7 +1,19 @@
 export const checkbox: IField = {
   id: 9,
   fieldName: '复选框',
-  componentName: 'n-checkbox',
+  componentName: 'drawerCheckBox',
   iconName: 'bx:select-multiple',
-  type: 'basic',
+  type: 'basic-senior',
+  componentProps: {
+    number: 4,
+  },
+  componentPropsMeta: {
+    number: {
+      name: '复选框数量',
+      fieldComponent: 'input-number-attribute',
+      fieldComponentParam: {
+        size: 4,
+      },
+    },
+  },
 }
