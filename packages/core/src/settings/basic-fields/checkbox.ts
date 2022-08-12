@@ -4,4 +4,5 @@ export const checkbox: IField = {
   componentName: 'n-checkbox',
   iconName: 'bx:select-multiple',
   type: 'basic',
+  style: '',
 }

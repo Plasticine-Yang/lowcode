@@ -1,33 +1,53 @@
-<!-- 自定义右侧面板输入组件 -->
-
+<!-- 上传图片 -->
 <template>
-  <div></div>
+  <n-upload
+    action="https://www.mocky.io/v2/5e4bafc63100007100d8b70f"
+    :default-file-list="previewFileList"
+    list-type="image-card"
+    @preview="handlePreview"
+  />
+  <n-modal
+    v-model:show="showModal"
+    preset="card"
+    style="width: 600px"
+    title="一张很酷的图片"
+  >
+    <img :src="previewImageUrl" style="width: 100%" />
+  </n-modal>
 </template>
 
 <script lang="ts" setup>
-import { ref } from 'vue'
 import { useDrawer } from '@/store'
+import { ref } from 'vue'
+import { UploadFileInfo } from 'naive-ui'
+/**
+ * interface  UploadFileInfo {
+ *  id: 'a',
+ *  name: '我是上传出错的普通文件.png',
+ *  status: 'error'|'finished'|'uploading',  
+  },
+ * 
+ */
 interface Props {
   keyname: string
 }
-type silderParam = {
-  // 定义一下在fieldComponentParam中使用该组件可以填写的参数，并没有使用
-  maxNum?: number // 最大值
-  minNum?: number // 最小值
-  step?: number // 滑动灵敏度
-}
-
 const drawer = useDrawer()
 const props = defineProps<Props>()
 let componentProps = drawer.activeComponent?.componentProps || {}
 let componentPropsMeta: ComponentPropsMeta =
   drawer.activeComponent?.componentPropsMeta || {}
 let param = componentPropsMeta[props.keyname]?.fieldComponentParam || {}
-const emit = defineEmits(['updateValue']) // setup 的第二个参数emit
-function updateValue(e: any) {
-  console.log('123')
-  console.log(e)
 
-  emit('updateValue', componentProps[props.keyname])
+const showModalRef = ref(false)
+const previewImageUrlRef = ref('')
+function handlePreview(file: UploadFileInfo) {
+  const { url } = file
+  previewImageUrlRef.value = url as string
+  showModalRef.value = true
 }
+
+let showModal = showModalRef
+let previewImageUrl = previewImageUrlRef
+let fileList = ref<UploadFileInfo[]>([])
+let previewFileList = ref<UploadFileInfo[]>([])
 </script>

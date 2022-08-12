@@ -12,8 +12,10 @@ import { useDrawer } from '@/store'
 interface Props {
   keyname: string
 }
-const drawer = useDrawer()
+const drawer = ref(useDrawer())
 const props = defineProps<Props>()
-let componentProps = ref(drawer.activeComponent?.componentProps || {})
-let componentPropsMeta = ref(drawer.activeComponent?.componentPropsMeta || {})
+let componentProps = ref(drawer.value.activeComponent?.componentProps || {})
+let componentPropsMeta = ref(
+  drawer.value.activeComponent?.componentPropsMeta || {},
+)
 </script>

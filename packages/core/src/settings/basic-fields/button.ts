@@ -17,4 +17,5 @@ export const button: IField = {
     //   name
     // }
   },
+  style: '',
 }

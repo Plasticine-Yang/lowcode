@@ -32,4 +32,5 @@ export const grid: IField = {
       fieldComponent: 'input-attribute',
     },
   },
+  style: '',
 }

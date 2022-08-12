@@ -21,6 +21,7 @@ export default function transformFieldToDrawer(field: IField): DrawerComponent {
     dragHandlerName: fieldcopy.fieldName,
     children: fieldcopy.children,
     type: fieldcopy.type,
+    style: fieldcopy.style,
   }
 
   return drawerComponent

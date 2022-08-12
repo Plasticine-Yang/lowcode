@@ -4,4 +4,5 @@ export const radio: IField = {
   componentName: 'n-radio',
   iconName: 'bi:textarea-resize',
   type: 'basic',
+  style: '',
 }

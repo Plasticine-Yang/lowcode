@@ -69,4 +69,5 @@ export const lb: IField = {
       fieldComponent: 'upload-image-attribute',
     },
   },
+  style: '',
 }

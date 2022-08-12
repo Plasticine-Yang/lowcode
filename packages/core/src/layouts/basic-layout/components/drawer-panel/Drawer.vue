@@ -45,6 +45,7 @@ export default defineComponent({
             :is="element.componentName"
             v-if="element.type == 'basic'"
             v-bind="element.componentProps"
+            :style="element.style"
           ></component>
           <!-- 高级组件，容器组件，需要再次封装的简单组件 -->
           <component
@@ -55,6 +56,7 @@ export default defineComponent({
               element.type == 'basic-senior'
             "
             :element="element"
+            :style="element.style"
           ></component>
         </item-wrapper>
       </template>
