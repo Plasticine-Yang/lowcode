@@ -19,7 +19,7 @@
 </template>
 
 <script lang="ts" setup>
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 import { useDrawer } from '@/store'
 import { changeGridChildren } from '../OnComponents/onSlider'
 interface Props {
@@ -32,20 +32,23 @@ type silderParam = {
   step?: number // 滑动灵敏度
 }
 
-const drawer = useDrawer()
+const drawer = ref(useDrawer())
 const props = defineProps<Props>()
-let componentProps = drawer.activeComponent?.componentProps || {}
-let componentPropsMeta: ComponentPropsMeta =
-  drawer.activeComponent?.componentPropsMeta || {}
-let param = componentPropsMeta[props.keyname]?.fieldComponentParam || {}
-// const emit = defineEmits(['updateValue']) // setup 的第二个参数emit
+let componentProps = computed(() => {
+  return drawer.value.activeComponent?.componentProps || {}
+})
+let componentPropsMeta = computed(() => {
+  return drawer.value.activeComponent?.componentPropsMeta || {}
+})
+let param = componentPropsMeta.value[props.keyname]?.fieldComponentParam || {}
+const emit = defineEmits(['updateValue']) // setup 的第二个参数emit
 function updateValue(e: any) {
-  if (drawer.activeComponent?.componentName == 'drawerGrid') {
+  if (drawer.value.activeComponent?.componentName == 'drawerGrid') {
     if (props.keyname == 'cols') {
       changeGridChildren(drawer, e)
     }
   }
-  if (drawer.activeComponent?.componentName == 'drawerFlex') {
+  if (drawer.value.activeComponent?.componentName == 'drawerFlex') {
     if (props.keyname == 'cols') {
       changeGridChildren(drawer, e)
     }

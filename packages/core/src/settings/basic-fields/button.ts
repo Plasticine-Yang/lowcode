@@ -96,4 +96,5 @@ export const button: IField = {
       fieldComponent: 'n-switch',
     },
   },
+  style: '',
 }

@@ -53,4 +53,5 @@ export const singleLineInput: IField = {
       fieldComponent: 'n-switch',
     },
   },
+  style: '',
 }

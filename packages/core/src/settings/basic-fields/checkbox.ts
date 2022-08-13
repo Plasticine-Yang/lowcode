@@ -3,6 +3,7 @@ export const checkbox: IField = {
   fieldName: '复选框',
   componentName: 'drawerCheckBox',
   iconName: 'bx:select-multiple',
+  style: '',
   type: 'basic-senior',
   componentProps: {
     number: 4,

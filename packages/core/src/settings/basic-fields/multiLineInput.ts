@@ -7,4 +7,5 @@ export const multiLineInput: IField = {
   componentProps: {
     type: 'textarea',
   },
+  style: '',
 }

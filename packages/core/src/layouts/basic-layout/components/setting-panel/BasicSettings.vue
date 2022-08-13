@@ -22,19 +22,11 @@
 </template>
 
 <script lang="ts">
-import {
-  inputAttribute,
-  inputNumberAttribute,
-  sliderAttribute,
-  selectAttribute,
-} from './components/index'
+import Attribute from './components/index'
 import { NSwitch, NInput } from 'naive-ui'
 export default {
   components: {
-    inputAttribute, // 输入框
-    inputNumberAttribute, // 选择输入框
-    sliderAttribute, //滑块
-    selectAttribute, // 选择器
+    ...Attribute,
     NSwitch,
     NInput,
   },

@@ -16,12 +16,15 @@ import { useDrawer } from '@/store'
 interface Props {
   keyname: string
 }
-const drawer = useDrawer()
+const drawer = ref(useDrawer())
 const props = defineProps<Props>()
-let componentProps = ref(drawer.activeComponent?.componentProps || {})
+
+let componentProps = ref(drawer.value.activeComponent?.componentProps || {})
 const change = (e: any, keyname: any) => {
   console.log(e)
   console.log(keyname)
 }
-let componentPropsMeta = ref(drawer.activeComponent?.componentPropsMeta || {})
+let componentPropsMeta = ref(
+  drawer.value.activeComponent?.componentPropsMeta || {},
+)
 </script>
