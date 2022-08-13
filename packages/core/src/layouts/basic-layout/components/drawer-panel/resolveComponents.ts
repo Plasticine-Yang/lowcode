@@ -1,4 +1,11 @@
-import { NInput, NRadio, NCheckbox, NButton, NRate } from 'naive-ui'
+import {
+  NInput,
+  NRadio,
+  NCheckbox,
+  NButton,
+  NRate,
+  NDatePicker,
+} from 'naive-ui'
 
 import { drawerBasicSenior } from './drawerBasic-senior'
 import { drawerContain } from './drawerContain'
@@ -9,6 +16,7 @@ export default {
   NCheckbox,
   NButton,
   NRate,
+  NDatePicker,
   ...drawerBasicSenior,
   ...drawerContain,
   ...drawerSenior,

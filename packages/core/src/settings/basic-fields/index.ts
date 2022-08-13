@@ -6,6 +6,7 @@ import { button } from './button'
 import { textInput } from './textInput'
 import { divider } from './divider'
 import { rate } from './rate'
+import { datePicker } from './datePicker'
 export const basicFields: IField[] = [
   singleLineInput,
   multiLineInput,
@@ -15,4 +16,5 @@ export const basicFields: IField[] = [
   textInput,
   divider,
   rate,
+  datePicker,
 ]
