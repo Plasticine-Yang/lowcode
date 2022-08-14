@@ -13,6 +13,6 @@ interface DrawerComponent {
   children?: DrawerComponent[]
   // 组件的类型
   type: 'senior' | 'contain' | 'basic' | 'basic-senior'
-  // 演示属性
-  style: string
+  // 样式属性
+  style?: string
 }
