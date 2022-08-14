@@ -8,7 +8,7 @@ export const textInput: IField = {
     style: {
       width: '100%',
       lineHeight: '30px',
-      color: 'orange',
+      // color: 'orange',
       height: '30px',
     },
     inputText: '123',

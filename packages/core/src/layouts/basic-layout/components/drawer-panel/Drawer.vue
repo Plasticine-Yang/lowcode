@@ -1,13 +1,14 @@
 <script lang="ts">
-import { useDrawer } from '@/store'
+import { useDrawer, useTheme } from '@/store'
+import { getGlobalTheme } from '@/utils/theme'
 import { drawerGroup } from '@/utils'
-import { defineComponent, computed } from 'vue'
+import { defineComponent, computed, ref } from 'vue'
 import resolveComponents from './resolveComponents'
-import { lightTheme } from '@/styles/theme/light'
 //这个抽离出来是因为递归调用了
 import drawerGrid from './drawerContain/drawerGrid.vue'
 import drawerFlex from './drawerContain/drawerFlex.vue'
 import drawerCollapse from './drawerSenior/drawerCollapse.vue'
+import { globalConfigs } from '@/settings/globalConfig'
 export default defineComponent({
   components: {
     ...resolveComponents,
@@ -18,18 +19,21 @@ export default defineComponent({
   setup() {
     // 画布数据
     const drawer = useDrawer()
-
+    const themer = useTheme()
+    const themeOverrides = getGlobalTheme(themer)
+    const globalConfig = ref(globalConfigs)
     return {
       drawer,
       drawerGroup,
-      lightTheme,
+      themeOverrides,
+      globalConfig,
     }
   },
 })
 </script>
 
 <template>
-  <n-config-provider :theme-overrides="lightTheme" style="min-height: 90px">
+  <n-config-provider :theme-overrides="themeOverrides">
     <draggable
       v-model="drawer.components"
       :group="drawerGroup"
@@ -40,6 +44,7 @@ export default defineComponent({
       class="wh-full bg-white"
       ghost-class="ghost"
       handle=".drag-handler"
+      :style="globalConfig.style"
     >
       <template #item="{ element }">
         <item-wrapper

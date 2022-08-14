@@ -15,12 +15,15 @@ export const blueTheme: GlobalThemeOverrides = {
     optionTextColorHover: 'rgb(142 188 236)',
   },
   Button: {
-    textColor: 'rgb(64, 158, 255)',
+    color: 'rgb(64, 158, 255)',
+    textColor: '#fff',
     border: 'rgb(64, 158, 255)',
-    borderFocus: 'rgb(64, 158, 255)',
-    borderHover: 'rgb(64, 158, 255)',
-    colorFocusPrimary: 'rgb(64, 158, 255)',
-    colorFocusSuccess: 'rgb(64, 158, 255)',
+    colorHover: 'rgb(234 189 213)',
+    textColorHover: '#fff',
+    textColorFocus: '#fff',
+    colorFocus: 'rgb(133 193 255)',
+    borderHover: 'rgb(133 193 255)',
+    borderFocus: 'rgb(133 193 255)',
   },
   Collapse: {
     titleTextColor: 'rgb(64, 158, 255)',
@@ -35,6 +38,10 @@ export const blueTheme: GlobalThemeOverrides = {
   },
   Radio: {
     dotColorActive: 'rgb(64, 158, 255)',
+    buttonTextColorActive: 'rgb(64, 158, 255)',
+  },
+  Checkbox: {
+    colorChecked: 'rgb(64, 158, 255)',
   },
   Switch: {
     railColorActive: 'rgb(64, 158, 255)',
@@ -49,6 +56,7 @@ export const blueTheme: GlobalThemeOverrides = {
     tabTextColorBar: 'rgb(133 179 226)',
   },
   Divider: {
-    color: 'purple',
+    color: 'black',
+    textColor: 'rgb(64, 158, 255)',
   },
 }

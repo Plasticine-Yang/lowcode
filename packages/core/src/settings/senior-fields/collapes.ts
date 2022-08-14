@@ -2,6 +2,7 @@ export const collapse: IField = {
   id: 18,
   fieldName: '折叠面板',
   componentName: 'drawerCollapse',
+  style: '1',
   componentProps: {
     title: '青铜,黄金',
     accordion: false,

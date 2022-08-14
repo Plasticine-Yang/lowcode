@@ -15,9 +15,13 @@ export const candyTheme: GlobalThemeOverrides = {
     optionTextColorHover: '#e3adca',
   },
   Button: {
-    textColor: 'rgb(221, 118, 173)',
+    color: 'rgb(221, 118, 173)',
+    textColor: '#fff',
     border: 'rgb(221, 118, 173)',
-    colorHover: 'rgb(221, 118, 173)',
+    colorHover: 'rgb(234 189 213)',
+    textColorHover: '#fff',
+    textColorFocus: '#fff',
+    colorFocus: 'rgb(234 189 213)',
     borderHover: 'rgb(221, 118, 173)',
     borderFocus: 'rgb(221, 118, 173)',
   },
@@ -27,13 +31,15 @@ export const candyTheme: GlobalThemeOverrides = {
     textColor: 'black',
   },
   Tag: {
-    // color: 'rgb(221 201 212)',
-    // textColor: 'rgb(64, 158, 255)',
     border: '  rgb(221, 118, 173)',
     colorBordered: 'rgb(64, 158, 255)',
   },
   Radio: {
-    dotColorActive: 'rgb(64, 158, 255)',
+    dotColorActive: 'rgb(221, 118, 173)',
+    buttonTextColorActive: 'rgb(221, 118, 173)',
+  },
+  Checkbox: {
+    colorChecked: 'rgb(221, 118, 173)',
   },
   Switch: {
     railColorActive: 'rgb(221, 118, 173)',
@@ -52,5 +58,9 @@ export const candyTheme: GlobalThemeOverrides = {
     tabTextColorActiveBar: '#f2ae2e',
     tabTextColorHoverBar: '#f2ae2e',
     tabTextColorBar: '#f0b6c0',
+  },
+  Divider: {
+    color: 'black',
+    textColor: 'rgb(221, 118, 173)',
   },
 }

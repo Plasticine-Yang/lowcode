@@ -6,7 +6,7 @@ export const button: IField = {
   type: 'basic-senior',
   componentProps: {
     Buttontext: '输入文本',
-    type: 'primary',
+    type: 'default',
     bordered: false,
     dashed: false,
     disabled: false,
