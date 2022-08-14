@@ -1,11 +1,10 @@
-export const multiLineInput: IField = {
+import { singleLineInput } from './singleLineInput'
+
+export const multiLineInput: IField = Object.assign({}, singleLineInput, {
   id: 2,
   fieldName: '多行输入',
-  componentName: 'n-input',
   iconName: 'bi:textarea-resize',
-  type: 'basic',
-  componentProps: {
+  componentProps: Object.assign({}, singleLineInput.componentProps, {
     type: 'textarea',
-  },
-  style: '',
-}
+  }),
+})
