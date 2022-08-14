@@ -49,7 +49,6 @@ export default defineComponent({
         text2: document.getElementById('text2'),
       }
       animation(elts)
-      console.log(elts, 'elts')
     })
     //切换主题的选择
     let options = [
