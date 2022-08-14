@@ -1,15 +1,13 @@
 import { defineStore } from 'pinia'
-interface theme {
+interface Theme {
   theme: string
   globalTheme: string
 }
 
-const initThemeState = (): theme => {
-  return {
-    theme: localStorage.getItem('theme') || 'light',
-    globalTheme: localStorage.getItem('globalTheme') || 'light',
-  }
-}
+const initThemeState = (): Theme => ({
+  theme: localStorage.getItem('theme') || 'light',
+  globalTheme: localStorage.getItem('globalTheme') || 'light',
+})
 
 export const useTheme = defineStore('theme', {
   state: initThemeState,
