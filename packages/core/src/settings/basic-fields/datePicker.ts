@@ -1,5 +1,5 @@
 export const datePicker: IField = {
-  id: 22,
+  id: 11,
   fieldName: '日期选择器',
   componentName: 'drawer-date-picker',
   iconName: 'bx:select-multiple',

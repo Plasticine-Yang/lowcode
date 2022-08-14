@@ -1,5 +1,5 @@
 export const divider: IField = {
-  id: 12,
+  id: 7,
   componentName: 'drawerDivider',
   type: 'basic-senior',
   iconName: 'material-symbols:safety-divider',

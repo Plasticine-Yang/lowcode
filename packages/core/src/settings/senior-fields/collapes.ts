@@ -1,5 +1,5 @@
 export const collapse: IField = {
-  id: 18,
+  id: 16,
   fieldName: '折叠面板',
   componentName: 'drawerCollapse',
   style: '1',

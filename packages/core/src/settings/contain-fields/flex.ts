@@ -1,6 +1,6 @@
 export const flex: IField = {
   //这个组件主要是想实现可以按照比例分割
-  id: 6,
+  id: 1,
   componentName: 'drawerFlex',
   componentProps: {
     cols: 2,

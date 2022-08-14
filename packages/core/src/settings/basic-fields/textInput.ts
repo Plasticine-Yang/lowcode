@@ -1,5 +1,5 @@
 export const textInput: IField = {
-  id: 16,
+  id: 13,
   fieldName: '文本框',
   componentName: 'drawerText',
   iconName: 'material-symbols:format-color-text',

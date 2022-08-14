@@ -1,5 +1,5 @@
 export const rate: IField = {
-  id: 12,
+  id: 10,
   componentName: 'n-rate',
   fieldName: '评分器',
   type: 'basic',

@@ -1,5 +1,5 @@
 export const grid: IField = {
-  id: 1,
+  id: 15,
   fieldName: '栅格',
   componentName: 'drawerGrid',
   iconName: 'clarity:grid-view-line',

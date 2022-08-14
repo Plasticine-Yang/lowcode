@@ -1,5 +1,5 @@
-export const lb: IField = {
-  id: 3,
+export const carousel: IField = {
+  id: 9,
   fieldName: '轮播图',
   componentName: 'drawer-carousel',
   type: 'senior',

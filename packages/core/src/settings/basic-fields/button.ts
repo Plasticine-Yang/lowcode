@@ -1,5 +1,5 @@
 export const button: IField = {
-  id: 11,
+  id: 2,
   fieldName: '按钮',
   componentName: 'drawerButton',
   iconName: 'material-symbols:radio-button-checked',

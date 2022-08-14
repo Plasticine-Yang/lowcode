@@ -1,5 +1,5 @@
 export const singleLineInput: IField = {
-  id: 7,
+  id: 4,
   fieldName: '单行输入',
   componentName: 'n-input',
   iconName: 'lucide:text-cursor-input',
