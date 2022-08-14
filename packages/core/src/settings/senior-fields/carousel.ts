@@ -3,7 +3,7 @@ export const carousel: IField = {
   fieldName: '轮播图',
   componentName: 'drawer-carousel',
   type: 'senior',
-  showName: 'carouselShow',
+  componentDisplay: 'carousel-display',
   componentProps: {
     imgUrl: ['lb1.png', 'lb2.png', 'lb3.png'],
     imgNum: 3,

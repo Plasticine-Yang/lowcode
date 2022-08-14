@@ -14,7 +14,7 @@
             name="contain-field"
             class="common-util"
           >
-            <contain-fields></contain-fields>
+            <container-fields></container-fields>
           </n-collapse-item>
           <!-- 基础字段 -->
           <n-collapse-item

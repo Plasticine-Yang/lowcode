@@ -1,7 +1,7 @@
 export const collapse: IField = {
   id: 16,
   fieldName: '折叠面板',
-  componentName: 'drawerCollapse',
+  componentName: 'drawer-collapse',
   style: '1',
   componentProps: {
     title: '青铜,黄金',
@@ -10,7 +10,7 @@ export const collapse: IField = {
   },
   children: [[], []],
   type: 'senior',
-  showName: 'collapseShow',
+  componentDisplay: 'collapse-display',
   componentPropsMeta: {
     title: {
       name: '面板标题',

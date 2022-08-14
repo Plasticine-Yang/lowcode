@@ -2,19 +2,19 @@
 import { useDrawer, useTheme } from '@/store'
 import { getGlobalTheme } from '@/utils/theme'
 import { drawerGroup } from '@/utils'
-import { defineComponent, computed, ref } from 'vue'
+import { defineComponent, ref } from 'vue'
 import resolveComponents from './resolveComponents'
 //这个抽离出来是因为递归调用了
-import drawerGrid from './drawerContain/drawerGrid.vue'
-import drawerFlex from './drawerContain/drawerFlex.vue'
-import drawerCollapse from './drawerSenior/drawerCollapse.vue'
+import DrawerGrid from './drawer-container/DrawerGrid.vue'
+import DrawerFlex from './drawer-container/DrawerFlex.vue'
+import DrawerCollapse from './drawer-senior/DrawerCollapse.vue'
 import { globalConfigs } from '@/settings/globalConfig'
 export default defineComponent({
   components: {
     ...resolveComponents,
-    drawerGrid,
-    drawerFlex,
-    drawerCollapse,
+    DrawerGrid,
+    DrawerFlex,
+    DrawerCollapse,
   },
   setup() {
     // 画布数据
@@ -68,7 +68,9 @@ export default defineComponent({
             "
             :element="element"
             :style="element.style"
-          ></component>
+          >
+            111
+          </component>
         </item-wrapper>
       </template>
     </draggable>

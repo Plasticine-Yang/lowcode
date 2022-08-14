@@ -17,10 +17,10 @@
           >
           </n-alert>
           <!-- 导出导入JSON展示数据 -->
-          <vue-json-editor-vue
+          <json-editor
             ref="editor"
             :value="JSON.stringify(jsonData, null, 2)"
-          ></vue-json-editor-vue>
+          ></json-editor>
         </div>
         <!-- 导出的按钮 -->
         <template v-if="toUse == '导出JSON'" #footer
@@ -86,11 +86,11 @@
 
 <script lang="ts">
 import { defineComponent, ref } from 'vue'
-import vueJsonEditorVue from './vueJsonEditor.vue'
+import JsonEditor from './JsonEditor.vue'
 import useClipboard from 'vue-clipboard3'
 export default defineComponent({
   components: {
-    vueJsonEditorVue,
+    JsonEditor,
   },
   props: {
     //是否展示面板

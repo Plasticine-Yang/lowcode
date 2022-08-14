@@ -1,6 +1,6 @@
-import carouselShow from './fieldsShow/carouselShow.vue'
-import collapseShow from './fieldsShow/collapseShow.vue'
+import CarouselDisplay from './fields-display/CarouselDisplay.vue'
+import CollapseDisplay from './fields-display/CollapseDisplay.vue'
 export default {
-  carouselShow,
-  collapseShow,
+  CarouselDisplay,
+  CollapseDisplay,
 }

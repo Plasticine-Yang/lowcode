@@ -21,7 +21,7 @@
 <script lang="ts" setup>
 import { ref, computed } from 'vue'
 import { useDrawer } from '@/store'
-import { changeGridChildren } from '../OnComponents/onSlider'
+import { changeGridChildren } from '../on-components/onSlider'
 interface Props {
   keyname: string
 }

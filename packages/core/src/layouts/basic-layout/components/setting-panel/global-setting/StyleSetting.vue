@@ -5,11 +5,11 @@
       :key="index"
       :path="key"
       :label="globalConfig.stylePropsMeta[key].name"
-      ><global-component
+      ><global-setting-item
         :keys="key"
         :global-props="globalConfig.style"
         :global-meta="globalConfig.stylePropsMeta"
-      ></global-component
+      ></global-setting-item
     ></n-form-item>
   </div>
 </template>

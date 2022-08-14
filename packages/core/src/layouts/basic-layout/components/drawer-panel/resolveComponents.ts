@@ -7,9 +7,9 @@ import {
   NDatePicker,
 } from 'naive-ui'
 
-import { drawerBasicSenior } from './drawerBasic-senior'
-import { drawerContain } from './drawerContain'
-import { drawerSenior } from './drawerSenior'
+import { DrawerBasicSenior } from './drawer-basic-senior'
+import { DrawerContainer } from './drawer-container'
+import { DrawerSenior } from './drawer-senior'
 export default {
   NInput,
   NRadio,
@@ -17,9 +17,9 @@ export default {
   NButton,
   NRate,
   NDatePicker,
-  ...drawerBasicSenior,
-  ...drawerContain,
-  ...drawerSenior,
+  ...DrawerBasicSenior,
+  ...DrawerContainer,
+  ...DrawerSenior,
 }
 
 //只要是可以拖入容器的话就不可以在这里进行声明！

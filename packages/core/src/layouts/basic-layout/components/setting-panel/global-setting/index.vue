@@ -13,11 +13,11 @@
         :path="key"
         :label="globalConfig.componentPropsMeta[key].name"
       >
-        <global-component
+        <global-setting-item
           :keys="key"
           :global-props="globalConfig.componentsProps"
           :global-meta="globalConfig.componentPropsMeta"
-        ></global-component>
+        ></global-setting-item>
       </n-form-item>
       <style-setting></style-setting>
     </n-form>
@@ -25,8 +25,8 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, computed, ref } from 'vue'
 import { globalConfigs } from '@/settings/globalConfig'
+import { defineComponent, ref } from 'vue'
 
 export default defineComponent({
   components: {},

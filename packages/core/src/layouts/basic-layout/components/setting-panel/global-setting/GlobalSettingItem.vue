@@ -25,9 +25,8 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, computed } from 'vue'
 import { useTheme } from '@/store'
-import { getGlobalTheme } from '@/utils/theme'
+import { defineComponent } from 'vue'
 export default defineComponent({
   props: {
     globalProps: {
