@@ -80,7 +80,7 @@ declare module '@vue/runtime-core' {
     NTabs: typeof import('naive-ui')['NTabs']
     NTag: typeof import('naive-ui')['NTag']
     NUpload: typeof import('naive-ui')['NUpload']
-    PanelHeaderModal: typeof import('./../layouts/basic-layout/components/drawer-panel/drawer-header/Import-Export/panelHeaderModal.vue')['default']
+    PanelHeaderModal: typeof import('./../layouts/basic-layout/components/drawer-panel/drawer-header/import-export/PanelHeaderModal.vue')['default']
     SelectAttribute: typeof import('./../layouts/basic-layout/components/setting-panel/components/selectAttribute.vue')['default']
     SeniorFields: typeof import('./../layouts/basic-layout/components/field-panel/senior-fields/index.vue')['default']
     Setting: typeof import('./../layouts/basic-layout/components/setting-panel/components/setting.vue')['default']

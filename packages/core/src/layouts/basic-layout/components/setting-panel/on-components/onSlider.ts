@@ -1,9 +1,7 @@
 //对grid的children进行修改
 export const changeGridChildren = (drawer: any, e: number) => {
-  console.log(drawer.activeComponent.id)
-
-  const children: any = drawer.activeComponent.children
-  drawer.activeComponent.children = changeArray(children, e, [])
+  const children: any = drawer.value.activeComponent.children
+  drawer.value.activeComponent.children = changeArray(children, e, [])
 }
 
 const changeArray = (item: any, e: number, adds: any) => {
