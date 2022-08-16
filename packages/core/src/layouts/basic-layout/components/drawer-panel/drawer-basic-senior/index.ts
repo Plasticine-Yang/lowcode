@@ -4,6 +4,7 @@ import DrawerCheckBox from './drawerCheckBox.vue'
 import DrawerDivider from './drawerDivider.vue'
 import DrawerDatePicker from './drawerDatePicker.vue'
 import DrawerSlider from './DrawerSlider.vue'
+import DrawerSelect from './DrawerSelect.vue'
 export const DrawerBasicSenior = {
   DrawerButton,
   DrawerText,
@@ -11,4 +12,5 @@ export const DrawerBasicSenior = {
   DrawerCheckBox,
   DrawerDatePicker,
   DrawerSlider,
+  DrawerSelect,
 }

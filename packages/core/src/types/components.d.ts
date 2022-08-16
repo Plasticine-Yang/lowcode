@@ -35,6 +35,7 @@ declare module '@vue/runtime-core' {
     DrawerPanel: typeof import('./../layouts/basic-layout/components/drawer-panel/index.vue')['default']
     DrawerPanelHeader: typeof import('./../layouts/basic-layout/components/drawer-panel/drawer-header/DrawerPanelHeader.vue')['default']
     DrawerPreview: typeof import('./../layouts/basic-layout/components/drawer-panel/drawer-header/drawer-preview/drawerPreview.vue')['default']
+    DrawerSelect: typeof import('./../layouts/basic-layout/components/drawer-panel/drawer-basic-senior/DrawerSelect.vue')['default']
     DrawerSlider: typeof import('./../layouts/basic-layout/components/drawer-panel/drawer-basic-senior/DrawerSlider.vue')['default']
     DrawerSlieder: typeof import('./../layouts/basic-layout/components/drawer-panel/drawer-basic-senior/DrawerSlieder.vue')['default']
     DrawerText: typeof import('./../layouts/basic-layout/components/drawer-panel/drawer-basic-senior/DrawerText.vue')['default']
