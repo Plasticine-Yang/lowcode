@@ -9,7 +9,7 @@ const themeOverrides = getTheme(themer)
 <template>
   <div id="app">
     <n-config-provider :theme-overrides="themeOverrides" style="height: 100%">
-      <basic-layout />
+      <n-dialog-provider> <basic-layout /></n-dialog-provider>
     </n-config-provider>
   </div>
 </template>
