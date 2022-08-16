@@ -21,7 +21,7 @@
               :list="item"
             ></grid-preview>
             <collapse-preview
-              v-if="item.componentName == 'drawerCollapse'"
+              v-if="item.componentName == 'drawer-collapse'"
               :element="item"
             ></collapse-preview>
             <component

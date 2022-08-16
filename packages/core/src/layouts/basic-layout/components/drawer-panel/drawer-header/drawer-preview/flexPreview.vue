@@ -22,7 +22,7 @@
           :element="sub"
         ></flex-preview>
         <collapse-preview
-          v-if="sub.componentName == 'drawerCollapse'"
+          v-if="sub.componentName == 'drawer-collapse'"
           :element="sub"
         ></collapse-preview>
         <component
