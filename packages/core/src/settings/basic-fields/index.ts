@@ -8,6 +8,7 @@ import { divider } from './divider'
 import { rate } from './rate'
 import { datePicker } from './datePicker'
 import { switchSelector } from './switchSelector'
+import { slider } from './slider'
 export const basicFields: IField[] = [
   singleLineInput,
   multiLineInput,
@@ -19,4 +20,5 @@ export const basicFields: IField[] = [
   rate,
   datePicker,
   switchSelector,
+  slider,
 ]
