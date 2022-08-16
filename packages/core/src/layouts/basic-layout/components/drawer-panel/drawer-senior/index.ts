@@ -1,3 +1,4 @@
 import DrawerCarousel from './DrawerCarousel.vue'
 import DrawerDropdown from './DrawerDropdown.vue'
-export const DrawerSenior = { DrawerCarousel, DrawerDropdown }
+import DrawerTimeLine from './DrawerTimeLine.vue'
+export const DrawerSenior = { DrawerCarousel, DrawerDropdown, DrawerTimeLine }
