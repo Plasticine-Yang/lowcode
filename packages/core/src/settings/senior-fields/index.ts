@@ -1,3 +1,4 @@
 import { carousel } from './carousel'
 import { collapse } from './collapes'
-export const seniorFields: IField[] = [carousel, collapse]
+import { dropdown } from './dropdown'
+export const seniorFields: IField[] = [carousel, collapse, dropdown]

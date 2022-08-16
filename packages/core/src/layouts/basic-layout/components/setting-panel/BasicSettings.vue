@@ -23,6 +23,7 @@
 
 <script lang="ts">
 import Attribute from './components/index'
+
 import { NSwitch, NInput } from 'naive-ui'
 export default {
   components: {
