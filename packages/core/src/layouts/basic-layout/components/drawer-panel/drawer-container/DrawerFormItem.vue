@@ -30,7 +30,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent, ref, watch } from 'vue'
 import { useDrawer, useTheme } from '@/store'
 import { drawerGroup } from '@/utils'
 import resolveComponents from '../resolveComponents'
@@ -53,6 +53,13 @@ export default defineComponent({
     },
   },
   setup(props) {
+    // 这里用了watch还是不能输入
+    watch(props.element, (newVal, oldVal) => {
+      if (newVal.children.length > 0) {
+        props.element.componentProps.value =
+          props.element.children[0].componentProps.value
+      }
+    })
     return { drawerGroup }
   },
 })

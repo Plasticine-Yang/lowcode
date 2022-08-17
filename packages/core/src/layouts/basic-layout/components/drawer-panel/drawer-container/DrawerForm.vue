@@ -92,7 +92,10 @@ export default defineComponent({
       candy: '3px dashed rgb(227, 173, 202)',
       blue: '3px dashed rgb(64, 158, 255)',
     }
-    props.element.componentProps = computed(() => {
+    //这里递归查找了componentName == 'drawerFormItem' 并且把数据显示出来，目前这里是无法修改的
+    //无法修改的原因： computed得到数据不能在其他地方变化
+    //等我再想想怎么修改
+    const propsDate: any = computed(() => {
       let formvalue: any = {}
       let index = 0
       const getTarget: any = (list: any[]) => {
@@ -120,6 +123,7 @@ export default defineComponent({
       getTarget(props.element.children)
       return formvalue
     })
+    //这里是因为在componetProps修改时，我希望在属性面板能够展现出来，所以也是动态增加
     const metaDate: any = computed(() => {
       const metaDates: any = {}
       for (let item in props.element.componentProps) {
@@ -130,7 +134,7 @@ export default defineComponent({
       }
       return metaDates
     })
-
+    props.element.componentProps = ref(propsDate)
     props.element.componentPropsMeta = ref(metaDate)
     return { formValue, drawerGroup, colorTheme, drawer, themer }
   },

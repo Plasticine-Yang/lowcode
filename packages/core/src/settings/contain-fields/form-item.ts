@@ -9,6 +9,7 @@ export const formItem: IField = {
   componentProps: {
     label: '标签',
     propertyName: '',
+    value: '',
   },
   componentPropsMeta: {
     label: {
@@ -17,6 +18,10 @@ export const formItem: IField = {
     },
     propertyName: {
       name: '属性名',
+      fieldComponent: 'input-attribute',
+    },
+    value: {
+      name: '属性值',
       fieldComponent: 'input-attribute',
     },
   },
