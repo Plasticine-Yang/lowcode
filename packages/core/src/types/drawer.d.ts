@@ -14,5 +14,5 @@ interface DrawerComponent {
   // 组件的类型
   type: 'senior' | 'contain' | 'basic' | 'basic-senior'
   // 样式属性
-  style?: string
+  style: string
 }

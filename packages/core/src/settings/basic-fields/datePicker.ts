@@ -4,6 +4,7 @@ export const datePicker: IField = {
   componentName: 'drawer-date-picker',
   iconName: 'bx:select-multiple',
   type: 'basic-senior',
+  style: '',
   componentProps: {
     value: 1183135260000,
     type: 'date',

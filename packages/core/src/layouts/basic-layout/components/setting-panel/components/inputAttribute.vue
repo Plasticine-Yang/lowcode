@@ -26,7 +26,4 @@ const change = (e: any, keyname: any) => {
   console.log(e)
   console.log(keyname)
 }
-let componentPropsMeta = ref(
-  drawer.value.activeComponent?.componentPropsMeta || {},
-)
 </script>
