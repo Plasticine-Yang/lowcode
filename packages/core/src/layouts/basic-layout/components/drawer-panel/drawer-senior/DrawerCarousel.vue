@@ -1,36 +1,29 @@
 <template>
   <n-carousel
-    style="width: 100%; aspectratio: 16/9"
+    style="width: 100%; aspect-ratio: 16/9"
     v-bind="element.componentProps"
   >
     <img
       v-for="(item, index) in element.componentProps?.imgUrl"
       :key="index"
-      :src="getAssetImages(item)"
+      :src="getAssetImages(item, index)"
       class="carousel-img wh-full"
     />
   </n-carousel>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script setup lang="ts">
+import { reactive } from 'vue'
+const props = defineProps(['element'])
 
-export default defineComponent({
-  props: {
-    element: {
-      type: Object,
-      default: () => {
-        return {}
-      },
-    },
-  },
-  setup() {
-    const getAssetImages = (name: string) => {
-      return new URL(`/src/assets/lb/${name}`, import.meta.url).href
-    }
-    return { getAssetImages }
-  },
-})
+const componentProps = reactive(props.element.componentProps)
+const defaultImgLength = componentProps.imgUrl.length
+const getAssetImages = (name: string, idx: number) => {
+  // 如果是新加的图片，直接使用base64
+  if (idx >= defaultImgLength) {
+    console.log(name, 'name')
+    return name
+  }
+  return new URL(`/src/assets/lb/${name}`, import.meta.url).href
+}
 </script>
-
-<style scoped></style>

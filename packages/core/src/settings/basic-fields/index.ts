@@ -7,6 +7,9 @@ import { textInput } from './textInput'
 import { divider } from './divider'
 import { rate } from './rate'
 import { datePicker } from './datePicker'
+import { switchSelector } from './switchSelector'
+import { slider } from './slider'
+import { select } from './select'
 export const basicFields: IField[] = [
   singleLineInput,
   multiLineInput,
@@ -17,4 +20,7 @@ export const basicFields: IField[] = [
   divider,
   rate,
   datePicker,
+  switchSelector,
+  slider,
+  select,
 ]

@@ -21,6 +21,9 @@
         style="width: 150px"
       ></n-color-picker
     ></template>
+    <template v-if="globalMeta[keys].fieldComponent == 'n-switch'">
+      <n-switch v-model:value="globalProps[keys]"></n-switch
+    ></template>
   </div>
 </template>
 
