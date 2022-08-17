@@ -3,4 +3,4 @@ interface Option {
   key: string
 }
 
-type Options = Array<Option>
+type Options = Array<Option | string>
