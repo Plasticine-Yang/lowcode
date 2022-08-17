@@ -28,4 +28,5 @@ export const flex: IField = {
   fieldName: 'flex布局',
   type: 'contain',
   children: [[], []],
+  style: '',
 }

@@ -1,7 +1,8 @@
 <template>
   <n-form
+    id="styleFrom"
     ref="formRef"
-    :model="activeComponent.style"
+    :model="model"
     label-placement="left"
     :rules="rules"
   >
@@ -27,7 +28,6 @@
 <script lang="ts">
 import Attribute from './components'
 import { NInputNumber, NColorPicker, NInput } from 'naive-ui'
-import { keysOf } from 'naive-ui/es/_utils'
 export default {
   components: {
     ...Attribute,
@@ -39,7 +39,7 @@ export default {
 </script>
 
 <script lang="ts" setup>
-import { ref, computed, Ref } from 'vue'
+import { ref, computed, Ref, watch, onMounted } from 'vue'
 import { useDrawer } from '@/store'
 
 const drawer = ref(useDrawer())
@@ -52,6 +52,8 @@ interface Style {
   name: string
   value: string | number | null
   fieldComponent: string
+  // 单位，用于简单检测输入内容例如width只输入数字
+  unit?: string
 }
 
 // 预设样式属性
@@ -60,6 +62,7 @@ let model: Ref<Record<string, Style>> = ref({
     name: '宽度',
     value: null,
     fieldComponent: 'n-input',
+    unit: 'px',
   },
   height: {
     name: '高度',
@@ -79,15 +82,16 @@ let model: Ref<Record<string, Style>> = ref({
   fontSize: {
     name: '字体大小',
     value: null,
-    fieldComponent: 'n-input-number',
+    fieldComponent: 'n-input',
   },
 })
 
 let activeComponent = computed(() => {
   return drawer.value.activeComponent || { style: '' }
 })
+
 // 获取已经设置的值
-let oddStyle = activeComponent.value.style
+let oddStyle = activeComponent.value.style || ''
 
 // 拆解字符串得到已经设置的值。
 let getOddStyle = () => {
@@ -95,8 +99,6 @@ let getOddStyle = () => {
   for (const item of addarr) {
     let keyname = item.split(':')[0]
     let value = item.split(':')[1]
-    console.log(addarr, item)
-
     // 该属性存在则赋值
     if (model.value.hasOwnProperty(keyname)) {
       model.value[keyname].value = value
@@ -113,11 +115,65 @@ let getOddStyle = () => {
 }
 getOddStyle()
 
+// 切换activeComponent
+watch(activeComponent, () => {
+  // 重值model
+  model.value = {
+    width: {
+      name: '宽度',
+      value: null,
+      fieldComponent: 'n-input',
+    },
+    height: {
+      name: '高度',
+      value: null,
+      fieldComponent: 'n-input',
+    },
+    backgroundColor: {
+      name: '背景颜色',
+      value: null,
+      fieldComponent: 'n-color-picker',
+    },
+    color: {
+      name: '填充颜色',
+      value: null,
+      fieldComponent: 'n-color-picker',
+    },
+    fontSize: {
+      name: '字体大小',
+      value: null,
+      fieldComponent: 'n-input',
+    },
+  }
+  getOddStyle()
+})
+
 // 点击加号添加事件
-let addStyle = () => {}
+let addStyle = () => {
+  let styleFrom = document.getElementById('styleFrom')
+  console.log(styleFrom)
+
+  // 添加model元素
+  // Object.defineProperty(model.value, 'temp', {
+  //   value: {
+  //     name: '',
+  //     value: null,
+  //     fieldComponent: 'n-input',
+  //   },
+  //   configurable: true,
+  //   enumerable: true,
+  // })
+  // let insert = { name: '', style: '' }
+  // // 用insertAdjacentHTML，不能解析n-input
+  // let insertStr = `<input v-model:value="insert.name" placeholder="请输入样式名称"/>
+  //           <input v-model:value="insert.name" placeholder="请输入样式"/>`
+  // let t = styleFrom.insertAdjacentHTML('beforeend', insertStr)
+  // console.log(t)
+  // 把输入内容放进model中
+  // 输入样式，输入值，全部采用n-input 的方式
+}
 
 let stylStr = computed(() => {
-  console.log(model.value)
   // 遍历样得到样式字符串
   let str: string = ''
   Object.keys(model.value).forEach(k => {
@@ -125,10 +181,14 @@ let stylStr = computed(() => {
       str += `${k}:${model.value[k].value};`
     }
   })
-  console.log('value', str, activeComponent.value.style)
   return str
 })
-activeComponent.value.style = stylStr.value
+
+watch(stylStr, () => {
+  activeComponent.value.style = stylStr.value
+})
+let formRef = ref(null) // 得到表单元素
+onMounted(() => {})
 </script>
 
 <style scoped>

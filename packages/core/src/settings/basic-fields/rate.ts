@@ -3,6 +3,7 @@ export const rate: IField = {
   componentName: 'n-rate',
   fieldName: '评分器',
   type: 'basic',
+  style: '',
   iconName: 'ic:baseline-star-rate',
   componentProps: {
     allowHalf: false,

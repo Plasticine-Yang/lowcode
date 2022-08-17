@@ -4,6 +4,7 @@ export const textInput: IField = {
   componentName: 'drawerText',
   iconName: 'material-symbols:format-color-text',
   type: 'basic-senior',
+  style: '',
   componentProps: {
     style: {
       width: '100%',

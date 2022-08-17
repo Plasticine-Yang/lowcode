@@ -4,6 +4,7 @@ export const divider: IField = {
   type: 'basic-senior',
   iconName: 'material-symbols:safety-divider',
   fieldName: '分割线',
+  style: '',
   componentProps: {
     dashed: false,
     dividerText: '分割线文字',
