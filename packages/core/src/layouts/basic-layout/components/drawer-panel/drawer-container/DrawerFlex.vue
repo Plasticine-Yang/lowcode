@@ -1,3 +1,4 @@
+<!-- flex容器可以放下所有的组件,可以表单也可以表单项 -->
 <template>
   <div class="flex drawerFlex">
     <div
@@ -41,17 +42,23 @@
               v-if="element.componentName == 'drawerCollapse'"
               :element="element"
             ></drawer-collapse>
+            <drawer-form
+              v-if="element.componentName == 'drawerForm'"
+              :element="element"
+            ></drawer-form>
+            <drawer-form-item
+              v-if="element.componentName == 'drawerFormItem'"
+              :element="element"
+            ></drawer-form-item>
             <component
               :is="element.componentName"
-              v-if="element.type == 'basic'"
+              v-else-if="element.type == 'basic'"
               v-bind="element.componentProps"
             ></component>
             <component
               :is="element.componentName"
-              v-if="
-                element.type == 'contain' ||
-                element.type == 'senior' ||
-                element.type == 'basic-senior'
+              v-else-if="
+                element.type == 'senior' || element.type == 'basic-senior'
               "
               :element="element"
             ></component></item-wrapper></template

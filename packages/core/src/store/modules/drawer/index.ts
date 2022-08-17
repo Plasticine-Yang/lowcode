@@ -24,11 +24,16 @@ export const useDrawer = defineStore('drawer', {
     },
     //找到点击的target
     getTarget(list: any, id: string): any {
-      for (let o of list || []) {
+      for (let o of list) {
         if (o.id == id) return o
         if (o.children) {
-          for (let item of o.children) {
-            const o_ = this.getTarget(item, id)
+          if (o.children[0] instanceof Array) {
+            for (let item of o.children) {
+              const o_ = this.getTarget(item, id)
+              if (o_) return o_
+            }
+          } else {
+            const o_ = this.getTarget(o.children, id)
             if (o_) return o_
           }
         }
@@ -40,7 +45,7 @@ export const useDrawer = defineStore('drawer', {
         if (item.id == id) {
           return false
         }
-        if (item.children && item.children.length > 0) {
+        if (item.children && item.children[0] instanceof Array) {
           for (let i = 0; i < item.children.length; i++) {
             item.children[i] = this.recuritFilter(item.children[i], id)
           }

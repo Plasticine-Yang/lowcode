@@ -11,7 +11,7 @@
 </template>
 
 <script lang="ts" setup>
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 import { useDrawer } from '@/store'
 interface Props {
   keyname: string
@@ -19,7 +19,9 @@ interface Props {
 const drawer = ref(useDrawer())
 const props = defineProps<Props>()
 
-let componentProps = ref(drawer.value.activeComponent?.componentProps || {})
+let componentProps = computed(
+  () => drawer.value.activeComponent?.componentProps || {},
+)
 const change = (e: any, keyname: any) => {
   console.log(e)
   console.log(keyname)
