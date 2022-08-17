@@ -4,6 +4,7 @@ import sliderAttribute from './sliderAttribute.vue'
 import selectAttribute from './selectAttribute.vue'
 import uploadImageAttribute from './uploadImageAttribute.vue'
 import collapseAttribute from './collapseAttribute.vue'
+import handleArrayAttribute from './handleArrayAttribute.vue'
 export default {
   inputAttribute,
   inputNumberAttribute,
@@ -11,4 +12,5 @@ export default {
   selectAttribute,
   uploadImageAttribute,
   collapseAttribute,
+  handleArrayAttribute,
 }
