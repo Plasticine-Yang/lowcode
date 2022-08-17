@@ -86,7 +86,6 @@ declare module '@vue/runtime-core' {
     NTag: typeof import('naive-ui')['NTag']
     NTimeline: typeof import('naive-ui')['NTimeline']
     NTimelineItem: typeof import('naive-ui')['NTimelineItem']
-    NUpload: typeof import('naive-ui')['NUpload']
     PanelHeaderModal: typeof import('./../layouts/basic-layout/components/drawer-panel/drawer-header/import-export/PanelHeaderModal.vue')['default']
     SelectAttribute: typeof import('./../layouts/basic-layout/components/setting-panel/components/selectAttribute.vue')['default']
     SeniorFields: typeof import('./../layouts/basic-layout/components/field-panel/senior-fields/index.vue')['default']

@@ -4,9 +4,9 @@
 -->
 <template>
   <div class="label-wrapper" ref="labelWrapper">
-    <label for="upload" v-show="!isPreview">
-      <div id="vertical-line"></div>
-      <div id="transverse-line"></div>
+    <label for="upload">
+      <div id="vertical-line" v-show="!isPreview"></div>
+      <div id="transverse-line" v-show="!isPreview"></div>
     </label>
   </div>
   <input type="file" @change="imageUpload" id="upload" style="display: none" />
