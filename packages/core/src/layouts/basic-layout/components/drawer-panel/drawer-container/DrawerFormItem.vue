@@ -9,6 +9,7 @@
         item-key="id"
         class="wh-full bg-white"
         ghost-class="ghost"
+        :disabled="disabled"
         handle=".drag-handler"
         ><template #item="{ element }">
           <item-wrapper
@@ -30,7 +31,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, watch } from 'vue'
+import { defineComponent, ref, watch, computed } from 'vue'
 import { useDrawer, useTheme } from '@/store'
 import { drawerGroup } from '@/utils'
 import resolveComponents from '../resolveComponents'
@@ -52,15 +53,29 @@ export default defineComponent({
       },
     },
   },
-  setup(props) {
-    // 这里用了watch还是不能输入
-    watch(props.element, (newVal, oldVal) => {
-      if (newVal.children.length > 0) {
-        props.element.componentProps.value =
-          props.element.children[0].componentProps.value
+  emits: ['changeDate'],
+  setup(props, context) {
+    const disabled = computed(() => {
+      console.log(props.element.children.length)
+      if (props.element.children.length > 0) {
+        return true
+      } else {
+        return false
       }
     })
-    return { drawerGroup }
+    watch(
+      props.element.children,
+      (newVal, oldVal) => {
+        if (newVal.length > 0) {
+          props.element.componentProps.value = ref(
+            props.element.children[0].componentProps.value,
+          )
+        }
+      },
+      { deep: true },
+    )
+
+    return { drawerGroup, disabled }
   },
 })
 </script>
