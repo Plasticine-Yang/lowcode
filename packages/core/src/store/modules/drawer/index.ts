@@ -45,10 +45,15 @@ export const useDrawer = defineStore('drawer', {
         if (item.id == id) {
           return false
         }
+        //flex，gird，collapse的children是二维数组
         if (item.children && item.children[0] instanceof Array) {
           for (let i = 0; i < item.children.length; i++) {
             item.children[i] = this.recuritFilter(item.children[i], id)
           }
+        }
+        //表单，表单项的children是一维数组
+        if (item.children && !(item.children[0] instanceof Array)) {
+          item.children = this.recuritFilter(item.children, id)
         }
         return true
       })
