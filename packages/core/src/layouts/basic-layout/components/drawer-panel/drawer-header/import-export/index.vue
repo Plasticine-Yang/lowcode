@@ -14,6 +14,13 @@
     >
       <icon icon="ph-export-bold" />导入为JSON
     </div>
+    <div
+      class="flex-center export"
+      style="cursor: pointer"
+      @click="exportJSON('导出表单数据')"
+    >
+      <icon icon="ph-export-bold" />导出表单数据
+    </div>
     <panel-header-modal
       :show-modal="showModal"
       :json-data="jsonData"
@@ -25,12 +32,13 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from 'vue'
+import { defineComponent, ref, computed } from 'vue'
 import { showExample } from './showExampe'
-import { useDrawer } from '@/store'
+import { useDrawer, useForm } from '@/store'
 export default defineComponent({
   setup() {
     const drawer = useDrawer()
+    const former = useForm()
     //控制面板的弹出
     const showModal = ref(false)
     //存放展示的JSON数据
@@ -46,6 +54,8 @@ export default defineComponent({
       } else if (toUseText == '导出JSON') {
         // 拿到目前的components
         jsonData.value = drawer.components
+      } else if (toUseText == '导出表单数据') {
+        jsonData.value = former.formList
       }
     }
     //改变弹出面板状态

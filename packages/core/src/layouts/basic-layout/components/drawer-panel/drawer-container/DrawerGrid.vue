@@ -37,6 +37,14 @@
                 v-if="element.componentName == 'drawerCollapse'"
                 :element="element"
               ></drawer-collapse>
+              <drawer-form
+                v-if="element.componentName == 'drawerForm'"
+                :element="element"
+              ></drawer-form>
+              <drawer-form-item
+                v-if="element.componentName == 'drawerFormItem'"
+                :element="element"
+              ></drawer-form-item>
               <component
                 :is="element.componentName"
                 v-else-if="element.type == 'basic'"

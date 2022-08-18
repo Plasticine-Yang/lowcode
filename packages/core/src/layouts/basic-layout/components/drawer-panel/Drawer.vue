@@ -8,6 +8,8 @@ import resolveComponents from './resolveComponents'
 import DrawerGrid from './drawer-container/DrawerGrid.vue'
 import DrawerFlex from './drawer-container/DrawerFlex.vue'
 import DrawerCollapse from './drawer-senior/DrawerCollapse.vue'
+import DrawerForm from './drawer-container/DrawerForm.vue'
+import DrawerFormItem from './drawer-container/DrawerFormItem.vue'
 import { globalConfigs } from '@/settings/globalConfig'
 export default defineComponent({
   components: {
@@ -15,6 +17,8 @@ export default defineComponent({
     DrawerGrid,
     DrawerFlex,
     DrawerCollapse,
+    DrawerForm,
+    DrawerFormItem,
   },
   setup() {
     // 画布数据

@@ -23,7 +23,7 @@
           ></json-editor>
         </div>
         <!-- 导出的按钮 -->
-        <template v-if="toUse == '导出JSON'" #footer
+        <template v-if="toUse == '导出JSON' || toUse == '导出表单数据'" #footer
           ><div class="flex justify-end">
             <n-button
               strong
