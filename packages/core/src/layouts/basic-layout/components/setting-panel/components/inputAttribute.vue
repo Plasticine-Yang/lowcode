@@ -4,8 +4,8 @@
   <div>
     <n-input
       v-model:value="componentProps[keyname]"
+      :disabled="isDisabled"
       @keydown.enter.prevent
-      @blur="change(componentProps[keyname], keyname)"
     />
   </div>
 </template>
@@ -15,15 +15,14 @@ import { ref, computed } from 'vue'
 import { useDrawer } from '@/store'
 interface Props {
   keyname: string
+  isDisabled: boolean
 }
 const drawer = ref(useDrawer())
-const props = defineProps<Props>()
+const props = withDefaults(defineProps<Props>(), {
+  isDisabled: false,
+})
 
 let componentProps = computed(
   () => drawer.value.activeComponent?.componentProps || {},
 )
-const change = (e: any, keyname: any) => {
-  console.log(e)
-  console.log(keyname)
-}
 </script>

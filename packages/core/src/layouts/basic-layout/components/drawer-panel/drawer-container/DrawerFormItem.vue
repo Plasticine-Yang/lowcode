@@ -56,7 +56,6 @@ export default defineComponent({
   emits: ['changeDate'],
   setup(props, context) {
     const disabled = computed(() => {
-      console.log(props.element.children.length)
       if (props.element.children.length > 0) {
         return true
       } else {

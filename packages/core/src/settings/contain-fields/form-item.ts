@@ -23,6 +23,7 @@ export const formItem: IField = {
     value: {
       name: '属性值',
       fieldComponent: 'input-attribute',
+      isDisabled: true,
     },
   },
 }

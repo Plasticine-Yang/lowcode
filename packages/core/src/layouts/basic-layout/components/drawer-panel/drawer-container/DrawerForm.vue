@@ -115,18 +115,22 @@ export default defineComponent({
       formValue.value = {}
       index.value = 0
       getTarget(newVal)
+      former.setForm(props.element.componentProps, props.element.id)
     })
     //这里是因为在componentProps修改时，我希望在属性面板能够展现出来，所以也是动态增加
-    //同时加入将数据pinpa
+
     const metaDate: any = computed(() => {
       const metaDates: any = {}
+      let index = ref(0)
       for (let item in props.element.componentProps) {
         metaDates[item] = {
           name: item,
           fieldComponent: 'input-attribute',
+          isDisabled: true,
         }
+        index.value++
       }
-      former.setForm(props.element.componentProps, props.element.id)
+
       return metaDates
     })
     props.element.componentProps = ref(formValue)
