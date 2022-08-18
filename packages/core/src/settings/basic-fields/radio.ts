@@ -5,7 +5,8 @@ export const radio: IField = {
   iconName: 'bi:textarea-resize',
   type: 'basic-senior',
   componentProps: {
-    style: 'line-height: 30px;height:30px',
+    style: 'line-height: 35px;height:30px',
+    value: '',
     options: [
       {
         label: 'radio1',
