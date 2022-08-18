@@ -14,7 +14,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from 'vue'
+import { defineComponent, ref, computed } from 'vue'
 
 export default defineComponent({
   props: {
@@ -31,7 +31,13 @@ export default defineComponent({
       props.element.componentProps.min,
       props.element.componentProps.max,
     ])
-
+    props.element.componentProps.value = computed(() => {
+      if (props.element.componentProps.range) {
+        return rangeTrue
+      } else {
+        return rangeFalse
+      }
+    })
     return { rangeFalse, rangeTrue }
   },
 })

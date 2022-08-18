@@ -9,6 +9,7 @@ export const slider: IField = {
     step: 1,
     vertical: false,
     showTooltip: false,
+    style: 'height:30px;padding-top:15px',
   },
   componentPropsMeta: {
     range: {

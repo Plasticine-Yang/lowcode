@@ -7,6 +7,7 @@ import DrawerSlider from './DrawerSlider.vue'
 import DrawerSelect from './DrawerSelect.vue'
 import DrawerRadio from './DrawerRadio.vue'
 import DrawerInput from './DrawerInput.vue'
+import DrawerSwitch from './DrawerSwitch.vue'
 export const DrawerBasicSenior = {
   DrawerButton,
   DrawerText,
@@ -17,4 +18,5 @@ export const DrawerBasicSenior = {
   DrawerSelect,
   DrawerRadio,
   DrawerInput,
+  DrawerSwitch,
 }

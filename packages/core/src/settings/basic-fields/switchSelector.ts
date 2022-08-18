@@ -1,15 +1,17 @@
 export const switchSelector: IField = {
   id: 21,
-  componentName: 'n-switch',
+  componentName: 'drawerSwitch',
   fieldName: '开关选择器',
-  type: 'basic',
   iconName: 'entypo:switch',
+  type: 'basic-senior',
   componentProps: {
     disabled: false,
     loading: false,
     round: true,
     rubberBand: true,
     size: 'medium',
+    value: false,
+    style: 'height: 32px',
   },
   componentPropsMeta: {
     disabled: {

@@ -29,6 +29,7 @@ export const select: IField = {
     placement: 'bottom',
     size: 'medium',
     showArrow: false,
+    value: '',
   },
   componentPropsMeta: {
     options: {

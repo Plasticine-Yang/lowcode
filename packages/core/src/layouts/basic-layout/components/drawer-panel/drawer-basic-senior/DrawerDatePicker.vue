@@ -1,5 +1,5 @@
 <!-- 
-  复选框二次封装
+  时间选择器
  -->
 <template>
   <n-date-picker

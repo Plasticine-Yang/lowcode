@@ -1,6 +1,10 @@
 <template>
   <div>
-    <n-select v-bind="element.componentProps" :options="options"></n-select>
+    <n-select
+      v-bind="element.componentProps"
+      v-model:value="element.componentProps.value"
+      :options="options"
+    ></n-select>
   </div>
 </template>
 
