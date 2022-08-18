@@ -1,27 +1,26 @@
-<!-- 自定义右侧面板输入组件 -->
-
 <template>
   <div>
-    <n-input
-      v-model:value="componentProps[keyname]"
-      @keydown.enter.prevent
-      @blur="change(componentProps[keyname], keyname)"
-    />
+    <n-input v-model:value="propsModel" @update:value="iptChange" />
   </div>
 </template>
 
-<script lang="ts" setup>
+<script>
 import { ref } from 'vue'
-import { useDrawer } from '@/store'
-interface Props {
-  keyname: string
-}
-const drawer = ref(useDrawer())
-const props = defineProps<Props>()
-
-let componentProps = ref(drawer.value.activeComponent?.componentProps || {})
-const change = (e: any, keyname: any) => {
-  console.log(e)
-  console.log(keyname)
+export default {
+  props: {
+    propsModel: { type: String, default: '' },
+  },
+  setup(props, ctx) {
+    function iptChange(e) {
+      // ctx 这里通过emit来修改父组件中v-model的数据
+      console.log(e)
+      ctx.emit('update:propsModel', e)
+    }
+    return {
+      iptChange,
+    }
+  },
 }
 </script>
+
+<style scoped></style>
