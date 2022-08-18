@@ -43,6 +43,8 @@ declare module '@vue/runtime-core' {
     FieldItem: typeof import('./../layouts/basic-layout/components/field-panel/FieldItem.vue')['default']
     FieldPanel: typeof import('./../layouts/basic-layout/components/field-panel/index.vue')['default']
     FlexPreview: typeof import('./../layouts/basic-layout/components/drawer-panel/drawer-header/drawer-preview/flexPreview.vue')['default']
+    FormItemPreview: typeof import('./../layouts/basic-layout/components/drawer-panel/drawer-header/drawer-preview/formItemPreview.vue')['default']
+    FormPreview: typeof import('./../layouts/basic-layout/components/drawer-panel/drawer-header/drawer-preview/formPreview.vue')['default']
     FormworkFields: typeof import('./../layouts/basic-layout/components/field-panel/formwork-fields/index.vue')['default']
     GlobalSetting: typeof import('./../layouts/basic-layout/components/setting-panel/global-setting/index.vue')['default']
     GlobalSettingItem: typeof import('./../layouts/basic-layout/components/setting-panel/global-setting/GlobalSettingItem.vue')['default']

@@ -24,6 +24,10 @@
               v-if="item.componentName == 'drawer-collapse'"
               :element="item"
             ></collapse-preview>
+            <form-preview
+              v-if="item.componentName == 'drawerForm'"
+              :element="item"
+            ></form-preview>
             <component
               :is="item.componentName"
               v-else-if="item.type == 'basic'"
