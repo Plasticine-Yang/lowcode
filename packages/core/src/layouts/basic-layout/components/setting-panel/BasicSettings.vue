@@ -14,6 +14,7 @@
       <component
         :is="componentPropsMeta[key].fieldComponent"
         v-model:value="componentProps[key]"
+        v-model:propsModel="componentProps[key]"
         :keyname="key"
         :is-disabled="componentPropsMeta[key].isDisabled"
       >

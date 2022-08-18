@@ -13,6 +13,7 @@ declare module '@vue/runtime-core' {
     BasicLayoutHeader: typeof import('./../layouts/basic-layout/components/BasicLayoutHeader.vue')['default']
     BasicSettings: typeof import('./../layouts/basic-layout/components/setting-panel/BasicSettings.vue')['default']
     CarouselDisplay: typeof import('./../layouts/basic-layout/components/field-panel/senior-fields/fields-display/CarouselDisplay.vue')['default']
+    CodeEditer: typeof import('./../layouts/basic-layout/components/setting-panel/styleSettingComponent/codeEditer.vue')['default']
     CollapseAttribute: typeof import('./../layouts/basic-layout/components/setting-panel/components/collapseAttribute.vue')['default']
     CollapseDisplay: typeof import('./../layouts/basic-layout/components/field-panel/senior-fields/fields-display/CollapseDisplay.vue')['default']
     CollapsePreview: typeof import('./../layouts/basic-layout/components/drawer-panel/drawer-header/drawer-preview/collapsePreview.vue')['default']

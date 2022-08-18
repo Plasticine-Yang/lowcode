@@ -1,28 +1,34 @@
-<!-- 自定义右侧面板输入组件 -->
-
 <template>
   <div>
     <n-input
-      v-model:value="componentProps[keyname]"
+      v-model:value="propsModel"
       :disabled="isDisabled"
-      @keydown.enter.prevent
+      @update:value="iptChange"
     />
   </div>
 </template>
 
-<script lang="ts" setup>
-import { ref, computed } from 'vue'
-import { useDrawer } from '@/store'
-interface Props {
-  keyname: string
-  isDisabled: boolean
+<script>
+import { ref } from 'vue'
+export default {
+  props: {
+    propsModel: { type: String, default: '' },
+    isDisabled: {
+      type: Boolean,
+      default: false,
+    },
+  },
+  setup(props, ctx) {
+    function iptChange(e) {
+      // ctx 这里通过emit来修改父组件中v-model的数据
+      console.log(e)
+      ctx.emit('update:propsModel', e)
+    }
+    return {
+      iptChange,
+    }
+  },
 }
-const drawer = ref(useDrawer())
-const props = withDefaults(defineProps<Props>(), {
-  isDisabled: false,
-})
-
-let componentProps = computed(
-  () => drawer.value.activeComponent?.componentProps || {},
-)
 </script>
+
+<style scoped></style>

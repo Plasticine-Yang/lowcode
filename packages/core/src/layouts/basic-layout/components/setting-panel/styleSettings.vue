@@ -23,11 +23,13 @@
   <div class="add-style">
     <div class="i-carbon:add add" title="添加样式" @click="addStyle"></div>
   </div>
+  <codeEditer :value="code" language="css" @updateValue="inputChange" />
 </template>
 
 <script lang="ts">
 import Attribute from './components'
-import { NInputNumber, NColorPicker, NInput } from 'naive-ui'
+import { NColorPicker, NInput, NInputNumber } from 'naive-ui'
+import codeEditer from './styleSettingComponent/codeEditer.vue'
 export default {
   components: {
     ...Attribute,
@@ -173,22 +175,55 @@ let addStyle = () => {
   // 输入样式，输入值，全部采用n-input 的方式
 }
 
-let stylStr = computed(() => {
-  // 遍历样得到样式字符串
+let styleStr = ref('')
+watch(model.value, () => {
   let str: string = ''
   Object.keys(model.value).forEach(k => {
     if (model.value[k].value != null) {
       str += `${k}:${model.value[k].value};`
     }
   })
-  return str
+  styleStr.value += str
 })
 
-watch(stylStr, () => {
-  activeComponent.value.style = stylStr.value
+let code = ref(`.code{${styleStr.value}}`)
+watch(styleStr, () => {
+  if (`.code{${styleStr.value}}` != code.value) {
+    code.value = `.code{${styleStr.value}}`
+  }
+  // if()
+  activeComponent.value.style = styleStr.value
 })
+
 let formRef = ref(null) // 得到表单元素
 onMounted(() => {})
+
+function toggleJsonCss(sorce: string, method: string) {
+  console.log(sorce)
+  if (sorce == '') return ''
+  let strs = ''
+  if (method == 'getJson') {
+    strs = sorce.split(';').join(',')
+  } else if (method == 'getCss') {
+    strs = sorce.split(',').join(';')
+  }
+  console.log(strs)
+
+  return strs
+}
+
+function inputChange(str: string) {
+  let csscon = str.split('{')[1]
+  let cssContent: string = ''
+  if (csscon) {
+    cssContent = csscon.split('}')[0]
+  }
+  console.log(cssContent, styleStr)
+  if (cssContent != styleStr.value) {
+    // 不统一 更新
+    styleStr.value = cssContent
+  }
+}
 </script>
 
 <style scoped>
