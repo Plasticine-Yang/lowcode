@@ -71,7 +71,7 @@ import { useDrawer, useTheme } from '@/store'
 import { drawerGroup } from '@/utils'
 import resolveComponents from '../resolveComponents'
 import { defineComponent, ref, computed } from 'vue'
-
+import { useForm } from '@/store'
 export default defineComponent({
   components: { ...resolveComponents },
   props: {
@@ -92,6 +92,7 @@ export default defineComponent({
       candy: '3px dashed rgb(227, 173, 202)',
       blue: '3px dashed rgb(64, 158, 255)',
     }
+    const former = useForm()
     //这里递归查找了componentName == 'drawerFormItem' 并且把数据显示出来，目前这里是无法修改的
     //无法修改的原因： computed得到数据不能在其他地方变化
     //等我再想想怎么修改
@@ -132,6 +133,7 @@ export default defineComponent({
           fieldComponent: 'input-attribute',
         }
       }
+      former.setForm(props.element.componentProps, props.element.id)
       return metaDates
     })
     props.element.componentProps = ref(propsDate)
