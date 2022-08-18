@@ -10,6 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@codemirror/lang-javascript": "^6.0.2",
+    "@types/codemirror": "^5.60.5",
     "ace-builds": "^1.8.1",
     "browserify": "^17.0.0",
     "cjs2esmodule": "^1.1.1",

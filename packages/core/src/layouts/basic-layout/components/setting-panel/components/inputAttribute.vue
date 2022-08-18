@@ -4,14 +4,15 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import { ref } from 'vue'
 export default {
   props: {
     propsModel: { type: String, default: '' },
   },
-  setup(props, ctx) {
-    function iptChange(e) {
+  emits: ['update:propsModel'],
+  setup(props: any, ctx: any) {
+    function iptChange(e: any) {
       // ctx 这里通过emit来修改父组件中v-model的数据
       console.log(e)
       ctx.emit('update:propsModel', e)

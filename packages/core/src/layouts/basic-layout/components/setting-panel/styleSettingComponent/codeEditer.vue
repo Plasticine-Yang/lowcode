@@ -42,7 +42,7 @@ export default {
       default: 'chaos',
     },
   },
-  emits: ['update:value'],
+  emits: ['update:value', 'updateValue'],
   setup(props: any, { emit }: any) {
     let editor: any = null
     const editorform = ref()

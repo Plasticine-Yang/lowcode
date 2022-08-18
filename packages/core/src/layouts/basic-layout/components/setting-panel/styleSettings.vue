@@ -21,9 +21,18 @@
     </n-form-item>
   </n-form>
   <div class="add-style">
-    <div class="i-carbon:add add" title="添加样式" @click="addStyle"></div>
+    <div
+      :class="!editerShow ? 'i-carbon:add add' : 'i-carbon:subtract-alt'"
+      title="添加样式"
+      @click="addStyle"
+    ></div>
   </div>
-  <codeEditer :value="code" language="css" @updateValue="inputChange" />
+  <codeEditer
+    v-show="editerShow"
+    :value="code"
+    language="css"
+    @updateValue="inputChange"
+  />
 </template>
 
 <script lang="ts">
@@ -94,7 +103,7 @@ let activeComponent = computed(() => {
 
 // 获取已经设置的值
 let oddStyle = activeComponent.value.style || ''
-
+let styleStr = ref('') // 代码输入的样式
 // 拆解字符串得到已经设置的值。
 let getOddStyle = () => {
   let addarr: string[] = oddStyle.split(';')
@@ -104,14 +113,9 @@ let getOddStyle = () => {
     // 该属性存在则赋值
     if (model.value.hasOwnProperty(keyname)) {
       model.value[keyname].value = value
-    } else if (item != '') {
-      // 不存在则添加
-      let styleItem: Style = {
-        name: keyname,
-        value: value,
-        fieldComponent: 'n-input',
-      }
-      model.value[keyname] = styleItem
+    } else if (keyname && value) {
+      // 不存在则添加到styletr中
+      styleStr.value += `${keyname}:${value};`
     }
   }
 }
@@ -151,39 +155,19 @@ watch(activeComponent, () => {
 })
 
 // 点击加号添加事件
+let editerShow = ref(true)
 let addStyle = () => {
-  let styleFrom = document.getElementById('styleFrom')
-  console.log(styleFrom)
-
-  // 添加model元素
-  // Object.defineProperty(model.value, 'temp', {
-  //   value: {
-  //     name: '',
-  //     value: null,
-  //     fieldComponent: 'n-input',
-  //   },
-  //   configurable: true,
-  //   enumerable: true,
-  // })
-  // let insert = { name: '', style: '' }
-  // // 用insertAdjacentHTML，不能解析n-input
-  // let insertStr = `<input v-model:value="insert.name" placeholder="请输入样式名称"/>
-  //           <input v-model:value="insert.name" placeholder="请输入样式"/>`
-  // let t = styleFrom.insertAdjacentHTML('beforeend', insertStr)
-  // console.log(t)
-  // 把输入内容放进model中
-  // 输入样式，输入值，全部采用n-input 的方式
+  editerShow.value = editerShow.value ? false : true
 }
 
-let styleStr = ref('')
-watch(model.value, () => {
+let modelStr = computed(() => {
   let str: string = ''
   Object.keys(model.value).forEach(k => {
     if (model.value[k].value != null) {
       str += `${k}:${model.value[k].value};`
     }
   })
-  styleStr.value += str
+  return str
 })
 
 let code = ref(`.code{${styleStr.value}}`)
@@ -191,8 +175,10 @@ watch(styleStr, () => {
   if (`.code{${styleStr.value}}` != code.value) {
     code.value = `.code{${styleStr.value}}`
   }
-  // if()
-  activeComponent.value.style = styleStr.value
+  activeComponent.value.style = modelStr.value + styleStr.value
+})
+watch(modelStr, () => {
+  activeComponent.value.style = modelStr.value + styleStr.value
 })
 
 let formRef = ref(null) // 得到表单元素
@@ -207,8 +193,6 @@ function toggleJsonCss(sorce: string, method: string) {
   } else if (method == 'getCss') {
     strs = sorce.split(',').join(';')
   }
-  console.log(strs)
-
   return strs
 }
 
@@ -218,7 +202,6 @@ function inputChange(str: string) {
   if (csscon) {
     cssContent = csscon.split('}')[0]
   }
-  console.log(cssContent, styleStr)
   if (cssContent != styleStr.value) {
     // 不统一 更新
     styleStr.value = cssContent
