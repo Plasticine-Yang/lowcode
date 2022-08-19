@@ -29,7 +29,7 @@
   </div>
   <codeEditer
     v-show="editerShow"
-    :value="code"
+    v-model:value="code"
     language="css"
     @updateValue="inputChange"
   />
@@ -151,6 +151,8 @@ watch(activeComponent, () => {
       fieldComponent: 'n-input',
     },
   }
+  // 重置code
+  styleStr.value = ''
   getOddStyle()
 })
 

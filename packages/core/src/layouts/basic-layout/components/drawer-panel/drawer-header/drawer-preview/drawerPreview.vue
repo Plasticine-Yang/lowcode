@@ -28,6 +28,10 @@
               v-if="item.componentName == 'drawerForm'"
               :element="item"
             ></form-preview>
+            <tab-preview
+              v-if="item.componentName == 'DrawerTabs'"
+              :element="item"
+            ></tab-preview>
             <component
               :is="item.componentName"
               v-else-if="item.type == 'basic'"

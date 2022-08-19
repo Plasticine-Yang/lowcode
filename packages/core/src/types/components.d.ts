@@ -33,6 +33,7 @@ declare module '@vue/runtime-core' {
     DrawerFormItem: typeof import('./../layouts/basic-layout/components/drawer-panel/drawer-container/DrawerFormItem.vue')['default']
     DrawerGrid: typeof import('./../layouts/basic-layout/components/drawer-panel/drawer-container/DrawerGrid.vue')['default']
     DrawerInput: typeof import('./../layouts/basic-layout/components/drawer-panel/drawer-basic-senior/DrawerInput.vue')['default']
+    DrawerItem: typeof import('./../layouts/basic-layout/components/drawer-panel/DrawerItem.vue')['default']
     DrawerPanel: typeof import('./../layouts/basic-layout/components/drawer-panel/index.vue')['default']
     DrawerPanelHeader: typeof import('./../layouts/basic-layout/components/drawer-panel/drawer-header/DrawerPanelHeader.vue')['default']
     DrawerPreview: typeof import('./../layouts/basic-layout/components/drawer-panel/drawer-header/drawer-preview/drawerPreview.vue')['default']
@@ -41,6 +42,7 @@ declare module '@vue/runtime-core' {
     DrawerSingleLineInput: typeof import('./../layouts/basic-layout/components/drawer-panel/drawer-basic-senior/DrawerSingleLineInput.vue')['default']
     DrawerSlider: typeof import('./../layouts/basic-layout/components/drawer-panel/drawer-basic-senior/DrawerSlider.vue')['default']
     DrawerSwitch: typeof import('./../layouts/basic-layout/components/drawer-panel/drawer-basic-senior/DrawerSwitch.vue')['default']
+    DrawerTabs: typeof import('./../layouts/basic-layout/components/drawer-panel/drawer-container/DrawerTabs.vue')['default']
     DrawerText: typeof import('./../layouts/basic-layout/components/drawer-panel/drawer-basic-senior/DrawerText.vue')['default']
     DrawerTimeLine: typeof import('./../layouts/basic-layout/components/drawer-panel/drawer-senior/DrawerTimeLine.vue')['default']
     DropdownDisplay: typeof import('./../layouts/basic-layout/components/field-panel/senior-fields/fields-display/DropdownDisplay.vue')['default']
@@ -106,6 +108,7 @@ declare module '@vue/runtime-core' {
     SliderAttribute: typeof import('./../layouts/basic-layout/components/setting-panel/components/sliderAttribute.vue')['default']
     StyleSetting: typeof import('./../layouts/basic-layout/components/setting-panel/global-setting/StyleSetting.vue')['default']
     StyleSettings: typeof import('./../layouts/basic-layout/components/setting-panel/styleSettings.vue')['default']
+    TabPreview: typeof import('./../layouts/basic-layout/components/drawer-panel/drawer-header/drawer-preview/tabPreview.vue')['default']
     TimeLineDisplay: typeof import('./../layouts/basic-layout/components/field-panel/senior-fields/fields-display/TimeLineDisplay.vue')['default']
     UploadImageAttribute: typeof import('./../layouts/basic-layout/components/setting-panel/components/uploadImageAttribute.vue')['default']
   }

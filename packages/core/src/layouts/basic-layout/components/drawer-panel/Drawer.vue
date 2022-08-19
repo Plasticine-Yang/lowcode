@@ -10,6 +10,7 @@ import DrawerFlex from './drawer-container/DrawerFlex.vue'
 import DrawerCollapse from './drawer-senior/DrawerCollapse.vue'
 import DrawerForm from './drawer-container/DrawerForm.vue'
 import DrawerFormItem from './drawer-container/DrawerFormItem.vue'
+import DrawerTabs from './drawer-container/DrawerTabs.vue'
 import { globalConfigs } from '@/settings/globalConfig'
 export default defineComponent({
   components: {
@@ -19,6 +20,7 @@ export default defineComponent({
     DrawerCollapse,
     DrawerForm,
     DrawerFormItem,
+    DrawerTabs,
   },
   setup() {
     // 画布数据
