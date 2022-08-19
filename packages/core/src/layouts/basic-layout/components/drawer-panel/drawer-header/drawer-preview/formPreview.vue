@@ -5,6 +5,7 @@
       :label-width="80"
       label-placement="left"
       style="width: 100%"
+      v-bind="element.componentProps"
     >
       <template v-for="(sub, index) in element.children" :key="index">
         <grid-preview
