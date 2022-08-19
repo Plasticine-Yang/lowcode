@@ -123,6 +123,8 @@ getOddStyle()
 
 // 切换activeComponent
 watch(activeComponent, () => {
+  console.log('cative')
+
   // 重值model
   model.value = {
     width: {

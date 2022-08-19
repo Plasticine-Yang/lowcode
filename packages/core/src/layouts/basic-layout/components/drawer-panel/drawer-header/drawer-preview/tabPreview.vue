@@ -61,3 +61,12 @@ export default defineComponent({
   },
 })
 </script>
+
+<style scoped>
+:deep(.n-tabs .n-tabs-tab) {
+  color: rgb(120, 118, 118);
+}
+:deep(.n-tabs .n-tabs-bar) {
+  background-color: #18a058;
+}
+</style>

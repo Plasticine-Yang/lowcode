@@ -16,11 +16,49 @@
           :drag-handler-name="element.dragHandlerName"
           :component-id="element.id"
           >{{ element.dragHandlerNam }}
+          <drawer-grid
+            v-if="element.componentName == 'drawerGrid'"
+            :element="element"
+            :style="element.style"
+          ></drawer-grid>
+          <drawer-flex
+            v-if="element.componentName == 'drawerFlex'"
+            :element="element"
+            :style="element.style"
+          ></drawer-flex>
+          <drawer-collapse
+            v-if="element.componentName == 'drawerCollapse'"
+            :element="element"
+            :style="element.style"
+          ></drawer-collapse>
+          <drawer-form
+            v-if="element.componentName == 'drawerForm'"
+            :element="element"
+            :style="element.style"
+          ></drawer-form>
+          <drawer-form-item
+            v-if="element.componentName == 'drawerFormItem'"
+            :element="element"
+            :style="element.style"
+          ></drawer-form-item>
+          <drawer-tabs
+            v-if="element.componentName == 'DrawerTabs'"
+            :element="element"
+            :style="element.style"
+          ></drawer-tabs>
           <component
             :is="element.componentName"
+            v-else-if="element.type == 'basic'"
             v-bind="element.componentProps"
             :style="element.style"
+          ></component>
+          <component
+            :is="element.componentName"
+            v-else-if="
+              element.type == 'senior' || element.type == 'basic-senior'
+            "
             :element="element"
+            :style="element.style"
           ></component>
         </item-wrapper>
       </template>

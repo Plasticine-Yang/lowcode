@@ -56,7 +56,12 @@
               :is="element.componentName"
               v-else-if="element.componentName == 'drawerGrid'"
               :element="element"
-            ></drawer-grid> </item-wrapper></template
+            ></drawer-grid>
+            <!-- 标签页 -->
+            <drawer-tabs
+              v-if="element.componentName == 'DrawerTabs'"
+              :element="element"
+            ></drawer-tabs> </item-wrapper></template
       ></draggable>
     </n-form>
   </div>

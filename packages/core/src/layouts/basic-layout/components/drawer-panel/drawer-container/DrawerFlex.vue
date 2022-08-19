@@ -50,6 +50,10 @@
               v-if="element.componentName == 'drawerFormItem'"
               :element="element"
             ></drawer-form-item>
+            <drawer-tabs
+              v-if="element.componentName == 'DrawerTabs'"
+              :element="element"
+            ></drawer-tabs>
             <component
               :is="element.componentName"
               v-else-if="element.type == 'basic'"
