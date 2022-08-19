@@ -1,7 +1,10 @@
 <!-- 表单项可以放入输入组件 -->
 <template>
   <div>
-    <n-form-item :label="element.componentProps.label">
+    <n-form-item
+      :label="element.componentProps.label"
+      v-bind="element.componentProps"
+    >
       <draggable
         :list="element.children"
         :group="drawerGroup"
@@ -35,6 +38,7 @@ import { defineComponent, ref, watch, computed } from 'vue'
 import { useDrawer, useTheme } from '@/store'
 import { drawerGroup } from '@/utils'
 import resolveComponents from '../resolveComponents'
+import { formInitial } from '@/settings/contain-fields/form'
 export default defineComponent({
   components: {
     ...resolveComponents,
@@ -56,7 +60,6 @@ export default defineComponent({
   emits: ['changeDate'],
   setup(props, context) {
     const disabled = computed(() => {
-      console.log(props.element.children.length)
       if (props.element.children.length > 0) {
         return true
       } else {
@@ -74,7 +77,18 @@ export default defineComponent({
       },
       { deep: true },
     )
-
+    watch(props.element.componentProps, (newVal, oldVal) => {
+      if (newVal.independent) {
+        props.element.componentProps = {
+          ...formInitial.componentProps,
+          ...props.element.componentProps,
+        }
+        props.element.componentPropsMeta = {
+          ...formInitial.componentPropsMeta,
+          ...props.element.componentPropsMeta,
+        }
+      }
+    })
     return { drawerGroup, disabled }
   },
 })

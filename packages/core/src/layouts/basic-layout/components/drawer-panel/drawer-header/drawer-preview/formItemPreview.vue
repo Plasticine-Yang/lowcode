@@ -1,6 +1,10 @@
 <template>
   <div>
-    <n-form-item :label="element.componentProps.label" style="width: 100%">
+    <n-form-item
+      :label="element.componentProps.label"
+      style="width: 100%"
+      v-bind="element.componentProps"
+    >
       <template v-if="element.children.length > 0">
         <component
           :is="element.children[0].componentName"

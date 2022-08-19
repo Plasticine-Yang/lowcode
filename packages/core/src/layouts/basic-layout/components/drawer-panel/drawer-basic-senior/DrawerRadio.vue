@@ -3,9 +3,10 @@
     <n-gi v-for="i in element.componentProps!.options" :key="i.key">
       <n-radio
         :label="i.label || 'default'"
-        @click="handleChange"
         :checked="checkedValue === i.label"
         :value="i.label"
+        :style="element.componentProps!.style"
+        @click="handleChange"
       ></n-radio>
     </n-gi>
   </n-grid>
@@ -20,4 +21,5 @@ const checkedValue = ref<string | null>(null)
 const handleChange = (e: Event) => {
   checkedValue.value = (e.target as HTMLInputElement).value
 }
+props.element.componentProps!.value = ref(checkedValue)
 </script>

@@ -9,7 +9,7 @@ export const formItem: IField = {
   componentProps: {
     label: '标签',
     propertyName: '',
-    value: '',
+    independent: false,
   },
   componentPropsMeta: {
     label: {
@@ -20,9 +20,15 @@ export const formItem: IField = {
       name: '属性名',
       fieldComponent: 'input-attribute',
     },
+
     value: {
       name: '属性值',
       fieldComponent: 'input-attribute',
+      isDisabled: true,
+    },
+    independent: {
+      name: '是否独立配置',
+      fieldComponent: 'n-switch',
     },
   },
 }

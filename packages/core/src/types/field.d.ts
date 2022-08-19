@@ -41,5 +41,6 @@ type ComponentPropsMeta = Record<
     // 对fieldcomponent 自定义组件 传参
     // 比如使用选择器，就要传入选项
     fieldComponentParam?: Record<string, any>
+    isDisabled?: boolean
   }
 >

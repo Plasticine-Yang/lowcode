@@ -16,6 +16,7 @@
         v-model:value="componentProps[key]"
         v-model:propsModel="componentProps[key]"
         :keyname="key"
+        :is-disabled="componentPropsMeta[key].isDisabled"
       >
       </component>
     </n-form-item>

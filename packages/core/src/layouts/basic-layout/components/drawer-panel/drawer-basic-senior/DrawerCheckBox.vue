@@ -10,7 +10,7 @@
 </template>
 
 <script setup lang="ts">
-import { reactive } from 'vue'
+import { reactive, ref } from 'vue'
 const props = defineProps<{ element: IField }>()
 const element = reactive(props.element)
 </script>
