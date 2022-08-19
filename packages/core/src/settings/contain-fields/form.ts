@@ -25,7 +25,7 @@ export const formInitial = {
       fieldComponent: 'slider-attribute',
     },
     labelAlign: {
-      name: '标签宽度',
+      name: '标签对齐',
       fieldComponent: 'select-attribute',
       fieldComponentParam: {
         selectOptions: [
