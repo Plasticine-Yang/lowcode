@@ -10,6 +10,7 @@ import { datePicker } from './datePicker'
 import { switchSelector } from './switchSelector'
 import { slider } from './slider'
 import { select } from './select'
+import { progress } from './progress'
 export const basicFields: IField[] = [
   singleLineInput,
   multiLineInput,
@@ -23,4 +24,5 @@ export const basicFields: IField[] = [
   switchSelector,
   slider,
   select,
+  progress,
 ]

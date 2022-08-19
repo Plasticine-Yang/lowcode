@@ -44,6 +44,7 @@
               v-else
               :element="item"
               class="preview"
+              :style="item.style"
             ></component> </template></n-config-provider></n-card
     ></n-modal>
   </div>

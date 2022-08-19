@@ -1,5 +1,5 @@
 export const tab: IField = {
-  id: 30,
+  id: 32,
   fieldName: '标签栏',
   componentName: 'DrawerTabs',
   iconName: 'ep:switch',

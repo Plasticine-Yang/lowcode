@@ -57,31 +57,7 @@ export default defineComponent({
   props: ['element'],
   setup(props) {
     const drawer = useDrawer()
-
-    //监测这里使用了children.length变化时，改变flexText
-    // const flexText = computed(() => {
-    //   let temp = props.element.componentProps.flexText
-    //   temp = temp.split(',')
-    //   if (temp.length < props.element.children.length) {
-    //     const add = props.element.children.length - temp.length
-    //     for (let i = 0; i < add; i++) {
-    //       temp.push(1)
-    //     }
-    //   }
-    //   return temp
-    // })
-
     return { drawer, drawerGroup }
   },
 })
 </script>
-
-<style scoped>
-.drawerFlex {
-  min-height: 50px;
-  overflow: hidden;
-}
-.flexDiv {
-  overflow: hidden;
-}
-</style>

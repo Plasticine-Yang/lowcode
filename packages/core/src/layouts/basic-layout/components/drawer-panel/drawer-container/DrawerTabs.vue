@@ -10,6 +10,7 @@
           element.componentProps['tabName' + (index + 1)] ||
           '标签' + (index + 1)
         "
+        tab-style="color:#ddd;"
       >
         <DrawerItem id="drawerItem" v-model:items="element.children[index]" />
       </n-tab-pane>
@@ -66,5 +67,13 @@ export default {
 <style scoped>
 .n-tab-pane {
   padding: 20px 0;
+  color: #fff;
+}
+
+:deep(.n-tabs .n-tabs-tab) {
+  color: rgb(120, 118, 118);
+}
+:deep(.n-tabs .n-tabs-bar) {
+  background-color: #18a058;
 }
 </style>

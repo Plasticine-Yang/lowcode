@@ -26,12 +26,13 @@
 <script lang="ts">
 import Attribute from './components/index'
 
-import { NSwitch, NInput } from 'naive-ui'
+import { NSwitch, NInput, NColorPicker } from 'naive-ui'
 export default {
   components: {
     ...Attribute,
     NSwitch,
     NInput,
+    NColorPicker,
   },
 }
 </script>
