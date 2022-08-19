@@ -12,7 +12,10 @@
 import { ref } from 'vue'
 export default {
   props: {
-    propsModel: { type: String, default: '' },
+    propsModel: {
+      type: [String, Number, Boolean],
+      required: true,
+    },
     isDisabled: {
       type: Boolean,
       default: false,
