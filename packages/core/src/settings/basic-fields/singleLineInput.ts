@@ -55,6 +55,21 @@ export const singleLineInput: IField = {
   },
   style: '',
   eventProps: {
-    onClick: () => {},
+    // 通过高阶函数的方式，利用 eval 执行编辑器代码 并利用闭包特性让编辑器代码能够访问到事件对象
+    onFocus: {
+      name: 'onFocus',
+      code: 'console.log("focus")',
+      eventHandlerGenerator: (code: string) => (e: Event) => eval(code),
+    },
+    onChange: {
+      name: 'onChange',
+      code: 'console.log("change")',
+      eventHandlerGenerator: (code: string) => (e: Event) => eval(code),
+    },
+    onInput: {
+      name: 'onInput',
+      code: 'console.log("input")',
+      eventHandlerGenerator: (code: string) => (e: Event) => eval(code),
+    },
   },
 }
