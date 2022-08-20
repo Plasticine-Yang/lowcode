@@ -45,7 +45,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import resolveComponents from '../../resolveComponents'
+import resolveComponents from '../../../resolveComponents'
 export default defineComponent({
   components: {
     ...resolveComponents,
