@@ -46,6 +46,11 @@
             :element="element"
             :style="element.style"
           ></drawer-tabs>
+          <drawer-collapse
+            v-if="element.componentName == 'drawer-collapse'"
+            :element="element"
+            :style="element.style"
+          ></drawer-collapse>
           <component
             :is="element.componentName"
             v-else-if="element.type == 'basic'"

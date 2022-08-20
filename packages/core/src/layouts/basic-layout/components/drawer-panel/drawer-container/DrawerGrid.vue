@@ -13,58 +13,8 @@
           minHeight: '30px',
         }"
       >
-        <draggable
-          :list="element.children[index]"
-          :group="drawerGroup"
-          :animation="300"
-          item-key="id"
-          class="wh-full bg-white"
-          ghost-class="ghost"
-          handle=".drag-handler"
-          ><template #item="{ element }">
-            <item-wrapper
-              :drag-handler-name="element.dragHandlerName"
-              :component-id="element.id"
-            >
-              <drawer-grid
-                v-if="element.componentName == 'drawerGrid'"
-                :element="element"
-              ></drawer-grid>
-              <drawer-flex
-                v-if="element.componentName == 'drawerFlex'"
-                :element="element"
-              ></drawer-flex>
-              <drawer-collapse
-                v-if="element.componentName == 'drawerCollapse'"
-                :element="element"
-              ></drawer-collapse>
-              <drawer-form
-                v-if="element.componentName == 'drawerForm'"
-                :element="element"
-              ></drawer-form>
-              <drawer-form-item
-                v-if="element.componentName == 'drawerFormItem'"
-                :element="element"
-              ></drawer-form-item>
-              <drawer-tabs
-                v-if="element.componentName == 'DrawerTabs'"
-                :element="element"
-              ></drawer-tabs>
-              <component
-                :is="element.componentName"
-                v-else-if="element.type == 'basic'"
-                v-bind="element.componentProps"
-              ></component>
-              <component
-                :is="element.componentName"
-                v-else-if="
-                  element.type == 'contain' ||
-                  element.type == 'senior' ||
-                  element.type == 'basic-senior'
-                "
-                :element="element"
-              ></component></item-wrapper></template></draggable
-      ></n-gi>
+        <DrawerItem id="drawerItem" v-model:items="element.children[index]"
+      /></n-gi>
     </n-grid>
   </div>
 </template>
