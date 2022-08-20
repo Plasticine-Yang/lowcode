@@ -1,7 +1,13 @@
 <template>
   <n-collapse v-bind="element.componentProps">
-    <template v-for="(item, index) in title" :key="index">
-      <n-collapse-item :title="item" :name="index">
+    <template
+      v-for="(item, index) in element.componentProps.itemNum"
+      :key="index"
+    >
+      <n-collapse-item
+        :title="element.componentProps[`collapse${item}`]"
+        :name="index"
+      >
         <drawer-preview-item
           :components="element.children[index]"
         ></drawer-preview-item>

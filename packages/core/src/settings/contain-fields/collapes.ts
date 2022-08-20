@@ -5,16 +5,21 @@ export const collapse: IField = {
   iconName: 'carbon:collapse-categories',
   style: '1',
   componentProps: {
-    title: '青铜,黄金',
+    itemNum: 2,
     accordion: false,
     arrowPlacement: 'left',
+    collapse1: '面板1',
+    collapse2: '面板2',
   },
   children: [[], []],
   type: 'contain',
   componentPropsMeta: {
-    title: {
-      name: '面板标题',
-      fieldComponent: 'input-attribute',
+    itemNum: {
+      name: '面板数量',
+      fieldComponent: 'slider-attribute',
+      fieldComponentParam: {
+        maxNum: 10,
+      },
     },
     accordion: {
       name: '是否只允许展开一个面板',
@@ -35,6 +40,14 @@ export const collapse: IField = {
           },
         ],
       },
+    },
+    collapse1: {
+      name: '面板1',
+      fieldComponent: 'input-attribute',
+    },
+    collapse2: {
+      name: '面板2',
+      fieldComponent: 'input-attribute',
     },
   },
 }
