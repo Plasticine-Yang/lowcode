@@ -38,7 +38,7 @@
 <script lang="ts">
 import Attribute from './components'
 import { NColorPicker, NInput, NInputNumber } from 'naive-ui'
-import codeEditer from './styleSettingComponent/codeEditer.vue'
+import codeEditer from './style-setting-component/CodeEditer.vue'
 export default {
   components: {
     ...Attribute,

@@ -1,10 +1,10 @@
-import inputAttribute from './inputAttribute.vue'
-import inputNumberAttribute from './inputNumberAttribute.vue'
-import sliderAttribute from './sliderAttribute.vue'
-import selectAttribute from './selectAttribute.vue'
-import uploadImageAttribute from './uploadImageAttribute.vue'
-import collapseAttribute from './collapseAttribute.vue'
-import handleArrayAttribute from './handleArrayAttribute.vue'
+import inputAttribute from './InputAttribute.vue'
+import inputNumberAttribute from './InputNumberAttribute.vue'
+import sliderAttribute from './SliderAttribute.vue'
+import selectAttribute from './SelectAttribute.vue'
+import uploadImageAttribute from './UploadImageAttribute.vue'
+import collapseAttribute from './CollapseAttribute.vue'
+import handleArrayAttribute from './HandleArrayAttribute.vue'
 export default {
   inputAttribute,
   inputNumberAttribute,
