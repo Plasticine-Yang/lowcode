@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { useDrawer } from '@/store'
-import { ref } from 'vue'
+import { ref, watch } from 'vue'
 
 const drawer = ref(useDrawer())
 </script>
@@ -26,6 +26,11 @@ const drawer = ref(useDrawer())
             <n-collapse-item title="样式属性" name="style">
               <style-settings />
             </n-collapse-item>
+            <n-collapse-item
+              v-if="drawer.activeComponent?.eventProps"
+              title="事件属性"
+              name="event"
+            ></n-collapse-item>
           </n-collapse>
         </section>
       </n-tab-pane>

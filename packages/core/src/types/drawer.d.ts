@@ -15,4 +15,6 @@ interface DrawerComponent {
   type: 'senior' | 'contain' | 'basic' | 'basic-senior'
   // 样式属性
   style: string
+  // 事件属性
+  eventProps?: Record<string, Function>
 }

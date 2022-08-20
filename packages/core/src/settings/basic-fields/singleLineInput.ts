@@ -54,4 +54,7 @@ export const singleLineInput: IField = {
     },
   },
   style: '',
+  eventProps: {
+    onClick: () => {},
+  },
 }
