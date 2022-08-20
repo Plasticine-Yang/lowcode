@@ -12,6 +12,7 @@ import DrawerForm from './drawer-container/DrawerForm.vue'
 import DrawerFormItem from './drawer-container/DrawerFormItem.vue'
 import DrawerTabs from './drawer-container/DrawerTabs.vue'
 import { globalConfigs } from '@/settings/globalConfig'
+import { useDrawerComponentPropsTransformer } from '@/hooks'
 export default defineComponent({
   components: {
     ...resolveComponents,
@@ -28,11 +29,15 @@ export default defineComponent({
     const themer = useTheme()
     const themeOverrides = getGlobalTheme(themer)
     const globalConfig = ref(globalConfigs)
+
+    const transformComponentProps = useDrawerComponentPropsTransformer()
+
     return {
       drawer,
       drawerGroup,
       themeOverrides,
       globalConfig,
+      componentPropsTransformer: transformComponentProps,
     }
   },
 })
@@ -61,7 +66,7 @@ export default defineComponent({
           <component
             :is="element.componentName"
             v-if="element.type == 'basic'"
-            v-bind="element.componentProps"
+            v-bind="componentPropsTransformer(element)"
             :style="element.style"
           ></component>
           <!-- 高级组件，容器组件，需要再次封装的简单组件 -->

@@ -34,5 +34,11 @@ export const useDrawer = defineStore('drawer', {
     resetActiveComponent() {
       this.activeComponent = null
     },
+    // 设置事件属性代码
+    setEventPropCode(eventName: string, eventCode: string) {
+      if (this.activeComponent?.eventProps) {
+        this.activeComponent.eventProps[eventName].code = eventCode
+      }
+    },
   },
 })

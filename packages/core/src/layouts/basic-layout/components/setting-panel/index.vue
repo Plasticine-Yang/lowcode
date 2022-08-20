@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { useDrawer } from '@/store'
-import { ref, watch } from 'vue'
+import { ref } from 'vue'
 
 const drawer = ref(useDrawer())
 </script>
@@ -30,7 +30,9 @@ const drawer = ref(useDrawer())
               v-if="drawer.activeComponent?.eventProps"
               title="事件属性"
               name="event"
-            ></n-collapse-item>
+            >
+              <event-settings />
+            </n-collapse-item>
           </n-collapse>
         </section>
       </n-tab-pane>

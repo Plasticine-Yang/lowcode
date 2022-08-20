@@ -16,5 +16,5 @@ interface DrawerComponent {
   // 样式属性
   style: string
   // 事件属性
-  eventProps?: Record<string, Function>
+  eventProps?: Record<string, EventPropValue>
 }
