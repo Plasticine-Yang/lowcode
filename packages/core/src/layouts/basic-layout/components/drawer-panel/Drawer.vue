@@ -75,7 +75,6 @@ export default defineComponent({
             :element="element"
             :style="element.style"
           >
-            111
           </component>
         </item-wrapper>
       </template>
