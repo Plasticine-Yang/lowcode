@@ -11,16 +11,17 @@
   },
   "dependencies": {
     "@codemirror/lang-javascript": "^6.0.2",
-    "@types/codemirror": "^5.60.5",
     "ace-builds": "^1.8.1",
     "browserify": "^17.0.0",
     "cjs2esmodule": "^1.1.1",
+    "codemirror": "^6.0.1",
     "default-passive-events": "^2.0.0",
     "lodash-es": "^4.17.21",
     "pinia": "^2.0.17",
     "uuid": "^8.3.2",
     "vue": "^3.2.37",
     "vue-clipboard3": "^2.0.0",
+    "vue-codemirror": "^6.0.2",
     "vue-json-editor": "^1.4.3",
     "vue3-ace-editor": "^2.2.2",
     "vuedraggable": "^4.1.0"
