@@ -72,10 +72,11 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, computed } from 'vue'
+import { defineComponent, computed, watch } from 'vue'
 import { useDrawer, useTheme } from '@/store'
 import { drawerGroup } from '@/utils'
 import resolveComponents from '../resolveComponents'
+import { changeChildren } from '@/utils/changeChildren'
 export default defineComponent({
   components: {
     ...resolveComponents,
@@ -96,7 +97,10 @@ export default defineComponent({
       }
       return temp
     })
-
+    //当cols变化的时候，修改children
+    watch(props.element.componentProps, (newVal, oldVal) => {
+      changeChildren(drawer, newVal.cols)
+    })
     const colorTheme: any = {
       light: '3px dashed black',
       dark: '3px dashed black',
