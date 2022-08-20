@@ -7,7 +7,7 @@ import resolveComponents from './resolveComponents'
 //这个抽离出来是因为递归调用了
 import DrawerGrid from './drawer-container/DrawerGrid.vue'
 import DrawerFlex from './drawer-container/DrawerFlex.vue'
-import DrawerCollapse from './drawer-senior/DrawerCollapse.vue'
+import DrawerCollapse from './drawer-container/DrawerCollapse.vue'
 import DrawerForm from './drawer-container/DrawerForm.vue'
 import DrawerFormItem from './drawer-container/DrawerFormItem.vue'
 import DrawerTabs from './drawer-container/DrawerTabs.vue'

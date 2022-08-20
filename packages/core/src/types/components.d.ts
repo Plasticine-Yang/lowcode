@@ -24,7 +24,7 @@ declare module '@vue/runtime-core' {
     DrawerCarousel: typeof import('./../layouts/basic-layout/components/drawer-panel/drawer-senior/DrawerCarousel.vue')['default']
     DrawerCheckB: typeof import('./../layouts/basic-layout/components/drawer-panel/drawer-basic-senior/DrawerCheckB.vue')['default']
     DrawerCheckBox: typeof import('./../layouts/basic-layout/components/drawer-panel/drawer-basic-senior/DrawerCheckBox.vue')['default']
-    DrawerCollapse: typeof import('./../layouts/basic-layout/components/drawer-panel/drawer-senior/DrawerCollapse.vue')['default']
+    DrawerCollapse: typeof import('./../layouts/basic-layout/components/drawer-panel/drawer-container/DrawerCollapse.vue')['default']
     DrawerDatePicker: typeof import('./../layouts/basic-layout/components/drawer-panel/drawer-basic-senior/DrawerDatePicker.vue')['default']
     DrawerDivider: typeof import('./../layouts/basic-layout/components/drawer-panel/drawer-basic-senior/DrawerDivider.vue')['default']
     DrawerDropdown: typeof import('./../layouts/basic-layout/components/drawer-panel/drawer-senior/DrawerDropdown.vue')['default']
@@ -114,7 +114,6 @@ declare module '@vue/runtime-core' {
     StyleSetting: typeof import('./../layouts/basic-layout/components/setting-panel/global-setting/StyleSetting.vue')['default']
     StyleSettings: typeof import('./../layouts/basic-layout/components/setting-panel/styleSettings.vue')['default']
     TabPreview: typeof import('./../layouts/basic-layout/components/drawer-panel/drawer-header/drawer-preview/tabPreview.vue')['default']
-    Temp: typeof import('./../layouts/basic-layout/components/setting-panel/event-settings/Temp.vue')['default']
     TimeLineDisplay: typeof import('./../layouts/basic-layout/components/field-panel/senior-fields/fields-display/TimeLineDisplay.vue')['default']
     UploadImageAttribute: typeof import('./../layouts/basic-layout/components/setting-panel/components/uploadImageAttribute.vue')['default']
   }

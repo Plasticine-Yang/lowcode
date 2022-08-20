@@ -5,6 +5,7 @@
       style="width: 100%"
       v-bind="element.componentProps"
     >
+      <!-- 表单项只允许放入基本容器 -->
       <template v-if="element.children.length > 0">
         <component
           :is="element.children[0].componentName"
@@ -24,7 +25,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import resolveComponents from '../../resolveComponents'
+import resolveComponents from '../../../resolveComponents'
 export default defineComponent({
   components: {
     ...resolveComponents,
