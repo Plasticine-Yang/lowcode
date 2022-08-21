@@ -13,6 +13,8 @@ const eventProps = computed(() => drawer.activeComponent?.eventProps)
 const eventName = ref('')
 // 当前编辑的事件监听器代码
 const eventCode = ref("console.log('hello lowcode')")
+// 事件监听器函数的参数描述符
+const eventHandlerArgsDescriptor = ref<Record<string, string>>({})
 const codemirrorConfig = {
   // 扩展: 使用 js 语言
   extensions: [javascript()],
@@ -28,9 +30,11 @@ const showEventCodeEditor = ref(false)
 const handleEditEventHandlerBtnClick = (
   eventPropName: string,
   eventPropCode: string,
+  eventPropHandlerArgsDescriptor: Record<string, string>,
 ) => {
   eventName.value = eventPropName
   eventCode.value = eventPropCode
+  eventHandlerArgsDescriptor.value = eventPropHandlerArgsDescriptor
   showEventCodeEditor.value = true
 }
 // 修改当前激活组件对应时间属性的代码
@@ -38,6 +42,25 @@ const handleEventCodeUpdate = () => {
   drawer.setEventPropCode(eventName.value, eventCode.value)
   showEventCodeEditor.value = false
 }
+// 编辑器模态框顶部显示的事件监听器函数签名信息
+const modalTitle = computed(() => {
+  const eventHandlerArgs: string[] = []
+  const eventHandlerArgsDescription: string[] = []
+
+  for (const argName of Object.keys(eventHandlerArgsDescriptor.value)) {
+    const description = eventHandlerArgsDescriptor.value[argName]
+    eventHandlerArgsDescription.push(`${argName}: ${description}`)
+    eventHandlerArgs.push(argName)
+  }
+
+  const funcSignature = `${eventName.value}(${eventHandlerArgs.join(
+    ', ',
+  )}) { // `
+
+  const argsDescription = eventHandlerArgsDescription.join(' | ')
+
+  return `${funcSignature}${argsDescription}`
+})
 </script>
 
 <template>
@@ -53,7 +76,12 @@ const handleEventCodeUpdate = () => {
           type="primary"
           size="tiny"
           @click="
-            () => handleEditEventHandlerBtnClick(eventProp.name, eventProp.code)
+            () =>
+              handleEditEventHandlerBtnClick(
+                eventProp.name,
+                eventProp.code,
+                eventProp.eventHandlerArgsDescriptor,
+              )
           "
           >编写代码</n-button
         >
@@ -65,7 +93,7 @@ const handleEventCodeUpdate = () => {
   <n-modal
     v-model:show="showEventCodeEditor"
     preset="card"
-    :title="`${eventName}(e) { // e 为事件对象`"
+    :title="modalTitle"
     :style="{ width: '800px' }"
   >
     <codemirror
