@@ -1,7 +1,7 @@
 <template>
   <div>
     <n-switch
-      v-bind="element.componentProps"
+      v-bind="transformComponentProps((element as any))"
       v-model:value="element.componentProps.value"
       :style="element.componentProps.style"
     ></n-switch>
@@ -10,7 +10,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-
+import { useDrawerComponentPropsTransformer } from '@/hooks'
 export default defineComponent({
   props: {
     element: {
@@ -21,7 +21,8 @@ export default defineComponent({
     },
   },
   setup() {
-    return {}
+    const transformComponentProps = useDrawerComponentPropsTransformer()
+    return { transformComponentProps }
   },
 })
 </script>

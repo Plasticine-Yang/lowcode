@@ -51,4 +51,14 @@ export const switchSelector: IField = {
       },
     },
   },
+  eventProps: {
+    'onUpdate:value': {
+      name: 'onUpdate:value',
+      code: 'console.log("update value")',
+      eventHandlerGenerator: (code: string) => (value: boolean) => eval(code),
+      eventHandlerArgsDescriptor: {
+        value: 'value -- 输入变化的值',
+      },
+    },
+  },
 }
