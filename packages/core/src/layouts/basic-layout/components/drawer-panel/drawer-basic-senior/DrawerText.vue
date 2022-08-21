@@ -2,7 +2,7 @@
   <div
     contenteditable="true"
     class="drawerText"
-    v-bind="transformComponentProps(element)"
+    v-bind="transformComponentProps((element as any))"
   >
     {{ element.componentProps.inputText }}
   </div>
