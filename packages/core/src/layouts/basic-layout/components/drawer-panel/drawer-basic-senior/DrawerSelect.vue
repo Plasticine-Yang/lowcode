@@ -1,8 +1,8 @@
 <template>
   <div>
     <n-select
-      v-bind="element.componentProps"
       v-model:value="element.componentProps.value"
+      v-bind="transformComponentProps((element as any))"
       :options="options"
     ></n-select>
   </div>
@@ -10,7 +10,7 @@
 
 <script lang="ts">
 import { defineComponent, computed } from 'vue'
-
+import { useDrawerComponentPropsTransformer } from '@/hooks'
 export default defineComponent({
   props: {
     element: {
@@ -43,7 +43,8 @@ export default defineComponent({
 
       return options
     })
-    return { options }
+    const transformComponentProps = useDrawerComponentPropsTransformer()
+    return { options, transformComponentProps }
   },
 })
 </script>

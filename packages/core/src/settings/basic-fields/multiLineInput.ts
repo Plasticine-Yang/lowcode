@@ -6,6 +6,6 @@ export const multiLineInput: IField = Object.assign({}, singleLineInput, {
   iconName: 'bi:textarea-resize',
   componentProps: Object.assign({}, singleLineInput.componentProps, {
     type: 'textarea',
-    value: '345',
+    value: '',
   }),
 })
