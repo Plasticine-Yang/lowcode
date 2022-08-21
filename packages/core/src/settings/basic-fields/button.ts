@@ -102,6 +102,9 @@ export const button: IField = {
       name: 'onClick',
       code: 'console.log("click")',
       eventHandlerGenerator: (code: string) => (e: Event) => eval(code),
+      eventHandlerArgsDescriptor: {
+        e: 'Event',
+      },
     },
   },
 }

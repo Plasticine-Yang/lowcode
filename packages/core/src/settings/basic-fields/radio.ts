@@ -44,4 +44,14 @@ export const radio: IField = {
     },
   },
   style: '',
+  eventProps: {
+    onClick: {
+      name: 'onClick',
+      code: 'console.log("click")',
+      eventHandlerGenerator: (code: string) => (e: Event) => eval(code),
+      eventHandlerArgsDescriptor: {
+        e: 'Event',
+      },
+    },
+  },
 }
