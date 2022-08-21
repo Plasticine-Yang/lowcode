@@ -42,14 +42,4 @@ export const checkbox: IField = {
       },
     },
   },
-  eventProps: {
-    onClick: {
-      name: 'onClick',
-      code: 'console.log("click")',
-      eventHandlerGenerator: (code: string) => (e: Event) => eval(code),
-      eventHandlerArgsDescriptor: {
-        e: 'Event',
-      },
-    },
-  },
 }
