@@ -2,12 +2,12 @@
   <div>
     <n-slider
       v-if="element.componentProps.range"
-      v-bind="element.componentProps"
+      v-bind="transformComponentProps((element as any))"
       v-model:value="rangeTrue"
     ></n-slider>
     <n-slider
       v-if="!element.componentProps.range"
-      v-bind="element.componentProps"
+      v-bind="transformComponentProps((element as any))"
       v-model:value="rangeFalse"
     ></n-slider>
   </div>
@@ -15,7 +15,7 @@
 
 <script lang="ts">
 import { defineComponent, ref, computed } from 'vue'
-
+import { useDrawerComponentPropsTransformer } from '@/hooks'
 export default defineComponent({
   props: {
     element: {
@@ -38,7 +38,8 @@ export default defineComponent({
         return rangeFalse
       }
     })
-    return { rangeFalse, rangeTrue }
+    const transformComponentProps = useDrawerComponentPropsTransformer()
+    return { rangeFalse, rangeTrue, transformComponentProps }
   },
 })
 </script>

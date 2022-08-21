@@ -27,17 +27,38 @@ export const slider: IField = {
     },
     max: {
       name: '最大值',
-      fieldComponent: 'input-attribute',
+      fieldComponent: 'slider-attribute',
+      fieldComponentParam: {
+        maxNum: 1000,
+      },
     },
     min: {
       name: '最小值',
-      fieldComponent: 'input-attribute',
+      fieldComponent: 'slider-attribute',
+      fieldComponentParam: {
+        maxNum: 1000,
+      },
     },
     step: {
       name: '步长',
-      fieldComponent: 'input-attribute',
+      fieldComponent: 'slider-attribute',
+      fieldComponentParam: {
+        maxNum: 100,
+      },
     },
   },
   type: 'basic-senior',
   iconName: 'bx:slider-alt',
+  eventProps: {
+    'onUpdate:value': {
+      name: 'onUpdate:value',
+      code: 'console.log("update value")',
+      eventHandlerGenerator:
+        (code: string) => (value: string | [string, string]) =>
+          eval(code),
+      eventHandlerArgsDescriptor: {
+        value: 'value -- 输入变化的值',
+      },
+    },
+  },
 }
