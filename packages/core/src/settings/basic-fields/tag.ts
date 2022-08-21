@@ -9,6 +9,11 @@ export const tag: IField = {
     type: 'default',
     content: '标签',
     closable: false,
+    disabled: false,
+    round: false,
+    size: 'medium',
+    strong: false,
+    triggerClickOnClose: true,
   },
   // 需要显示在属性配置面板的属性就在这里编写相关元数据信息
   // 比如 type: 'text' 这种属性不希望被用户修改 就不需要写进来
