@@ -33,7 +33,7 @@
           </n-collapse-item>
         </n-collapse>
       </n-tab-pane>
-      <n-tab-pane name="模版"></n-tab-pane>
+      <n-tab-pane name="模版"> <formwork-fields></formwork-fields></n-tab-pane>
     </n-tabs>
   </section>
 </template>

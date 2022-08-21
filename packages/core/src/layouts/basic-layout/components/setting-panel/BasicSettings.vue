@@ -14,7 +14,9 @@
       <component
         :is="componentPropsMeta[key].fieldComponent"
         v-model:value="componentProps[key]"
+        v-model:propsModel="componentProps[key]"
         :keyname="key"
+        :is-disabled="componentPropsMeta[key].isDisabled"
       >
       </component>
     </n-form-item>
@@ -23,12 +25,14 @@
 
 <script lang="ts">
 import Attribute from './components/index'
-import { NSwitch, NInput } from 'naive-ui'
+
+import { NSwitch, NInput, NColorPicker } from 'naive-ui'
 export default {
   components: {
     ...Attribute,
     NSwitch,
     NInput,
+    NColorPicker,
   },
 }
 </script>

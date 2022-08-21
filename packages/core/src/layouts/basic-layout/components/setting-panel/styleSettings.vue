@@ -1,7 +1,8 @@
 <template>
   <n-form
+    id="styleFrom"
     ref="formRef"
-    :model="activeComponent.style"
+    :model="model"
     label-placement="left"
     :rules="rules"
   >
@@ -20,14 +21,24 @@
     </n-form-item>
   </n-form>
   <div class="add-style">
-    <div class="i-carbon:add add" title="添加样式" @click="addStyle"></div>
+    <div
+      :class="!editerShow ? 'i-carbon:add add' : 'i-carbon:subtract-alt'"
+      title="添加样式"
+      @click="addStyle"
+    ></div>
   </div>
+  <codeEditer
+    v-show="editerShow"
+    v-model:value="code"
+    language="css"
+    @updateValue="inputChange"
+  />
 </template>
 
 <script lang="ts">
 import Attribute from './components'
-import { NInputNumber, NColorPicker, NInput } from 'naive-ui'
-import { keysOf } from 'naive-ui/es/_utils'
+import { NColorPicker, NInput, NInputNumber } from 'naive-ui'
+import codeEditer from './style-setting-component/CodeEditer.vue'
 export default {
   components: {
     ...Attribute,
@@ -39,7 +50,7 @@ export default {
 </script>
 
 <script lang="ts" setup>
-import { ref, computed, Ref } from 'vue'
+import { ref, computed, Ref, watch, onMounted } from 'vue'
 import { useDrawer } from '@/store'
 
 const drawer = ref(useDrawer())
@@ -52,6 +63,8 @@ interface Style {
   name: string
   value: string | number | null
   fieldComponent: string
+  // 单位，用于简单检测输入内容例如width只输入数字
+  unit?: string
 }
 
 // 预设样式属性
@@ -60,6 +73,7 @@ let model: Ref<Record<string, Style>> = ref({
     name: '宽度',
     value: null,
     fieldComponent: 'n-input',
+    unit: 'px',
   },
   height: {
     name: '高度',
@@ -79,56 +93,124 @@ let model: Ref<Record<string, Style>> = ref({
   fontSize: {
     name: '字体大小',
     value: null,
-    fieldComponent: 'n-input-number',
+    fieldComponent: 'n-input',
   },
 })
 
 let activeComponent = computed(() => {
   return drawer.value.activeComponent || { style: '' }
 })
-// 获取已经设置的值
-let oddStyle = activeComponent.value.style
 
+// 获取已经设置的值
+let oddStyle = activeComponent.value.style || ''
+let styleStr = ref('') // 代码输入的样式
 // 拆解字符串得到已经设置的值。
 let getOddStyle = () => {
   let addarr: string[] = oddStyle.split(';')
   for (const item of addarr) {
     let keyname = item.split(':')[0]
     let value = item.split(':')[1]
-    console.log(addarr, item)
-
     // 该属性存在则赋值
     if (model.value.hasOwnProperty(keyname)) {
       model.value[keyname].value = value
-    } else if (item != '') {
-      // 不存在则添加
-      let styleItem: Style = {
-        name: keyname,
-        value: value,
-        fieldComponent: 'n-input',
-      }
-      model.value[keyname] = styleItem
+    } else if (keyname && value) {
+      // 不存在则添加到styletr中
+      styleStr.value += `${keyname}:${value};`
     }
   }
 }
 getOddStyle()
 
-// 点击加号添加事件
-let addStyle = () => {}
+// 切换activeComponent
+watch(activeComponent, () => {
+  console.log('cative')
 
-let stylStr = computed(() => {
-  console.log(model.value)
-  // 遍历样得到样式字符串
+  // 重值model
+  model.value = {
+    width: {
+      name: '宽度',
+      value: null,
+      fieldComponent: 'n-input',
+    },
+    height: {
+      name: '高度',
+      value: null,
+      fieldComponent: 'n-input',
+    },
+    backgroundColor: {
+      name: '背景颜色',
+      value: null,
+      fieldComponent: 'n-color-picker',
+    },
+    color: {
+      name: '填充颜色',
+      value: null,
+      fieldComponent: 'n-color-picker',
+    },
+    fontSize: {
+      name: '字体大小',
+      value: null,
+      fieldComponent: 'n-input',
+    },
+  }
+  // 重置code
+  styleStr.value = ''
+  getOddStyle()
+})
+
+// 点击加号添加事件
+let editerShow = ref(true)
+let addStyle = () => {
+  editerShow.value = editerShow.value ? false : true
+}
+
+let modelStr = computed(() => {
   let str: string = ''
   Object.keys(model.value).forEach(k => {
     if (model.value[k].value != null) {
       str += `${k}:${model.value[k].value};`
     }
   })
-  console.log('value', str, activeComponent.value.style)
   return str
 })
-activeComponent.value.style = stylStr.value
+
+let code = ref(`.code{${styleStr.value}}`)
+watch(styleStr, () => {
+  if (`.code{${styleStr.value}}` != code.value) {
+    code.value = `.code{${styleStr.value}}`
+  }
+  activeComponent.value.style = modelStr.value + styleStr.value
+})
+watch(modelStr, () => {
+  activeComponent.value.style = modelStr.value + styleStr.value
+})
+
+let formRef = ref(null) // 得到表单元素
+onMounted(() => {})
+
+function toggleJsonCss(sorce: string, method: string) {
+  console.log(sorce)
+  if (sorce == '') return ''
+  let strs = ''
+  if (method == 'getJson') {
+    strs = sorce.split(';').join(',')
+  } else if (method == 'getCss') {
+    strs = sorce.split(',').join(';')
+  }
+  return strs
+}
+
+function inputChange(str: string) {
+  let csscon = str.split('{')[1]
+  let cssContent: string = ''
+  if (csscon) {
+    cssContent = csscon.split('}')[0]
+  }
+  if (cssContent != styleStr.value) {
+    // 不统一 更新
+    styleStr.value = cssContent
+  }
+}
 </script>
 
 <style scoped>

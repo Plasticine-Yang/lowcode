@@ -10,7 +10,7 @@ interface IField {
   // 组件 props
   componentProps?: Record<string, any>
   // 组件 props 元数据
-  componentPropsMeta?: ComponentPropsMeta
+  componentPropsMeta?: ComponentPropsMeta | Object
   //容器的子组件
   children?: any
   //组件的分类 ，因为发现简单组件也挺多需要再封装的....但是不适合放到高级组件，所以以'basic-senior'为分类
@@ -18,7 +18,9 @@ interface IField {
   // 需要单独定制显示在左侧的组件对应的组件名
   componentDisplay?: string
   // 行内样式
-  style: string
+  style?: string
+  // 事件属性
+  eventProps?: Record<string, EventPropValue>
 }
 
 // 记录组件 props 元数据信息 -- 方便属性配置表单的渲染
@@ -41,5 +43,6 @@ type ComponentPropsMeta = Record<
     // 对fieldcomponent 自定义组件 传参
     // 比如使用选择器，就要传入选项
     fieldComponentParam?: Record<string, any>
+    isDisabled?: boolean
   }
 >

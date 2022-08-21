@@ -4,7 +4,7 @@ export const grid: IField = {
   componentName: 'drawerGrid',
   iconName: 'clarity:grid-view-line',
   type: 'contain',
-  children: [],
+  children: [[], []],
   componentProps: {
     cols: 2,
     xGap: '12',

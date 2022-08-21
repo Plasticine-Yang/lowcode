@@ -12,34 +12,9 @@
             : drawer.activeComponent?.componentProps?.interval + 'px',
       }"
     >
-      <template v-for="(sub, indexs) in element.children[index]" :key="indexs">
-        <grid-preview
-          v-if="sub.componentName == 'drawerGrid'"
-          :list="sub"
-        ></grid-preview>
-        <flex-preview
-          v-else-if="sub.componentName == 'drawerFlex'"
-          :element="sub"
-        ></flex-preview>
-        <collapse-preview
-          v-if="sub.componentName == 'drawerCollapse'"
-          :element="sub"
-        ></collapse-preview>
-        <component
-          :is="sub.componentName"
-          v-else-if="sub.type == 'basic'"
-          v-bind="sub.componentProps"
-        ></component>
-        <component
-          :is="sub.componentName"
-          v-else-if="
-            sub.type == 'contain' ||
-            sub.type == 'senior' ||
-            sub.type == 'basic-senior'
-          "
-          :element="sub"
-        ></component
-      ></template>
+      <drawer-preview-item
+        :components="element.children[index]"
+      ></drawer-preview-item>
     </div>
   </div>
 </template>
@@ -48,7 +23,7 @@
 import { defineComponent, computed } from 'vue'
 import { useDrawer } from '@/store'
 import { drawerGroup } from '@/utils'
-import resolveComponents from '../../resolveComponents'
+import resolveComponents from '../../../resolveComponents'
 
 export default defineComponent({
   components: {

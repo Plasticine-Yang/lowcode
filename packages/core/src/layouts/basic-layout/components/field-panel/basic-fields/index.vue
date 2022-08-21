@@ -24,6 +24,7 @@ const fieldItemList = reactive<IField[]>(basicFields)
         :icon-name="element.iconName"
         :component-name="element.componentName"
         :component-prpos="element.componentProps"
+        :event-props="element.eventProps"
       />
     </template>
   </draggable>

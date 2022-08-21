@@ -11,32 +11,9 @@
         :style="globalConfig.style"
       >
         <n-config-provider :theme-overrides="themeOverrides">
-          <template v-for="(item, index) in components" :key="index">
-            <flex-preview
-              v-if="item.componentName == 'drawerFlex'"
-              :element="item"
-            ></flex-preview>
-            <grid-preview
-              v-if="item.componentName == 'drawerGrid'"
-              :list="item"
-            ></grid-preview>
-            <collapse-preview
-              v-if="item.componentName == 'drawerCollapse'"
-              :element="item"
-            ></collapse-preview>
-            <component
-              :is="item.componentName"
-              v-else-if="item.type == 'basic'"
-              v-bind="item.componentProps"
-              style="margin: 10px 0"
-              class="preview"
-            ></component>
-            <component
-              :is="item.componentName"
-              v-else
-              :element="item"
-              class="preview"
-            ></component> </template></n-config-provider></n-card
+          <drawer-preview-item
+            :components="components"
+          ></drawer-preview-item></n-config-provider></n-card
     ></n-modal>
   </div>
 </template>
@@ -44,13 +21,9 @@
 <script lang="ts">
 import { defineComponent, computed, ref } from 'vue'
 import { useDrawer, useTheme } from '@/store'
-import resolveComponents from '../../resolveComponents'
 import { globalConfigs } from '@/settings/globalConfig'
 import { getGlobalTheme } from '@/utils/theme'
 export default defineComponent({
-  components: {
-    ...resolveComponents,
-  },
   props: {
     showModal: {
       type: Boolean,

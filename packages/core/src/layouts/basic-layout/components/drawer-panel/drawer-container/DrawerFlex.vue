@@ -1,3 +1,4 @@
+<!-- flex容器可以放下所有的组件,可以表单也可以表单项 -->
 <template>
   <div class="flex drawerFlex">
     <div
@@ -16,55 +17,17 @@
             : drawer.activeComponent?.componentProps?.interval + 'px',
       }"
     >
-      <draggable
-        :list="element.children[index]"
-        :group="drawerGroup"
-        :animation="300"
-        item-key="id"
-        class="wh-full bg-white"
-        ghost-class="ghost"
-        handle=".drag-handler"
-        ><template #item="{ element }">
-          <item-wrapper
-            :drag-handler-name="element.dragHandlerName"
-            :component-id="element.id"
-          >
-            <drawer-grid
-              v-if="element.componentName == 'drawerGrid'"
-              :element="element"
-            ></drawer-grid>
-            <drawer-flex
-              v-if="element.componentName == 'drawerFlex'"
-              :element="element"
-            ></drawer-flex>
-            <drawer-collapse
-              v-if="element.componentName == 'drawerCollapse'"
-              :element="element"
-            ></drawer-collapse>
-            <component
-              :is="element.componentName"
-              v-if="element.type == 'basic'"
-              v-bind="element.componentProps"
-            ></component>
-            <component
-              :is="element.componentName"
-              v-if="
-                element.type == 'contain' ||
-                element.type == 'senior' ||
-                element.type == 'basic-senior'
-              "
-              :element="element"
-            ></component></item-wrapper></template
-      ></draggable>
+      <DrawerItem id="drawerItem" v-model:items="element.children[index]" />
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent, computed } from 'vue'
+import { defineComponent, computed, watch } from 'vue'
 import { useDrawer, useTheme } from '@/store'
 import { drawerGroup } from '@/utils'
 import resolveComponents from '../resolveComponents'
+import { changeChildren } from '@/utils/changeChildren'
 export default defineComponent({
   components: {
     ...resolveComponents,
@@ -85,7 +48,10 @@ export default defineComponent({
       }
       return temp
     })
-
+    //当cols变化的时候，修改children
+    watch(props.element.componentProps, (newVal, oldVal) => {
+      changeChildren(drawer, newVal.cols)
+    })
     const colorTheme: any = {
       light: '3px dashed black',
       dark: '3px dashed black',

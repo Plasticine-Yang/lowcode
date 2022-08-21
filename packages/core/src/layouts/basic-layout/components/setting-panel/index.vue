@@ -26,6 +26,13 @@ const drawer = ref(useDrawer())
             <n-collapse-item title="样式属性" name="style">
               <style-settings />
             </n-collapse-item>
+            <n-collapse-item
+              v-if="drawer.activeComponent?.eventProps"
+              title="事件属性"
+              name="event"
+            >
+              <event-settings />
+            </n-collapse-item>
           </n-collapse>
         </section>
       </n-tab-pane>

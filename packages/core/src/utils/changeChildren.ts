@@ -1,7 +1,5 @@
-//对grid的children进行修改
-export const changeGridChildren = (drawer: any, e: number) => {
-  console.log(drawer.activeComponent.id)
-
+//对grid,flex的children进行修改
+export const changeChildren = (drawer: any, e: number) => {
   const children: any = drawer.activeComponent.children
   drawer.activeComponent.children = changeArray(children, e, [])
 }

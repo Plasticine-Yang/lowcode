@@ -1,18 +1,11 @@
 import { generateId } from './generateId'
+import { cloneDeep } from 'lodash-es'
 
 /**
  * @description 负责左侧组件拖拽到画布时进行转换
  */
 export default function transformFieldToDrawer(field: IField): DrawerComponent {
-  const fieldcopy = JSON.parse(JSON.stringify(field))
-  //如果是grid栅格的话，其children应该为n个子数组
-  if (fieldcopy.componentName == 'drawerGrid') {
-    //这里不能使用fill初始化数组，二维数组初始化时，fill填充的为对象类型（数组）为浅拷贝
-    fieldcopy.children = new Array(fieldcopy.componentProps!.cols)
-    for (let i = 0; i < fieldcopy.children.length; i++) {
-      fieldcopy.children[i] = []
-    }
-  }
+  const fieldcopy = cloneDeep(field)
   const drawerComponent: DrawerComponent = {
     id: generateId(),
     componentName: fieldcopy.componentName,
@@ -21,7 +14,8 @@ export default function transformFieldToDrawer(field: IField): DrawerComponent {
     dragHandlerName: fieldcopy.fieldName,
     children: fieldcopy.children,
     type: fieldcopy.type,
-    style: fieldcopy.style,
+    style: fieldcopy.style!,
+    eventProps: fieldcopy.eventProps,
   }
 
   return drawerComponent

@@ -7,7 +7,6 @@
       :step="param.step || 1"
       :max="param.maxNum"
       :min="param.minNum || 0"
-      @update:value="updateValue"
     />
     <n-input-number
       v-model:value="componentProps[keyname]"
@@ -21,7 +20,7 @@
 <script lang="ts" setup>
 import { ref, computed } from 'vue'
 import { useDrawer } from '@/store'
-import { changeGridChildren } from '../on-components/onSlider'
+
 interface Props {
   keyname: string
 }
@@ -41,17 +40,4 @@ let componentPropsMeta = computed(() => {
   return drawer.value.activeComponent?.componentPropsMeta || {}
 })
 let param = componentPropsMeta.value[props.keyname]?.fieldComponentParam || {}
-const emit = defineEmits(['updateValue']) // setup 的第二个参数emit
-function updateValue(e: any) {
-  if (drawer.value.activeComponent?.componentName == 'drawerGrid') {
-    if (props.keyname == 'cols') {
-      changeGridChildren(drawer, e)
-    }
-  }
-  if (drawer.value.activeComponent?.componentName == 'drawerFlex') {
-    if (props.keyname == 'cols') {
-      changeGridChildren(drawer, e)
-    }
-  }
-}
 </script>

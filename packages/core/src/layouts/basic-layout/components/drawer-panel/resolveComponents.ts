@@ -5,6 +5,9 @@ import {
   NButton,
   NRate,
   NDatePicker,
+  NSwitch,
+  NSlider,
+  NProgress,
 } from 'naive-ui'
 
 import { DrawerBasicSenior } from './drawer-basic-senior'
@@ -17,6 +20,9 @@ export default {
   NButton,
   NRate,
   NDatePicker,
+  NSwitch,
+  NSlider,
+  NProgress,
   ...DrawerBasicSenior,
   ...DrawerContainer,
   ...DrawerSenior,

@@ -3,6 +3,7 @@ export const rate: IField = {
   componentName: 'n-rate',
   fieldName: '评分器',
   type: 'basic',
+  style: '',
   iconName: 'ic:baseline-star-rate',
   componentProps: {
     allowHalf: false,
@@ -50,6 +51,16 @@ export const rate: IField = {
             value: 'large',
           },
         ],
+      },
+    },
+  },
+  eventProps: {
+    onUpdateValue: {
+      name: 'onUpdateValue',
+      code: 'console.log("rate update")',
+      eventHandlerGenerator: (code: string) => (value: number) => eval(code),
+      eventHandlerArgsDescriptor: {
+        value: 'number -- 已激活图标个数',
       },
     },
   },

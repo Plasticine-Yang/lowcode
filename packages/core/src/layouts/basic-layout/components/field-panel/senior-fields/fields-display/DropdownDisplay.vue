@@ -1,7 +1,7 @@
 <template>
   <div class="relative" style="height: 100px">
-    <img src="@/assets/collapse.gif" class="carousel-img wh-full" />
-    <div class="absolute lb">折叠面板</div>
+    <img src="@/assets/dropdown.gif" class="carousel-img wh-full" />
+    <div class="absolute lb">下拉面板</div>
   </div>
 </template>
 

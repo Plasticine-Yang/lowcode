@@ -2,13 +2,14 @@
   <div
     contenteditable="true"
     class="drawerText"
-    v-bind="element.componentProps"
+    v-bind="transformComponentProps((element as any))"
   >
     {{ element.componentProps.inputText }}
   </div>
 </template>
 
 <script lang="ts">
+import { useDrawerComponentPropsTransformer } from '@/hooks'
 import { defineComponent } from 'vue'
 
 export default defineComponent({
@@ -21,7 +22,9 @@ export default defineComponent({
     },
   },
   setup() {
-    return {}
+    const transformComponentProps = useDrawerComponentPropsTransformer()
+
+    return { transformComponentProps }
   },
 })
 </script>

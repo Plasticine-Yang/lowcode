@@ -1,9 +1,9 @@
 export const singleLineInput: IField = {
   id: 4,
   fieldName: '单行输入',
-  componentName: 'n-input',
+  componentName: 'DrawerInput',
   iconName: 'lucide:text-cursor-input',
-  type: 'basic',
+  type: 'basic-senior',
   componentProps: {
     type: 'text',
     clearable: false,
@@ -14,7 +14,7 @@ export const singleLineInput: IField = {
     autofocus: false,
     round: false,
     showCount: false,
-    vModel: '123',
+    value: '123',
   },
   // 需要显示在属性配置面板的属性就在这里编写相关元数据信息
   // 比如 type: 'text' 这种属性不希望被用户修改 就不需要写进来
@@ -22,7 +22,7 @@ export const singleLineInput: IField = {
   componentPropsMeta: {
     placeholder: {
       name: '提示信息',
-      fieldComponent: 'n-input',
+      fieldComponent: 'input-attribute',
     },
     clearable: {
       name: '是否可清除',
@@ -54,4 +54,39 @@ export const singleLineInput: IField = {
     },
   },
   style: '',
+  eventProps: {
+    // 通过高阶函数的方式，利用 eval 执行编辑器代码 并利用闭包特性让编辑器代码能够访问到事件对象
+    onFocus: {
+      name: 'onFocus',
+      code: 'console.log("focus")',
+      eventHandlerGenerator: (code: string) => (e: Event) => eval(code),
+      eventHandlerArgsDescriptor: {
+        e: 'Event',
+      },
+    },
+    onBlur: {
+      name: 'onBlur',
+      code: 'console.log("blur")',
+      eventHandlerGenerator: (code: string) => (e: Event) => eval(code),
+      eventHandlerArgsDescriptor: {
+        e: 'Event',
+      },
+    },
+    onChange: {
+      name: 'onChange',
+      code: 'console.log("change")',
+      eventHandlerGenerator: (code: string) => (e: Event) => eval(code),
+      eventHandlerArgsDescriptor: {
+        e: 'Event',
+      },
+    },
+    onInput: {
+      name: 'onInput',
+      code: 'console.log("input")',
+      eventHandlerGenerator: (code: string) => (e: Event) => eval(code),
+      eventHandlerArgsDescriptor: {
+        e: 'Event',
+      },
+    },
+  },
 }
