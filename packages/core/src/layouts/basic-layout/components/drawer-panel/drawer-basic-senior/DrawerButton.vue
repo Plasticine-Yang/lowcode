@@ -1,12 +1,13 @@
 <template>
   <div>
-    <n-button v-bind="element.componentProps">{{
+    <n-button v-bind="transformComponentProps(element)">{{
       element.componentProps.Buttontext
     }}</n-button>
   </div>
 </template>
 
 <script lang="ts">
+import { useDrawerComponentPropsTransformer } from '@/hooks'
 import { defineComponent } from 'vue'
 
 export default defineComponent({
@@ -19,7 +20,9 @@ export default defineComponent({
     },
   },
   setup() {
-    return {}
+    const transformComponentProps = useDrawerComponentPropsTransformer()
+
+    return { transformComponentProps }
   },
 })
 </script>
