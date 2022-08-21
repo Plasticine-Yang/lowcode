@@ -1,3 +1,4 @@
+import { SelectBaseOption } from 'naive-ui/es/select/src/interface'
 export const select: IField = {
   id: 22,
   componentName: 'drawer-select',
@@ -149,6 +150,21 @@ export const select: IField = {
       eventHandlerGenerator: (code: string) => (show: boolean) => eval(code),
       eventHandlerArgsDescriptor: {
         show: 'boolean -- 控制选择组件的显示逻辑',
+      },
+    },
+    'onUpdate:value': {
+      name: 'onUpdate:value',
+      code: 'console.log("update value")',
+      eventHandlerGenerator:
+        (code: string) =>
+        (
+          value: Array<string | number> | string | number | null,
+          option: SelectBaseOption | null | SelectBaseOption[],
+        ) =>
+          eval(code),
+      eventHandlerArgsDescriptor: {
+        value: 'value -- 选择的',
+        option: 'option -- 选择的选项内容',
       },
     },
   },
