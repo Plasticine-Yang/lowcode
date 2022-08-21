@@ -11,6 +11,8 @@ import { switchSelector } from './switchSelector'
 import { slider } from './slider'
 import { select } from './select'
 import { progress } from './progress'
+import { tag } from './tag'
+
 export const basicFields: IField[] = [
   singleLineInput,
   multiLineInput,
@@ -25,4 +27,5 @@ export const basicFields: IField[] = [
   slider,
   select,
   progress,
+  tag,
 ]
