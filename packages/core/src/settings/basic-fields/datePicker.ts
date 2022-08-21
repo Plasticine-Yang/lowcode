@@ -134,21 +134,33 @@ export const datePicker: IField = {
       name: 'onClear',
       code: 'console.log("clear")',
       eventHandlerGenerator: (code: string) => (e: Event) => eval(code),
+      eventHandlerArgsDescriptor: {
+        e: 'Event',
+      },
     },
     onBlur: {
       name: 'onBlur',
       code: 'console.log("blur")',
       eventHandlerGenerator: (code: string) => (e: Event) => eval(code),
+      eventHandlerArgsDescriptor: {
+        e: 'Event',
+      },
     },
     onFocus: {
       name: 'onFocus',
       code: 'console.log("focus")',
       eventHandlerGenerator: (code: string) => (e: Event) => eval(code),
+      eventHandlerArgsDescriptor: {
+        e: 'Event',
+      },
     },
     onUpdateShow: {
       name: 'onUpdateShow',
       code: 'console.log("update show")',
       eventHandlerGenerator: (code: string) => (show: boolean) => eval(code),
+      eventHandlerArgsDescriptor: {
+        show: 'boolean -- 控制日期组件的显示逻辑',
+      },
     },
   },
 }
