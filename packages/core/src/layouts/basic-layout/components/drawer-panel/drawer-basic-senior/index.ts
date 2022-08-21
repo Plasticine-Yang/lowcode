@@ -10,6 +10,7 @@ import DrawerInput from './DrawerInput.vue'
 import DrawerSwitch from './DrawerSwitch.vue'
 import DrawerProgress from './DrawerProgress.vue'
 import DrawerTag from './DrawerTag.vue'
+import DrawerAvatar from './DrawerAvatar.vue'
 
 export const DrawerBasicSenior = {
   DrawerButton,
@@ -24,4 +25,5 @@ export const DrawerBasicSenior = {
   DrawerSwitch,
   DrawerProgress,
   DrawerTag,
+  DrawerAvatar,
 }

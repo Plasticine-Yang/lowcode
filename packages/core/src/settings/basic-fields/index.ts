@@ -12,6 +12,7 @@ import { slider } from './slider'
 import { select } from './select'
 import { progress } from './progress'
 import { tag } from './tag'
+import { avatar } from './avatar'
 
 export const basicFields: IField[] = [
   singleLineInput,
@@ -28,4 +29,5 @@ export const basicFields: IField[] = [
   select,
   progress,
   tag,
+  avatar,
 ]
