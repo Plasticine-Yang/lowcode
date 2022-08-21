@@ -54,4 +54,11 @@ export const rate: IField = {
       },
     },
   },
+  eventProps: {
+    onUpdateValue: {
+      name: 'onUpdateValue',
+      code: 'console.log("rate update")',
+      eventHandlerGenerator: (code: string) => (e: Event) => eval(code),
+    },
+  },
 }
