@@ -32,4 +32,26 @@ export const textInput: IField = {
       fieldComponent: 'input-attribute',
     },
   },
+  eventProps: {
+    onFocus: {
+      name: 'onFocus',
+      code: 'console.log("focus")',
+      eventHandlerGenerator: (code: string) => (e: Event) => eval(code),
+    },
+    onBlur: {
+      name: 'onBlur',
+      code: 'console.log("blur")',
+      eventHandlerGenerator: (code: string) => (e: Event) => eval(code),
+    },
+    onChange: {
+      name: 'onChange',
+      code: 'console.log("change")',
+      eventHandlerGenerator: (code: string) => (e: Event) => eval(code),
+    },
+    onInput: {
+      name: 'onInput',
+      code: 'console.log("input")',
+      eventHandlerGenerator: (code: string) => (e: Event) => eval(code),
+    },
+  },
 }
