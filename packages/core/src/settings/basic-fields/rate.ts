@@ -58,7 +58,10 @@ export const rate: IField = {
     onUpdateValue: {
       name: 'onUpdateValue',
       code: 'console.log("rate update")',
-      eventHandlerGenerator: (code: string) => (e: Event) => eval(code),
+      eventHandlerGenerator: (code: string) => (value: number) => eval(code),
+      eventHandlerArgsDescriptor: {
+        value: 'number -- 已激活图标个数',
+      },
     },
   },
 }
