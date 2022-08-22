@@ -15,7 +15,11 @@ export const JSONStringify = (option: any) => {
 // 对象序列化解析
 export const JSONParse = (objStr: any) => {
   return JSON.parse(objStr, (k, v) => {
-    if (typeof v === 'string' && v.indexOf && v.indexOf('(code) =>') > -1) {
+    if (
+      typeof v === 'string' &&
+      v.indexOf &&
+      (v.indexOf('(code) =>') > -1 || v.indexOf('code=>') > -1)
+    ) {
       // eval 可能在eslint中报错，需要加入下行注释
       // eslint-disable-next-line
       return eval(`(function(){return ${v}})()`)
