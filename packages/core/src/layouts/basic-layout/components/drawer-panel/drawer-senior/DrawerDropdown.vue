@@ -4,7 +4,7 @@
     v-bind="element.componentProps"
     :options="options"
   >
-    <n-button>下拉面板</n-button>
+    <div style="display: inline">{{ element.componentProps.showText }}</div>
   </n-dropdown>
 </template>
 
