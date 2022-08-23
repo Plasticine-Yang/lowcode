@@ -11,6 +11,28 @@ const routes = [
     path: '/description',
     name: 'description',
     component: () => import('@/layouts/description/index.vue'),
+    children: [
+      {
+        path: '',
+        name: 'home',
+        component: () => import('@/layouts/description/Introduce.vue'),
+      },
+      {
+        path: 'detail',
+        name: 'detail',
+        component: () => import('@/layouts/description/Detail.vue'),
+      },
+      {
+        path: 'install',
+        name: 'install',
+        component: () => import('@/layouts/description/Install.vue'),
+      },
+      {
+        path: 'use',
+        name: 'use',
+        component: () => import('@/layouts/description/Use.vue'),
+      },
+    ],
   },
   {
     path: '/404',
