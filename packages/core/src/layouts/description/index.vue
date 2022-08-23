@@ -20,7 +20,11 @@
             style="height: 100%"
           />
         </n-layout-sider>
-        <n-layout class="show"> <router-view></router-view></n-layout>
+        <n-layout class="show"
+          ><n-config-provider :hljs="hljs">
+            <router-view></router-view>
+          </n-config-provider>
+        </n-layout>
       </n-layout>
     </n-layout>
   </n-space>
@@ -29,15 +33,19 @@
 <script lang="ts">
 import { h, defineComponent, ref, Component } from 'vue'
 import { menuOptions } from './menuOptions'
-
+import hljs from 'highlight.js'
+import javascript from 'highlight.js/lib/languages/javascript'
+hljs.registerLanguage('javascript', javascript)
 export default defineComponent({
   setup() {
     return {
       menuOptions,
+      hljs,
     }
   },
 })
 </script>
+
 <style scoped>
 .show {
   font-size: 16px;

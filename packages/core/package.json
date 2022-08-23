@@ -16,6 +16,7 @@
     "cjs2esmodule": "^1.1.1",
     "codemirror": "^6.0.1",
     "default-passive-events": "^2.0.0",
+    "highlight.js": "^11.6.0",
     "lodash-es": "^4.17.21",
     "pinia": "^2.0.17",
     "uuid": "^8.3.2",

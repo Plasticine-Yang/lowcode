@@ -14,7 +14,7 @@ onMounted(() => {
     text2: document.getElementById('text2'),
   }
   animation(elts)
-  if (router.currentRoute.value.matched[0].path == '/') {
+  if (router.currentRoute.value.matched[0].path == '/index') {
     isHome.value = true
   } else {
     isHome.value = false

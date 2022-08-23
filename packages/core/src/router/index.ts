@@ -2,9 +2,10 @@ import { App } from 'vue'
 import { createRouter, createWebHistory } from 'vue-router'
 
 const routes = [
+  { path: '/', redirect: '/index' },
   {
-    path: '/',
-    name: 'home',
+    path: '/index',
+    name: '',
     component: () => import('@/layouts/basic-layout/index.vue'),
   },
   {
