@@ -1,6 +1,6 @@
 <template>
   <n-space vertical>
-    <n-layout>
+    <n-layout class="common-util">
       <n-layout-header bordered>
         <basic-layout-header></basic-layout-header>
       </n-layout-header>
@@ -12,15 +12,17 @@
           :collapsed-width="80"
           :width="240"
           :native-scrollbar="false"
+          class="common-util"
         >
           <n-menu
             :collapsed-width="80"
             :collapsed-icon-size="22"
             :options="menuOptions"
             style="height: 100%"
+            class="common-util"
           />
         </n-layout-sider>
-        <n-layout class="show"
+        <n-layout class="show common-util"
           ><n-config-provider :hljs="hljs">
             <router-view></router-view>
           </n-config-provider>
