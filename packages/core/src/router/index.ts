@@ -12,6 +12,15 @@ const routes = [
     name: 'description',
     component: () => import('@/layouts/description/index.vue'),
   },
+  {
+    path: '/404',
+    name: '404',
+    component: () => import('@/layouts/notFound/index.vue'),
+  },
+  {
+    path: '/:pathMatch(.*)',
+    redirect: '/404',
+  },
 ]
 
 export default function setupRouter(app: App) {

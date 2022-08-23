@@ -92,6 +92,7 @@ declare module '@vue/runtime-core' {
     NList: typeof import('naive-ui')['NList']
     NListItem: typeof import('naive-ui')['NListItem']
     NModal: typeof import('naive-ui')['NModal']
+    NotFound: typeof import('./../layouts/notFound/index.vue')['default']
     NProgress: typeof import('naive-ui')['NProgress']
     NRadio: typeof import('naive-ui')['NRadio']
     NSelect: typeof import('naive-ui')['NSelect']
