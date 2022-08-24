@@ -31,14 +31,15 @@ import { defineComponent } from 'vue'
 
 export default defineComponent({
   setup() {
-    const show =
-      '<lowCoderRender :components="exampleComponents" contain-width="800px" contain-height="600px"></lowCoderRender>'
+    const show = `
+    <lowCodeRenders :components="componentsExample" containWidth="800px" containHeight="600px"></lowCodeRenders>
+   `
     //简单的使用配置这两个就行了
     const showSecond = `import { createApp } from 'vue'
-    import App from './App.vue'
-    import naive from 'naive-ui'
-    import lowCoderRender from 'lowcode-renders'
-    createApp(App).use(lowCoderRender).use(naive).mount('#app')`
+import App from './App.vue'
+import naive from 'naive-ui'
+import lowCodeRenders from 'lowcode-renders'
+createApp(App).use(lowCodeRenders).use(naive).mount('#app')`
     return { show, showSecond }
   },
 })
