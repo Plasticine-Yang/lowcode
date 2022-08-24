@@ -1,5 +1,5 @@
 import { App } from 'vue'
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHashHistory } from 'vue-router'
 
 const routes = [
   { path: '/', redirect: '/index' },
@@ -48,7 +48,7 @@ const routes = [
 
 export default function setupRouter(app: App) {
   const router = createRouter({
-    history: createWebHistory(),
+    history: createWebHashHistory(),
     routes,
   })
   app.use(router)
