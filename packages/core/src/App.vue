@@ -2,6 +2,7 @@
 import BasicLayout from './layouts/basic-layout/index.vue'
 import { useTheme } from '@/store'
 import { getTheme } from '@/utils/theme'
+
 const themer = useTheme()
 const themeOverrides = getTheme(themer)
 </script>
