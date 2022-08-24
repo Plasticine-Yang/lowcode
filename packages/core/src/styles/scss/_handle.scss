@@ -3,7 +3,7 @@
   @each $theme-name,
   $theme-map in $themes {
     $theme-map: $theme-map !global;
-    [data-theme="#{$theme-name}"] & {
+    [data-theme="#{''+$theme-name}"] & {
       @content;
     }
  

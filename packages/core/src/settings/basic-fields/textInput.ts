@@ -12,21 +12,9 @@ export const textInput: IField = {
       // color: 'orange',
       height: '30px',
     },
-    inputText: '123',
+    inputText: '文本框文字',
   },
   componentPropsMeta: {
-    width: {
-      name: '长度',
-      fieldComponent: 'input-attribute',
-    },
-    height: {
-      name: '高度',
-      fieldComponent: 'input-attribute',
-    },
-    lineHeight: {
-      name: '行高',
-      fieldComponent: 'input-attribute',
-    },
     inputText: {
       name: '文本内容',
       fieldComponent: 'input-attribute',

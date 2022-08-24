@@ -6,7 +6,7 @@
   "author": "Plasticine",
   "scripts": {
     "dev": "vite",
-    "build": "vue-tsc --noEmit && vite build",
+    "build": "vite build",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -16,6 +16,7 @@
     "cjs2esmodule": "^1.1.1",
     "codemirror": "^6.0.1",
     "default-passive-events": "^2.0.0",
+    "highlight.js": "^11.6.0",
     "lodash-es": "^4.17.21",
     "pinia": "^2.0.17",
     "uuid": "^8.3.2",
@@ -23,6 +24,7 @@
     "vue-clipboard3": "^2.0.0",
     "vue-codemirror": "^6.0.2",
     "vue-json-editor": "^1.4.3",
+    "vue-router": "^4.0.13",
     "vue3-ace-editor": "^2.2.2",
     "vuedraggable": "^4.1.0"
   },

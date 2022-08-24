@@ -20,7 +20,7 @@ interface IField {
   // 行内样式
   style?: string
   // 事件属性
-  eventProps: Record<string, EventPropValue>
+  eventProps?: Record<string, EventPropValue>
 }
 
 // 记录组件 props 元数据信息 -- 方便属性配置表单的渲染

@@ -9,12 +9,11 @@ export default function useDrawerComponentPropsTransformer() {
     if (drawerComponent.eventProps) {
       // 只在有配置事件属性时才会进行转换
       for (const eventName of Object.keys(drawerComponent.eventProps)) {
-        const eventPropValue: EventPropValue<Event> =
+        const eventPropValue: EventPropValue =
           drawerComponent.eventProps[eventName]
         // 提取监听器代码以及调用监听器函数生成器生成监听器函数
         const eventCode = eventPropValue.code
         const eventHandler = eventPropValue.eventHandlerGenerator(eventCode)
-
         // 赋值给 eventProps 生成事件属性
         eventProps[eventName] = eventHandler
       }

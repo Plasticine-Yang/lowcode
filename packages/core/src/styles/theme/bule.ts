@@ -1,13 +1,6 @@
 import type { GlobalThemeOverrides } from 'naive-ui'
-//黑暗
+//蓝色
 export const blueTheme: GlobalThemeOverrides = {
-  common: {
-    textColorBase: '#fff',
-    bodyColor: 'black',
-    borderColor: 'black',
-    textColor1: 'rgb(64, 158, 255)',
-    dividerColor: '#fff',
-  },
   Dropdown: {
     color: '#fff',
     optionTextColor: 'rgb(64, 158, 255)',
@@ -17,8 +10,7 @@ export const blueTheme: GlobalThemeOverrides = {
   Button: {
     color: 'rgb(64, 158, 255)',
     textColor: '#fff',
-    border: 'rgb(64, 158, 255)',
-    colorHover: 'rgb(234 189 213)',
+    colorHover: 'rgb(64, 158, 255)',
     textColorHover: '#fff',
     textColorFocus: '#fff',
     colorFocus: 'rgb(133 193 255)',

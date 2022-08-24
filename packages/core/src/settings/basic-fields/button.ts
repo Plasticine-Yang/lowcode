@@ -98,9 +98,17 @@ export const button: IField = {
   },
   style: '',
   eventProps: {
-    onClick: {
-      name: 'onClick',
-      code: 'console.log("click")',
+    onBlur: {
+      name: 'onBlur',
+      code: 'console.log("blur")',
+      eventHandlerGenerator: (code: string) => (e: Event) => eval(code),
+      eventHandlerArgsDescriptor: {
+        e: 'Event',
+      },
+    },
+    onFocus: {
+      name: 'onFocus',
+      code: 'console.log("focus")',
       eventHandlerGenerator: (code: string) => (e: Event) => eval(code),
       eventHandlerArgsDescriptor: {
         e: 'Event',

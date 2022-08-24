@@ -1,13 +1,6 @@
 import type { GlobalThemeOverrides } from 'naive-ui'
 //黑暗
 export const candyTheme: GlobalThemeOverrides = {
-  common: {
-    textColorBase: '#fff',
-    bodyColor: 'black',
-    borderColor: 'black',
-    textColor1: 'rgb(221, 118, 173)',
-    dividerColor: '#fff',
-  },
   Dropdown: {
     color: '#fff',
     optionTextColor: 'rgb(221, 118, 173)',

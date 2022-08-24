@@ -55,6 +55,7 @@ importers:
       cjs2esmodule: ^1.1.1
       codemirror: ^6.0.1
       default-passive-events: ^2.0.0
+      highlight.js: ^11.6.0
       lodash-es: ^4.17.21
       naive-ui: ^2.31.0
       pinia: ^2.0.17
@@ -68,6 +69,7 @@ importers:
       vue-clipboard3: ^2.0.0
       vue-codemirror: ^6.0.2
       vue-json-editor: ^1.4.3
+      vue-router: ^4.0.13
       vue-tsc: ^0.38.4
       vue3-ace-editor: ^2.2.2
       vuedraggable: ^4.1.0
@@ -78,6 +80,7 @@ importers:
       cjs2esmodule: registry.npmmirror.com/cjs2esmodule/1.1.1
       codemirror: 6.0.1
       default-passive-events: registry.npmmirror.com/default-passive-events/2.0.0
+      highlight.js: 11.6.0
       lodash-es: 4.17.21
       pinia: 2.0.17_vue@3.2.37
       uuid: 8.3.2
@@ -85,6 +88,7 @@ importers:
       vue-clipboard3: registry.npmmirror.com/vue-clipboard3/2.0.0
       vue-codemirror: 6.0.2_w3v55mexrpfzyztsvxxm2lvyqu
       vue-json-editor: registry.npmmirror.com/vue-json-editor/1.4.3
+      vue-router: 4.0.13_vue@3.2.37
       vue3-ace-editor: registry.npmmirror.com/vue3-ace-editor/2.2.2
       vuedraggable: 4.1.0_vue@3.2.37
     devDependencies:
@@ -2094,7 +2098,6 @@ packages:
   /highlight.js/11.6.0:
     resolution: {integrity: sha512-ig1eqDzJaB0pqEvlPVIpSSyMaO92bH1N2rJpLMN/nX396wTpDA4Eq0uK+7I/2XG17pFaaKE0kjV/XPeGt7Evjw==}
     engines: {node: '>=12.0.0'}
-    dev: true
 
   /hosted-git-info/2.8.9:
     resolution: {integrity: sha512-mxIDAb9Lsm6DoOJ7xH+5+X4y1LU/4Hi50L9C5sIswK3JzULS4bwk1FvjdBgvYR4bzT4tuUQiC15FE2f5HbLvYw==}
@@ -3635,6 +3638,15 @@ packages:
     transitivePeerDependencies:
       - supports-color
     dev: true
+
+  /vue-router/4.0.13_vue@3.2.37:
+    resolution: {integrity: sha512-LmXrC+BkDRLak+d5xTMgUYraT3Nj0H/vCbP+7usGvIl9Viqd1UP6AsP0i69pSbn9O0dXK/xCdp4yPw21HqV9Jw==}
+    peerDependencies:
+      vue: ^3.2.0
+    dependencies:
+      '@vue/devtools-api': 6.2.1
+      vue: 3.2.37
+    dev: false
 
   /vue-tsc/0.38.9:
     resolution: {integrity: sha512-Yoy5phgvGqyF98Fb4mYqboR4Q149jrdcGv5kSmufXJUq++RZJ2iMVG0g6zl+v3t4ORVWkQmRpsV4x2szufZ0LQ==}
