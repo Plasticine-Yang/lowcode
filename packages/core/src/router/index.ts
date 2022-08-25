@@ -1,5 +1,5 @@
 import { App } from 'vue'
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHashHistory } from 'vue-router'
 
 const routes = [
   { path: '/', redirect: '/index' },
@@ -36,6 +36,16 @@ const routes = [
     ],
   },
   {
+    path: '/sign_up',
+    name: 'sign_up',
+    component: () => import('@/layouts/user/index.vue'),
+  },
+  {
+    path: '/sign_in',
+    name: 'sign_in',
+    component: () => import('@/layouts/user/index.vue'),
+  },
+  {
     path: '/404',
     name: '404',
     component: () => import('@/layouts/notFound/index.vue'),
@@ -46,9 +56,14 @@ const routes = [
   },
 ]
 
+export const router = createRouter({
+  history: createWebHashHistory(),
+  routes,
+})
+
 export default function setupRouter(app: App) {
   const router = createRouter({
-    history: createWebHistory(),
+    history: createWebHashHistory(),
     routes,
   })
   app.use(router)

@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import BasicLayout from './layouts/basic-layout/index.vue'
 import { useTheme } from '@/store'
 import { getTheme } from '@/utils/theme'
 

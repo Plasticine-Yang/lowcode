@@ -20,6 +20,7 @@ export default function useDrawerComponentPropsTransformer() {
     }
 
     const transformedComponentProps = {
+      eventProps: drawerComponent.eventProps,
       ...drawerComponent.componentProps,
       ...eventProps,
     }

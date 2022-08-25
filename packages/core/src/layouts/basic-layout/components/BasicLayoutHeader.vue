@@ -7,7 +7,6 @@ import { useRouter } from 'vue-router'
 // 切换主题
 const toggleTheme = useToggleTheme()
 const router = useRouter()
-const isHome = ref(true)
 onMounted(() => {
   const elts = {
     text1: document.getElementById('text1'),
@@ -20,6 +19,8 @@ onMounted(() => {
     isHome.value = false
   }
 })
+
+const isHome = ref(true)
 </script>
 
 <template>
@@ -61,6 +62,7 @@ onMounted(() => {
       >
         <icon icon="fa-brands:github" />Github
       </a>
+      <user-panel />
     </div>
   </n-layout-header>
 </template>
