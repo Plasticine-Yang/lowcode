@@ -128,9 +128,7 @@ export default defineComponent({
       try {
         await toClipboard(value)
         copyText.value = '已复制'
-      } catch (e) {
-        console.log(e)
-      }
+      } catch (e) {}
     }
     const editor = ref<any>(null)
     const insert = () => {

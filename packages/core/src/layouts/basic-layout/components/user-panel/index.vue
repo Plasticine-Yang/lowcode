@@ -96,13 +96,11 @@ onMounted(() => {
   isLogin.value = token ? true : false
   if (isLogin.value) {
     // 如果有 token，先携带token获取信息
-    console.log('post')
     api.post!('/account/userinfo', {
       accessToken: token,
     })
       .then(response => {
         // 如果正确返回则更改用户个人信息
-        console.log('userinfo', response)
         if (response.code === 20000 && response.data) {
           userStore.changeUserInfo(response.data)
         } else {
@@ -112,7 +110,6 @@ onMounted(() => {
         }
       })
       .catch(error => {
-        console.log(error)
         // token 有错或者过期都不显示个人中心
         isLogin.value = false
       })
@@ -135,7 +132,6 @@ const submitUserInfoForm = () => {
     nickname: nickname.value || userStore.$state.nickname,
     avatarUrl: avatarUrl.value || userStore.$state.avatarUrl,
   }).then(response => {
-    console.log('response', response)
     if (response.code == 20000) {
       userStore.changeUserInfo(response.data)
       alert('配置修改成功')
@@ -152,8 +148,6 @@ const showComponentJsonListModal = ref(false)
 const drawer = useDrawer()
 const userInfo = reactive(userStore.$state)
 const replaceDrawer = componentJson => {
-  console.log('dec', componentJson)
-  console.log('asd', decrypt(componentJson))
   // 解密后得到JSON字符串
   const component = decrypt(componentJson)
   drawer.setComponent(JSONParse(component))

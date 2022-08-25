@@ -38,7 +38,6 @@ const submit = () => {
     username: username.value,
     password: password.value,
   }).then(response => {
-    console.log(response)
     if (response.code === 20000 && response.data.accessToken) {
       // 更改当前用户信息
       userStore.changeUserInfo(response.data)

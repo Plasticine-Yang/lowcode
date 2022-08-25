@@ -17,13 +17,11 @@ const saveComponents = () => {
   const componentJSON = JSONStringify(components)
   // 再将其加密为字符串，读取的时候进行解密，这样数据就不会丢失
   const decryptedComponentJSON = encrypt(componentJSON)
-  console.log('components', typeof componentJSON)
   const accessToken = localStorage.getItem('access_token')
   api.patch!('/component_json/save', {
     accessToken,
     componentJson: decryptedComponentJSON,
   }).then(response => {
-    console.log('response', response)
     if (response.code === 20000) {
       userStore.changeUserInfo(response.data)
       alert(response.message)

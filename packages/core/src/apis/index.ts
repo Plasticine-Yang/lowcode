@@ -46,7 +46,6 @@ instance.interceptors.response.use(
   response => {
     // normalizeResponse(response.data)
     const data = response.data
-    console.log('data', data)
     let status = response.status
     const errorToken = [40001, 40002, 40003]
     if (status == 200 || status == 304) {
@@ -65,7 +64,7 @@ instance.interceptors.response.use(
     }
   },
   error => {
-    console.log(error)
+    // console.log(error)
   },
 )
 
