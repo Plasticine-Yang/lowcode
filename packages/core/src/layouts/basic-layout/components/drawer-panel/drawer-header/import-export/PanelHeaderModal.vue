@@ -19,7 +19,7 @@
           <!-- 导出导入JSON展示数据 -->
           <json-editor
             ref="editor"
-            :value="JSON.stringify(jsonData, null, 2)"
+            :value="JSONStringify(jsonData)"
           ></json-editor>
         </div>
         <!-- 导出的按钮 -->
@@ -88,6 +88,7 @@
 import { defineComponent, ref } from 'vue'
 import JsonEditor from './JsonEditor.vue'
 import useClipboard from 'vue-clipboard3'
+import { JSONStringify } from '@/utils/resetSerialize'
 export default defineComponent({
   components: {
     JsonEditor,
@@ -127,9 +128,7 @@ export default defineComponent({
       try {
         await toClipboard(value)
         copyText.value = '已复制'
-      } catch (e) {
-        console.log(e)
-      }
+      } catch (e) {}
     }
     const editor = ref<any>(null)
     const insert = () => {
@@ -139,7 +138,7 @@ export default defineComponent({
       }
     }
     const modelValue = ref([])
-    return { close, copy, copyText, insert, modelValue, editor }
+    return { close, copy, copyText, insert, modelValue, editor, JSONStringify }
   },
 })
 </script>

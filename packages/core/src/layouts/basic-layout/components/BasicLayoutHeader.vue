@@ -1,19 +1,26 @@
 <script lang="ts" setup>
-import { onMounted } from 'vue'
+import { onMounted, ref } from 'vue'
 import { animation } from '@/utils/logoAnimation'
 import { themeOptions } from '@/theme'
 import { useToggleTheme } from '@/composables'
-
+import { useRouter } from 'vue-router'
 // 切换主题
 const toggleTheme = useToggleTheme()
-
+const router = useRouter()
 onMounted(() => {
   const elts = {
     text1: document.getElementById('text1'),
     text2: document.getElementById('text2'),
   }
   animation(elts)
+  if (router.currentRoute.value.matched[0].path == '/index') {
+    isHome.value = true
+  } else {
+    isHome.value = false
+  }
 })
+
+const isHome = ref(true)
 </script>
 
 <template>
@@ -39,6 +46,11 @@ onMounted(() => {
       </svg>
     </h1>
     <div class="flex items-center">
+      <!-- 跳转文档 -->
+      <n-button v-if="isHome"
+        ><router-link to="/description">文档</router-link></n-button
+      >
+      <n-button v-else><router-link to="/">首页</router-link></n-button>
       <!-- 切换主题 -->
       <n-dropdown :options="themeOptions" @select="toggleTheme">
         <n-button class="common-util" :bordered="false">主题切换</n-button>
@@ -50,6 +62,7 @@ onMounted(() => {
       >
         <icon icon="fa-brands:github" />Github
       </a>
+      <user-panel />
     </div>
   </n-layout-header>
 </template>

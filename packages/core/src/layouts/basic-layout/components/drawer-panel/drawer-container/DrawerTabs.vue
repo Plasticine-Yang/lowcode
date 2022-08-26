@@ -57,7 +57,7 @@ export default {
       () => props.element.componentProps.pane,
       () => {
         changeNum()
-        console.log(document.getElementById('drawerItem'))
+        // console.log(document.getElementById('drawerItem'))
       },
     )
   },

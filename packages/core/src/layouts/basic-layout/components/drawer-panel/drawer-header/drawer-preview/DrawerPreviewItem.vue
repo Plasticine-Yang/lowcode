@@ -18,6 +18,10 @@
         v-if="item.componentName == 'drawerForm'"
         :element="item"
       ></form-preview>
+      <text-input-preview
+        v-if="item.componentName == 'drawerText'"
+        :element="item"
+      ></text-input-preview>
       <tab-preview
         v-if="item.componentName == 'DrawerTabs'"
         :element="item"
@@ -31,7 +35,10 @@
       ></component>
       <component
         :is="item.componentName"
-        v-else
+        v-else-if="
+          item.componentName != 'drawerText' &&
+          (item.type == 'basic-senior' || item.type == 'senior')
+        "
         :element="item"
         class="preview"
         :style="item.style"
@@ -43,6 +50,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 import resolveComponents from '../../resolveComponents'
+
 export default defineComponent({
   components: {
     ...resolveComponents,

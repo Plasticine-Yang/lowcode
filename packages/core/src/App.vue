@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import BasicLayout from './layouts/basic-layout/index.vue'
 import { useTheme } from '@/store'
 import { getTheme } from '@/utils/theme'
+
 const themer = useTheme()
 const themeOverrides = getTheme(themer)
 </script>
@@ -9,7 +9,7 @@ const themeOverrides = getTheme(themer)
 <template>
   <div id="app">
     <n-config-provider :theme-overrides="themeOverrides" style="height: 100%">
-      <n-dialog-provider> <basic-layout /></n-dialog-provider>
+      <n-dialog-provider><router-view></router-view> </n-dialog-provider>
     </n-config-provider>
   </div>
 </template>

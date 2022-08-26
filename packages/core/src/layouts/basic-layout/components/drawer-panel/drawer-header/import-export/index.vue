@@ -32,7 +32,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, computed } from 'vue'
+import { defineComponent, ref, computed, nextTick } from 'vue'
 import { showExample } from './showExampe'
 import { useDrawer, useForm } from '@/store'
 export default defineComponent({
@@ -53,7 +53,7 @@ export default defineComponent({
         jsonData.value = showExample
       } else if (toUseText == '导出JSON') {
         // 拿到目前的components
-        jsonData.value = drawer.components
+        jsonData.value = computed(() => drawer.components).value
       } else if (toUseText == '导出表单数据') {
         jsonData.value = former.formList
       }
